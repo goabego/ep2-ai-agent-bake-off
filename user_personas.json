@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "name": "Marcus W.",
+      "age": 24,
+      "risk_tolerance": "moderate-high",
+      "financial_blurb": "A recent computer science graduate starting a high-paying job at a tech company. He has substantial student loan debt and wants to pay it off quickly while also starting to save for his first home.",
+      "goals": [
+        "Aggressively pay off $60,000 in student loans in the next 5 years.",
+        "Start saving for a $50,000 down payment on a condo.",
+        "Contribute to his company's 401(k) to get the full employer match."
+      ],
+      "profile_picture": "user01_marcus_w.jpg"
+    },
+    {
+      "name": "Janet D.",
+      "age": 42,
+      "risk_tolerance": "moderate",
+      "financial_blurb": "A marketing director, married with one child. She's focused on saving for her child's future education and getting serious about her own retirement planning.",
+      "goals": [
+        "Contribute $800/month to her daughter's 529 college savings plan.",
+        "Increase her 401(k) contribution rate from 6% to 10% of her salary.",
+        "Evaluate and rebalance her current investment portfolio for long-term growth."
+      ],
+      "profile_picture": "user02_janet_d.jpg"
+    },
+    {
+      "name": "Ashwin K.",
+      "age": 63,
+      "risk_tolerance": "low-moderate",
+      "financial_blurb": "A successful entrepreneur who sold his business. He has a significant nest egg and is now focused on capital preservation, tax-efficient income generation, and planning his estate for a comfortable retirement.",
+      "goals": [
+        "Optimize his investment portfolio to generate a reliable annual income of $120,000 with minimal tax liability.",
+        "Explore tax-loss harvesting opportunities to offset capital gains.",
+        "Work with an estate planner to set up a trust for his heirs."
+      ],
+      "profile_picture": "user10_ashwin_k.jpg"
+    }
+  ]
+}

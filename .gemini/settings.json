@@ -1,0 +1,22 @@
+{
+    "theme": "GitHub",
+    "autoAccept": false,
+    "sandbox": true,
+    "checkpointing": {
+      "enabled": true
+    },
+    "fileFiltering": {
+      "respectGitIgnore": true
+    },
+    "usageStatisticsEnabled": true,
+
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
+  }
+  }

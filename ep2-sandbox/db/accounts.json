@@ -1,0 +1,83 @@
+[
+  {
+    "account_id": "acc-mw-c-001",
+    "user_id": "user-001",
+    "type": "checking",
+    "balance": 8500.00,
+    "institution": "Chase"
+  },
+  {
+    "account_id": "acc-mw-s-002",
+    "user_id": "user-001",
+    "type": "savings",
+    "balance": 25000.00,
+    "institution": "Chase"
+  },
+  {
+    "account_id": "acc-mw-i-003",
+    "user_id": "user-001",
+    "type": "investment",
+    "balance": 15000.00,
+    "holdings": [
+      {"symbol": "VTI", "value": 10000.00},
+      {"symbol": "VXUS", "value": 5000.00}
+    ]
+  },
+  {
+    "account_id": "acc-mw-d-004",
+    "user_id": "user-001",
+    "type": "debt",
+    "balance": -60000.00,
+    "asset": "Student Loan",
+    "interest_rate": 0.058
+  },
+  {
+    "account_id": "acc-jd-c-001",
+    "user_id": "user-002",
+    "type": "checking",
+    "balance": 12000.00,
+    "institution": "Bank of America"
+  },
+  {
+    "account_id": "acc-jd-i-002",
+    "user_id": "user-002",
+    "type": "investment",
+    "balance": 250000.00,
+    "holdings": [
+      {"symbol": "SPY", "value": 150000.00},
+      {"symbol": "AGG", "value": 100000.00}
+    ]
+  },
+  {
+    "account_id": "acc-jd-e-003",
+    "user_id": "user-002",
+    "type": "education",
+    "balance": 75000.00,
+    "institution": "Fidelity 529"
+  },
+  {
+    "account_id": "acc-ak-c-001",
+    "user_id": "user-003",
+    "type": "checking",
+    "balance": 50000.00,
+    "institution": "Morgan Stanley"
+  },
+  {
+    "account_id": "acc-ak-i-002",
+    "user_id": "user-003",
+    "type": "investment",
+    "balance": 5000000.00,
+    "holdings": [
+      {"symbol": "MUB", "value": 2000000.00},
+      {"symbol": "VTEB", "value": 2000000.00},
+      {"symbol": "SCHD", "value": 1000000.00}
+    ]
+  },
+  {
+    "account_id": "acc-ak-t-003",
+    "user_id": "user-003",
+    "type": "trust",
+    "balance": 2500000.00,
+    "institution": "Northern Trust"
+  }
+]

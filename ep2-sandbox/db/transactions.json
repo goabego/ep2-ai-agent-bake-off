@@ -1,0 +1,1450 @@
+[
+  {
+    "transaction_id": "txn_id_001",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-01T09:00:00Z",
+    "description": "Paycheck - ACME Corp",
+    "amount": 4000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_002",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-01T10:00:00Z",
+    "description": "Rent Payment",
+    "amount": -2000.00,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_003",
+    "account_id": "acc-mw-d-004",
+    "date": "2025-05-05T11:00:00Z",
+    "description": "Student Loan Payment",
+    "amount": -1000.00,
+    "category": "Debt"
+  },
+  {
+    "transaction_id": "txn_id_004",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-15T09:00:00Z",
+    "description": "Paycheck - ACME Corp",
+    "amount": 4000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_005",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-15T09:05:00Z",
+    "description": "Transfer to Savings",
+    "amount": -1500.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_006",
+    "account_id": "acc-mw-s-002",
+    "date": "2025-05-15T09:05:00Z",
+    "description": "Deposit from Checking",
+    "amount": 1500.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_007",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-01T09:00:00Z",
+    "description": "Paycheck - ACME Corp",
+    "amount": 4000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_008",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-01T10:00:00Z",
+    "description": "Rent Payment",
+    "amount": -2000.00,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_009",
+    "account_id": "acc-mw-d-004",
+    "date": "2025-06-05T11:00:00Z",
+    "description": "Student Loan Payment",
+    "amount": -1000.00,
+    "category": "Debt"
+  },
+  {
+    "transaction_id": "txn_id_010",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-15T09:00:00Z",
+    "description": "Paycheck - ACME Corp",
+    "amount": 4000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_011",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-15T09:05:00Z",
+    "description": "Transfer to Savings",
+    "amount": -1500.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_012",
+    "account_id": "acc-mw-s-002",
+    "date": "2025-06-15T09:05:00Z",
+    "description": "Deposit from Checking",
+    "amount": 1500.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_013",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-01T09:00:00Z",
+    "description": "Paycheck - ACME Corp",
+    "amount": 4000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_014",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-01T10:00:00Z",
+    "description": "Rent Payment",
+    "amount": -2000.00,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_015",
+    "account_id": "acc-mw-d-004",
+    "date": "2025-07-05T11:00:00Z",
+    "description": "Student Loan Payment",
+    "amount": -1000.00,
+    "category": "Debt"
+  },
+  {
+    "transaction_id": "txn_id_016",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-15T09:00:00Z",
+    "description": "Paycheck - ACME Corp",
+    "amount": 4000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_017",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-15T09:05:00Z",
+    "description": "Transfer to Savings",
+    "amount": -1500.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_018",
+    "account_id": "acc-mw-s-002",
+    "date": "2025-07-15T09:05:00Z",
+    "description": "Deposit from Checking",
+    "amount": 1500.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_019",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-10T09:00:00Z",
+    "description": "Paycheck - Cymbal Corp",
+    "amount": 8000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_020",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-10T10:00:00Z",
+    "description": "Mortgage Payment",
+    "amount": -3500.00,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_021",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-12T09:05:00Z",
+    "description": "Transfer to 529 Plan",
+    "amount": -800.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_022",
+    "account_id": "acc-jd-e-003",
+    "date": "2025-05-12T09:05:00Z",
+    "description": "Deposit from Checking",
+    "amount": 800.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_023",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-25T09:00:00Z",
+    "description": "Paycheck - Cymbal Corp",
+    "amount": 8000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_024",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-10T09:00:00Z",
+    "description": "Paycheck - Cymbal Corp",
+    "amount": 8000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_025",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-10T10:00:00Z",
+    "description": "Mortgage Payment",
+    "amount": -3500.00,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_026",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-12T09:05:00Z",
+    "description": "Transfer to 529 Plan",
+    "amount": -800.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_027",
+    "account_id": "acc-jd-e-003",
+    "date": "2025-06-12T09:05:00Z",
+    "description": "Deposit from Checking",
+    "amount": 800.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_028",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-25T09:00:00Z",
+    "description": "Paycheck - Cymbal Corp",
+    "amount": 8000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_029",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-10T09:00:00Z",
+    "description": "Paycheck - Cymbal Corp",
+    "amount": 8000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_030",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-10T10:00:00Z",
+    "description": "Mortgage Payment",
+    "amount": -3500.00,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_031",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-12T09:05:00Z",
+    "description": "Transfer to 529 Plan",
+    "amount": -800.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_032",
+    "account_id": "acc-jd-e-003",
+    "date": "2025-07-12T09:05:00Z",
+    "description": "Deposit from Checking",
+    "amount": 800.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_033",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-25T09:00:00Z",
+    "description": "Paycheck - Cymbal Corp",
+    "amount": 8000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_034",
+    "account_id": "acc-ak-i-002",
+    "date": "2025-05-15T10:00:00Z",
+    "description": "Dividend Income",
+    "amount": 10000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_035",
+    "account_id": "acc-ak-i-002",
+    "date": "2025-05-15T10:05:00Z",
+    "description": "Transfer to Checking",
+    "amount": -10000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_036",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-15T10:05:00Z",
+    "description": "Deposit from Investment",
+    "amount": 10000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_037",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-20T12:00:00Z",
+    "description": "Property Tax",
+    "amount": -15000.00,
+    "category": "Taxes"
+  },
+  {
+    "transaction_id": "txn_id_038",
+    "account_id": "acc-ak-i-002",
+    "date": "2025-06-15T10:00:00Z",
+    "description": "Dividend Income",
+    "amount": 10000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_039",
+    "account_id": "acc-ak-i-002",
+    "date": "2025-06-15T10:05:00Z",
+    "description": "Transfer to Checking",
+    "amount": -10000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_040",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-15T10:05:00Z",
+    "description": "Deposit from Investment",
+    "amount": 10000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_041",
+    "account_id": "acc-ak-i-002",
+    "date": "2025-07-15T10:00:00Z",
+    "description": "Dividend Income",
+    "amount": 10000.00,
+    "category": "Income"
+  },
+  {
+    "transaction_id": "txn_id_042",
+    "account_id": "acc-ak-i-002",
+    "date": "2025-07-15T10:05:00Z",
+    "description": "Transfer to Checking",
+    "amount": -10000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_043",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-15T10:05:00Z",
+    "description": "Deposit from Investment",
+    "amount": 10000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_044",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-28T14:00:00Z",
+    "description": "Charitable Donation",
+    "amount": -5000.00,
+    "category": "Charity"
+  },
+  {
+    "transaction_id": "txn_id_045",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-02T18:00:00Z",
+    "description": "Groceries - Cymbal Market",
+    "amount": -150.25,
+    "category": "Groceries"
+  },
+  {
+    "transaction_id": "txn_id_046",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-08T12:30:00Z",
+    "description": "Lunch - ACME Salads",
+    "amount": -18.50,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_047",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-20T07:00:00Z",
+    "description": "Gas - Cymbal Fuel",
+    "amount": -55.00,
+    "category": "Transportation"
+  },
+  {
+    "transaction_id": "txn_id_048",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-07T19:00:00Z",
+    "description": "Dinner - ACME Pizza",
+    "amount": -45.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_049",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-18T17:00:00Z",
+    "description": "Shopping - ACME Online",
+    "amount": -75.99,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_050",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-10T08:00:00Z",
+    "description": "Coffee - Cymbal Coffee",
+    "amount": -5.75,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_051",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-22T13:00:00Z",
+    "description": "ACME Power & Light",
+    "amount": -85.00,
+    "category": "Utilities"
+  },
+  {
+    "transaction_id": "txn_id_052",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-05T16:00:00Z",
+    "description": "Groceries - Cymbal Market",
+    "amount": -350.00,
+    "category": "Groceries"
+  },
+  {
+    "transaction_id": "txn_id_053",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-18T11:00:00Z",
+    "description": "Cymbal Youth Soccer",
+    "amount": -150.00,
+    "category": "Kids"
+  },
+  {
+    "transaction_id": "txn_id_054",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-28T09:00:00Z",
+    "description": "ACME Auto Insurance",
+    "amount": -250.00,
+    "category": "Transportation"
+  },
+  {
+    "transaction_id": "txn_id_055",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-08T15:00:00Z",
+    "description": "Cymbal Home Improvement",
+    "amount": -200.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_056",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-20T20:00:00Z",
+    "description": "Dinner - The ACME Grill",
+    "amount": -120.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_057",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-02T10:00:00Z",
+    "description": "Gas - Cymbal Fuel",
+    "amount": -60.00,
+    "category": "Transportation"
+  },
+  {
+    "transaction_id": "txn_id_058",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-15T18:30:00Z",
+    "description": "ACME Travel Agency",
+    "amount": -1500.00,
+    "category": "Travel"
+  },
+  {
+    "transaction_id": "txn_id_059",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-25T14:00:00Z",
+    "description": "Groceries - Cymbal Market",
+    "amount": -400.00,
+    "category": "Groceries"
+  },
+  {
+    "transaction_id": "txn_id_060",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-28T12:00:00Z",
+    "description": "Subscription - Cymbal Streaming",
+    "amount": -14.99,
+    "category": "Entertainment"
+  },
+  {
+    "transaction_id": "txn_id_061",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-30T19:00:00Z",
+    "description": "ACME Cinemas",
+    "amount": -50.00,
+    "category": "Entertainment"
+  },
+  {
+    "transaction_id": "txn_id_062",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-01T11:00:00Z",
+    "description": "Cymbal Greens Country Club",
+    "amount": -1000.00,
+    "category": "Entertainment"
+  },
+  {
+    "transaction_id": "txn_id_063",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-10T13:00:00Z",
+    "description": "Lunch - The ACME Club",
+    "amount": -150.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_064",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-25T15:00:00Z",
+    "description": "Cymbal Fine Art Auction",
+    "amount": -25000.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_065",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-05T18:00:00Z",
+    "description": "Dinner - The Cymbal Room",
+    "amount": -800.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_066",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-18T10:00:00Z",
+    "description": "ACME Airlines",
+    "amount": -15000.00,
+    "category": "Travel"
+  },
+  {
+    "transaction_id": "txn_id_067",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-22T14:00:00Z",
+    "description": "Shopping - Cymbal Emporium",
+    "amount": -5000.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_068",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-01T12:00:00Z",
+    "description": "ACME Home Services",
+    "amount": -2000.00,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_069",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-10T16:00:00Z",
+    "description": "Cymbal Vintners",
+    "amount": -3000.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_070",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-20T11:00:00Z",
+    "description": "Donation - ACME Museum of Art",
+    "amount": -10000.00,
+    "category": "Charity"
+  },
+  {
+    "transaction_id": "txn_id_071",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-25T19:00:00Z",
+    "description": "Cymbal Grand Opera",
+    "amount": -1200.00,
+    "category": "Entertainment"
+  },
+  {
+    "transaction_id": "txn_id_072",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-18T14:22:01Z",
+    "description": "ACME Landscaping",
+    "amount": -500,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_073",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-18T14:22:01Z",
+    "description": "ACME Landscaping",
+    "amount": -500,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_074",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-18T14:22:01Z",
+    "description": "ACME Landscaping",
+    "amount": -500,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_075",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-28T14:22:01Z",
+    "description": "Contribution - Committee for a Better ACME",
+    "amount": -2500,
+    "category": "Gifts & Donations"
+  },
+  {
+    "transaction_id": "txn_id_076",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-03T10:00:00Z",
+    "description": "ACME Fitness",
+    "amount": -50.00,
+    "category": "Health & Wellness"
+  },
+  {
+    "transaction_id": "txn_id_077",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-10T15:00:00Z",
+    "description": "Cymbal Electronics",
+    "amount": -500.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_078",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-18T20:00:00Z",
+    "description": "ACME Cinemas",
+    "amount": -30.00,
+    "category": "Entertainment"
+  },
+  {
+    "transaction_id": "txn_id_079",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-25T12:00:00Z",
+    "description": "Lunch - Cymbal Deli",
+    "amount": -15.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_080",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-02T08:00:00Z",
+    "description": "Coffee - ACME Coffee",
+    "amount": -4.50,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_081",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-09T18:00:00Z",
+    "description": "Groceries - Cymbal Market",
+    "amount": -120.00,
+    "category": "Groceries"
+  },
+  {
+    "transaction_id": "txn_id_082",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-16T12:00:00Z",
+    "description": "Lunch - ACME Salads",
+    "amount": -20.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_083",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-23T07:30:00Z",
+    "description": "Gas - Cymbal Fuel",
+    "amount": -60.00,
+    "category": "Transportation"
+  },
+  {
+    "transaction_id": "txn_id_084",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-30T19:00:00Z",
+    "description": "Dinner - ACME Grill",
+    "amount": -60.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_085",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-07T08:30:00Z",
+    "description": "Coffee - Cymbal Coffee",
+    "amount": -5.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_086",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-14T17:00:00Z",
+    "description": "Shopping - ACME Online",
+    "amount": -150.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_087",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-21T12:30:00Z",
+    "description": "Lunch - Cymbal Deli",
+    "amount": -12.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_088",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-28T18:00:00Z",
+    "description": "Groceries - Cymbal Market",
+    "amount": -180.00,
+    "category": "Groceries"
+  },
+  {
+    "transaction_id": "txn_id_089",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-11T14:00:00Z",
+    "description": "Cymbal Books",
+    "amount": -40.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_090",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-22T09:00:00Z",
+    "description": "ACME Phone Bill",
+    "amount": -100.00,
+    "category": "Utilities"
+  },
+  {
+    "transaction_id": "txn_id_091",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-04T11:00:00Z",
+    "description": "Cymbal Music Subscription",
+    "amount": -10.00,
+    "category": "Entertainment"
+  },
+  {
+    "transaction_id": "txn_id_092",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-12T21:00:00Z",
+    "description": "ACME Ride Share",
+    "amount": -25.00,
+    "category": "Transportation"
+  },
+  {
+    "transaction_id": "txn_id_093",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-20T16:00:00Z",
+    "description": "Cymbal Pharmacy",
+    "amount": -30.00,
+    "category": "Health & Wellness"
+  },
+  {
+    "transaction_id": "txn_id_094",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-03T13:00:00Z",
+    "description": "ACME Hardware",
+    "amount": -40.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_095",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-11T10:00:00Z",
+    "description": "Cymbal Bank Fee",
+    "amount": -15.00,
+    "category": "Fees"
+  },
+  {
+    "transaction_id": "txn_id_096",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-19T15:00:00Z",
+    "description": "ACME Pet Store",
+    "amount": -80.00,
+    "category": "Pets"
+  },
+  {
+    "transaction_id": "txn_id_097",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-26T11:00:00Z",
+    "description": "Cymbal Dry Cleaning",
+    "amount": -35.00,
+    "category": "Services"
+  },
+  {
+    "transaction_id": "txn_id_098",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-29T16:00:00Z",
+    "description": "ACME Office Supplies",
+    "amount": -60.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_099",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-28T14:00:00Z",
+    "description": "Transfer to Investment",
+    "amount": -500.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_100",
+    "account_id": "acc-mw-i-003",
+    "date": "2025-05-28T14:00:00Z",
+    "description": "Deposit from Checking",
+    "amount": 500.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_101",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-02T13:00:00Z",
+    "description": "ACME Kids Clothing",
+    "amount": -200.00,
+    "category": "Kids"
+  },
+  {
+    "transaction_id": "txn_id_102",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-08T17:00:00Z",
+    "description": "Cymbal Garden Center",
+    "amount": -100.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_103",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-15T19:00:00Z",
+    "description": "Dinner - ACME Steakhouse",
+    "amount": -250.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_104",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-22T10:00:00Z",
+    "description": "ACME Home Insurance",
+    "amount": -400.00,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_105",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-29T16:00:00Z",
+    "description": "Cymbal Art Supplies",
+    "amount": -75.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_106",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-04T09:00:00Z",
+    "description": "ACME Car Wash",
+    "amount": -20.00,
+    "category": "Transportation"
+  },
+  {
+    "transaction_id": "txn_id_107",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-11T13:00:00Z",
+    "description": "Lunch - Cymbal Cafe",
+    "amount": -40.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_108",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-18T18:00:00Z",
+    "description": "Groceries - ACME Market",
+    "amount": -300.00,
+    "category": "Groceries"
+  },
+  {
+    "transaction_id": "txn_id_109",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-26T11:00:00Z",
+    "description": "Cymbal Pharmacy",
+    "amount": -50.00,
+    "category": "Health & Wellness"
+  },
+  {
+    "transaction_id": "txn_id_110",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-01T15:00:00Z",
+    "description": "ACME Electronics",
+    "amount": -800.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_111",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-08T19:00:00Z",
+    "description": "Dinner - Cymbal Thai",
+    "amount": -80.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_112",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-16T10:00:00Z",
+    "description": "ACME Vet Clinic",
+    "amount": -120.00,
+    "category": "Pets"
+  },
+  {
+    "transaction_id": "txn_id_113",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-23T14:00:00Z",
+    "description": "Cymbal Pool Supplies",
+    "amount": -150.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_114",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-30T17:00:00Z",
+    "description": "ACME Sporting Goods",
+    "amount": -250.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_115",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-14T16:00:00Z",
+    "description": "Transfer to Investment",
+    "amount": -1000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_116",
+    "account_id": "acc-jd-i-002",
+    "date": "2025-05-14T16:00:00Z",
+    "description": "Deposit from Checking",
+    "amount": 1000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_117",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-14T16:00:00Z",
+    "description": "Transfer to Investment",
+    "amount": -1000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_118",
+    "account_id": "acc-jd-i-002",
+    "date": "2025-06-14T16:00:00Z",
+    "description": "Deposit from Checking",
+    "amount": 1000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_119",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-14T16:00:00Z",
+    "description": "Transfer to Investment",
+    "amount": -1000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_120",
+    "account_id": "acc-jd-i-002",
+    "date": "2025-07-14T16:00:00Z",
+    "description": "Deposit from Checking",
+    "amount": 1000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_121",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-05T14:00:00Z",
+    "description": "ACME Yacht Club",
+    "amount": -2500.00,
+    "category": "Entertainment"
+  },
+  {
+    "transaction_id": "txn_id_122",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-12T12:00:00Z",
+    "description": "Cymbal Private Jet Charter",
+    "amount": -25000.00,
+    "category": "Travel"
+  },
+  {
+    "transaction_id": "txn_id_123",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-20T18:00:00Z",
+    "description": "Dinner - The ACME Club",
+    "amount": -1200.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_124",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-28T11:00:00Z",
+    "description": "Cymbal Wealth Management Fee",
+    "amount": -5000.00,
+    "category": "Fees"
+  },
+  {
+    "transaction_id": "txn_id_125",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-02T16:00:00Z",
+    "description": "ACME Fine Wines",
+    "amount": -8000.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_126",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-09T10:00:00Z",
+    "description": "Cymbal Security Services",
+    "amount": -3000.00,
+    "category": "Services"
+  },
+  {
+    "transaction_id": "txn_id_127",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-16T14:00:00Z",
+    "description": "ACME Concierge Service",
+    "amount": -1500.00,
+    "category": "Services"
+  },
+  {
+    "transaction_id": "txn_id_128",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-23T19:00:00Z",
+    "description": "Dinner - Cymbal Supper Club",
+    "amount": -1000.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_129",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-30T12:00:00Z",
+    "description": "ACME Property Management",
+    "amount": -4000.00,
+    "category": "Housing"
+  },
+  {
+    "transaction_id": "txn_id_130",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-06T15:00:00Z",
+    "description": "Cymbal Luxury Imports",
+    "amount": -50000.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_131",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-13T11:00:00Z",
+    "description": "ACME Foundation Donation",
+    "amount": -25000.00,
+    "category": "Charity"
+  },
+  {
+    "transaction_id": "txn_id_132",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-20T17:00:00Z",
+    "description": "Cymbal Art Gallery",
+    "amount": -15000.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_133",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-27T13:00:00Z",
+    "description": "ACME Legal Services",
+    "amount": -10000.00,
+    "category": "Services"
+  },
+  {
+    "transaction_id": "txn_id_134",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-19T13:00:00Z",
+    "description": "Transfer to Trust",
+    "amount": -100000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_135",
+    "account_id": "acc-ak-t-003",
+    "date": "2025-05-19T13:00:00Z",
+    "description": "Deposit from Checking",
+    "amount": 100000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_136",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-19T13:00:00Z",
+    "description": "Transfer to Trust",
+    "amount": -100000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_137",
+    "account_id": "acc-ak-t-003",
+    "date": "2025-06-19T13:00:00Z",
+    "description": "Deposit from Checking",
+    "amount": 100000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_138",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-19T13:00:00Z",
+    "description": "Transfer to Trust",
+    "amount": -100000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_139",
+    "account_id": "acc-ak-t-003",
+    "date": "2025-07-19T13:00:00Z",
+    "description": "Deposit from Checking",
+    "amount": 100000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_140",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-06T12:00:00Z",
+    "description": "Lunch - ACME Grill",
+    "amount": -25.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_141",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-12T08:00:00Z",
+    "description": "Coffee - Cymbal Coffee",
+    "amount": -6.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_142",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-19T18:00:00Z",
+    "description": "Groceries - ACME Market",
+    "amount": -90.00,
+    "category": "Groceries"
+  },
+  {
+    "transaction_id": "txn_id_143",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-05-26T07:00:00Z",
+    "description": "Gas - Cymbal Fuel",
+    "amount": -50.00,
+    "category": "Transportation"
+  },
+  {
+    "transaction_id": "txn_id_144",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-03T12:30:00Z",
+    "description": "Lunch - ACME Salads",
+    "amount": -18.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_145",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-10T08:30:00Z",
+    "description": "Coffee - Cymbal Coffee",
+    "amount": -5.50,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_146",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-17T17:00:00Z",
+    "description": "Shopping - ACME Online",
+    "amount": -120.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_147",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-06-24T19:00:00Z",
+    "description": "Dinner - Cymbal Pizza",
+    "amount": -40.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_148",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-02T13:00:00Z",
+    "description": "Lunch - ACME Grill",
+    "amount": -30.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_149",
+    "account_id": "acc-mw-c-001",
+    "date": "2025-07-09T09:00:00Z",
+    "description": "Coffee - Cymbal Coffee",
+    "amount": -6.50,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_150",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-04T15:00:00Z",
+    "description": "Cymbal Kids Store",
+    "amount": -150.00,
+    "category": "Kids"
+  },
+  {
+    "transaction_id": "txn_id_151",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-11T10:00:00Z",
+    "description": "ACME Home Decor",
+    "amount": -300.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_152",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-18T14:00:00Z",
+    "description": "Cymbal Dance Classes",
+    "amount": -200.00,
+    "category": "Kids"
+  },
+  {
+    "transaction_id": "txn_id_153",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-25T11:00:00Z",
+    "description": "ACME Pet Supplies",
+    "amount": -100.00,
+    "category": "Pets"
+  },
+  {
+    "transaction_id": "txn_id_154",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-01T16:00:00Z",
+    "description": "Groceries - Cymbal Market",
+    "amount": -450.00,
+    "category": "Groceries"
+  },
+  {
+    "transaction_id": "txn_id_155",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-08T12:00:00Z",
+    "description": "Lunch - ACME Cafe",
+    "amount": -50.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_156",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-15T09:00:00Z",
+    "description": "Cymbal Gas",
+    "amount": -70.00,
+    "category": "Transportation"
+  },
+  {
+    "transaction_id": "txn_id_157",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-22T18:00:00Z",
+    "description": "Dinner - ACME Italian",
+    "amount": -150.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_158",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-06-29T13:00:00Z",
+    "description": "Cymbal Bookstore",
+    "amount": -80.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_159",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-06T10:00:00Z",
+    "description": "ACME Water Bill",
+    "amount": -100.00,
+    "category": "Utilities"
+  },
+  {
+    "transaction_id": "txn_id_160",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-13T15:00:00Z",
+    "description": "Cymbal Summer Camp",
+    "amount": -500.00,
+    "category": "Kids"
+  },
+  {
+    "transaction_id": "txn_id_161",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-20T11:00:00Z",
+    "description": "ACME Pharmacy",
+    "amount": -60.00,
+    "category": "Health & Wellness"
+  },
+  {
+    "transaction_id": "txn_id_162",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-07-27T17:00:00Z",
+    "description": "Cymbal Movie Tickets",
+    "amount": -60.00,
+    "category": "Entertainment"
+  },
+  {
+    "transaction_id": "txn_id_163",
+    "account_id": "acc-jd-c-001",
+    "date": "2025-05-20T10:00:00Z",
+    "description": "Transfer to Investment",
+    "amount": -1000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_164",
+    "account_id": "acc-jd-i-002",
+    "date": "2025-05-20T10:00:00Z",
+    "description": "Deposit from Checking",
+    "amount": 1000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_165",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-03T11:00:00Z",
+    "description": "Cymbal Charity Gala",
+    "amount": -5000.00,
+    "category": "Charity"
+  },
+  {
+    "transaction_id": "txn_id_166",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-10T14:00:00Z",
+    "description": "ACME Antique Auction",
+    "amount": -15000.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_167",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-17T19:00:00Z",
+    "description": "Dinner - The Cymbal Club",
+    "amount": -1500.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_168",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-24T10:00:00Z",
+    "description": "ACME Financial Advisor",
+    "amount": -8000.00,
+    "category": "Services"
+  },
+  {
+    "transaction_id": "txn_id_169",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-31T16:00:00Z",
+    "description": "Cymbal Luxury Travel",
+    "amount": -30000.00,
+    "category": "Travel"
+  },
+  {
+    "transaction_id": "txn_id_170",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-07T12:00:00Z",
+    "description": "ACME Country Club",
+    "amount": -2000.00,
+    "category": "Entertainment"
+  },
+  {
+    "transaction_id": "txn_id_171",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-14T15:00:00Z",
+    "description": "Cymbal Art Investment",
+    "amount": -50000.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_172",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-21T18:00:00Z",
+    "description": "Dinner - ACME Fine Dining",
+    "amount": -2000.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_173",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-28T11:00:00Z",
+    "description": "Cymbal Estate Planning",
+    "amount": -12000.00,
+    "category": "Services"
+  },
+  {
+    "transaction_id": "txn_id_174",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-05T13:00:00Z",
+    "description": "ACME Wine Auction",
+    "amount": -18000.00,
+    "category": "Shopping"
+  },
+  {
+    "transaction_id": "txn_id_175",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-12T16:00:00Z",
+    "description": "Cymbal Private Security",
+    "amount": -5000.00,
+    "category": "Services"
+  },
+  {
+    "transaction_id": "txn_id_176",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-19T20:00:00Z",
+    "description": "Dinner - The ACME Room",
+    "amount": -2500.00,
+    "category": "Dining"
+  },
+  {
+    "transaction_id": "txn_id_177",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-07-26T10:00:00Z",
+    "description": "Cymbal University Donation",
+    "amount": -100000.00,
+    "category": "Charity"
+  },
+  {
+    "transaction_id": "txn_id_178",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-05-26T14:00:00Z",
+    "description": "Transfer to Investment",
+    "amount": -200000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_179",
+    "account_id": "acc-ak-i-002",
+    "date": "2025-05-26T14:00:00Z",
+    "description": "Deposit from Checking",
+    "amount": 200000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_180",
+    "account_id": "acc-ak-c-001",
+    "date": "2025-06-26T14:00:00Z",
+    "description": "Transfer to Investment",
+    "amount": -200000.00,
+    "category": "Transfers"
+  },
+  {
+    "transaction_id": "txn_id_181",
+    "account_id": "acc-ak-i-002",
+    "date": "2025-06-26T14:00:00Z",
+    "description": "Deposit from Checking",
+    "amount": 200000.00,
+    "category": "Transfers"
+  }
+]

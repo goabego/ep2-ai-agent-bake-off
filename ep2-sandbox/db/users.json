@@ -1,0 +1,26 @@
+[
+  {
+    "user_id": "user-001",
+    "name": "Marcus W.",
+    "age": 24,
+    "risk_tolerance": "moderate-high",
+    "profile_picture": "user01_marcus_w.jpg",
+    "credit_score": 620
+  },
+  {
+    "user_id": "user-002",
+    "name": "Janet D.",
+    "age": 42,
+    "risk_tolerance": "moderate",
+    "profile_picture": "user02_janet_d.jpg",
+    "credit_score": 720
+  },
+  {
+    "user_id": "user-003",
+    "name": "Ashwin K.",
+    "age": 63,
+    "risk_tolerance": "low-moderate",
+    "profile_picture": "user10_ashwin_k.jpg",
+    "credit_score": 820
+  }
+]

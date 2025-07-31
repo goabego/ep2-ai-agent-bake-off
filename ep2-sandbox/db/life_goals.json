@@ -1,0 +1,18 @@
+[
+  {
+    "goal_id": "goal-001",
+    "user_id": "user-123",
+    "description": "Buy a house",
+    "target_amount": 750000.00,
+    "target_date": "2030-01-01",
+    "current_amount_saved": 120000.00
+  },
+  {
+    "goal_id": "goal-002",
+    "user_id": "user-123",
+    "description": "Retire",
+    "target_amount": 2000000.00,
+    "target_date": "2055-01-01",
+    "current_amount_saved": 150000.00
+  }
+]

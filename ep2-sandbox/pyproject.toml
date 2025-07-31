@@ -1,0 +1,31 @@
+[project]
+name = "ai-financial-steward"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Abraham Gomez",email = "abrahamgomez@google.com"}
+]
+readme = "README.md"
+requires-python = "^3.10"
+dependencies = [
+    "fastapi>=0.104.0,<0.105.0",
+    "uvicorn[standard]>=0.35.0,<0.36.0",
+    "pydantic>=2.0.0,<3.0.0",
+    "python-multipart>=0.0.6,<0.1.0",
+    "google-generativeai>=0.3.0,<0.4.0",
+    "httpx>=0.25.0,<0.26.0",
+    "pytest (>=8.4.1,<9.0.0)"
+]
+
+[tool.poetry]
+packages = [
+    {include = "backend"},
+    {include = "agent"}
+]
+
+[tool.poetry.group.dev.dependencies]
+erdantic = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
