@@ -79,5 +79,12 @@
     "type": "trust",
     "balance": 2500000.00,
     "institution": "Northern Trust"
+  },
+  {
+    "account_id": "acc-004-c-001",
+    "user_id": "user-004",
+    "type": "checking",
+    "balance": 1000.00,
+    "institution": "Citibank"
   }
 ]
