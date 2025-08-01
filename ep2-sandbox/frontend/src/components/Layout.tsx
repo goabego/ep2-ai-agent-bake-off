@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, useSearchParams } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import { fetchUser } from '@/services/api';
 
 interface User {
@@ -28,11 +29,12 @@ const Layout: React.FC = () => {
   }, [userId]);
 
   return (
-    <div className="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden " style={{fontFamily: '"Public Sans", "Noto Sans", sans-serif'}}>
+    <div className="relative flex size-full min-h-screen flex-col bg-background group/design-root overflow-x-hidden " style={{fontFamily: '"Public Sans", "Noto Sans", sans-serif'}}>
       <Navbar userName={user?.name} profilePicture={user?.profile_picture} />
       <main className="flex-1 pb-20">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };

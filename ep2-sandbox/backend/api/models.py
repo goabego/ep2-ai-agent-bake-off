@@ -10,11 +10,13 @@ class Holding(BaseModel):
 class Account(BaseModel):
     account_id: str
     user_id: str
+    category: str
     type: str
+    sub_type: str
+    description: str
     balance: float
     institution: Optional[str] = None
     holdings: Optional[List[Holding]] = None
-    asset: Optional[str] = None
     interest_rate: Optional[float] = None
 
 class User(BaseModel):

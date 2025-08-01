@@ -39,19 +39,23 @@ This will start the FastAPI server, and you can access the interactive API docum
 
 The backend API provides the following endpoints:
 
-- `GET /user/{user_id}`: Retrieves a user's profile.
-- `GET /user/{user_id}/accounts`: Fetches all accounts for a specific user.
-- `POST /user/{user_id}/transactions`: Adds a new transaction for a user.
-- `GET /goals/{user_id}`: Retrieves a user's financial goals.
-- `PUT /goals/{goal_id}`: Updates a specific financial goal.
-- `GET /events/next`: Fetches the next event for a midway challenge.
+- `GET /api/users/{user_id}`: Retrieves a user's profile.
+- `GET /api/users/{user_id}/accounts`: Fetches all accounts for a specific user.
+- `GET /api/users/{user_id}/transactions`: Retrieves all transactions for a user.
+- `GET /api/users/{user_id}/debts`: Retrieves all debt accounts for a user.
+- `GET /api/users/{user_id}/investments`: Retrieves all investment accounts for a user.
+- `GET /api/users/{user_id}/networth`: Calculates the net worth of a user.
+- `GET /api/users/{user_id}/cashflow`: Calculates the cash flow for a user over the last 30 days.
+- `GET /api/users/{user_id}/average_cashflow`: Calculates the average monthly cash flow for a user over the last 3 months.
+- `GET /api/goals/{user_id}`: Retrieves a user's financial goals.
+- `PUT /api/goals/{goal_id}`: Updates a specific financial goal.
 
 ## Mock Data
 
 The `db/` directory contains the following mock JSON files:
 
 - **`users.json`**: User profile information.
-- **`accounts.json`**: Financial accounts linked to users.
+- **`accounts.json`**: Financial accounts linked to users. Each account has a `category` (`asset` or `liability`), `type` (e.g., `cash`, `investment`, `loan`), and `sub_type` (e.g., `checking`, `brokerage`, `student_loan`).
 - **`transactions.json`**: A log of all financial transactions.
 - **`life_goals.json`**: Users' major life goals.
 - **`market_data.json`**: Simulated market data for challenges.

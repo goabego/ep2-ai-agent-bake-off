@@ -66,7 +66,7 @@ const TransactionsPage: React.FC = () => {
       {user && (
         <div className="mb-8">
           <h1 className="text-4xl font-bold">Welcome, {user.name}</h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-muted-foreground">
             Age: {user.age} | Credit Score: {user.credit_score}
           </p>
         </div>
@@ -88,7 +88,7 @@ const TransactionsPage: React.FC = () => {
               <TableCell>{new Date(transaction.date).toLocaleDateString()}</TableCell>
               <TableCell>{transaction.description}</TableCell>
               <TableCell>{transaction.category}</TableCell>
-              <TableCell className={`text-right ${transaction.amount < 0 ? 'text-red-500' : 'text-green-500'}`}>
+              <TableCell className={`text-right ${transaction.amount < 0 ? 'text-destructive' : 'text-primary'}`}>
                 ${Math.abs(transaction.amount).toFixed(2)}
               </TableCell>
             </TableRow>

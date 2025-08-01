@@ -23,3 +23,27 @@ export const fetchAccounts = async (userId: string) => {
   }
   return response.json();
 };
+
+export const fetchDebts = async (userId: string) => {
+  const response = await fetch(`${API_URL}/users/${userId}/debts`);
+  if (!response.ok) {
+    throw new Error('Could not fetch debts');
+  }
+  return response.json();
+};
+
+export const fetchInvestments = async (userId: string) => {
+  const response = await fetch(`${API_URL}/users/${userId}/investments`);
+  if (!response.ok) {
+    throw new Error('Could not fetch investments');
+  }
+  return response.json();
+};
+
+export const fetchNetWorth = async (userId: string) => {
+  const response = await fetch(`${API_URL}/users/${userId}/networth`);
+  if (!response.ok) {
+    throw new Error('Could not fetch net worth');
+  }
+  return response.json();
+};
