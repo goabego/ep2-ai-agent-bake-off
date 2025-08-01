@@ -64,7 +64,7 @@ const Sidebar: React.FC = () => {
               <p className="text-muted-foreground text-sm font-normal leading-normal line-clamp-2">{account.institution}</p>
             </div>
           </div>
-          <div className="shrink-0"><p className="text-foreground text-base font-normal leading-normal">${account.balance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p></div>
+          <div className="shrink-0"><p className="text-foreground text-sm font-normal leading-normal">${account.balance.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p></div>
         </div>
       ))}
       {investments.length > 5 && (
@@ -85,7 +85,7 @@ const Sidebar: React.FC = () => {
               <p className="text-muted-foreground text-sm font-normal leading-normal line-clamp-2">{account.institution}</p>
             </div>
           </div>
-          <div className="shrink-0"><p className="text-destructive text-base font-normal leading-normal">(${Math.abs(account.balance).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })})</p></div>
+          <div className="shrink-0"><p className="text-destructive text-sm font-normal leading-normal">${Math.abs(account.balance).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p></div>
         </div>
       ))}
       {debts.length > 5 && (
