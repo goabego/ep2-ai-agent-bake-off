@@ -5,7 +5,13 @@
     "age": 24,
     "risk_tolerance": "moderate-high",
     "profile_picture": "user01_marcus_w.jpg",
-    "credit_score": 620
+    "credit_score": 620,
+    "financial_blurb": "A recent computer science graduate starting a high-paying job at a tech company. He has substantial student loan debt and wants to pay it off quickly while also starting to save for his first home.",
+    "goals": [
+      "Aggressively pay off $60,000 in student loans in the next 5 years.",
+      "Start saving for a $50,000 down payment on a condo.",
+      "Contribute to his company's 401(k) to get the full employer match."
+    ]
   },
   {
     "user_id": "user-002",
@@ -13,7 +19,13 @@
     "age": 42,
     "risk_tolerance": "moderate",
     "profile_picture": "user02_janet_d.jpg",
-    "credit_score": 720
+    "credit_score": 720,
+    "financial_blurb": "A marketing director, married with one child. She's focused on saving for her child's future education and getting serious about her own retirement planning.",
+    "goals": [
+      "Contribute $800/month to her daughter's 529 college savings plan.",
+      "Increase her 401(k) contribution rate from 6% to 10% of her salary.",
+      "Evaluate and rebalance her current investment portfolio for long-term growth."
+    ]
   },
   {
     "user_id": "user-003",
@@ -21,6 +33,12 @@
     "age": 63,
     "risk_tolerance": "low-moderate",
     "profile_picture": "user10_ashwin_k.jpg",
-    "credit_score": 820
+    "credit_score": 820,
+    "financial_blurb": "A recently retired high school teacher who spent over 35 years in education. Ashwin is focused on making his pension and savings last through retirement, managing healthcare costs, and leaving a small legacy for his grandchildren.",
+    "goals": [
+      "Create a sustainable withdrawal plan from his pension and 403(b) to cover living expenses.",
+      "Review Medicare options and supplemental insurance to manage healthcare costs.",
+      "Set aside savings for occasional travel and gifts for his grandchildren."
+    ]
   }
 ]

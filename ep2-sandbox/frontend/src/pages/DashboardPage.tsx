@@ -36,7 +36,7 @@ const DashboardPage: React.FC = () => {
   
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const transactionsPerPage = 10;
+  const transactionsPerPage = 15;
 
   // Calculate pagination values
   const indexOfLastTransaction = currentPage * transactionsPerPage;
