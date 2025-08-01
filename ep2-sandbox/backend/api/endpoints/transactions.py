@@ -25,8 +25,9 @@ def get_user_transactions(user_id: str):
     """
     Get all transactions for a user.
     """
+    normalized_user_id = user_id.replace("_", "-")
     accounts = read_accounts_data()
-    user_account_ids = [acc.account_id for acc in accounts if acc.user_id == user_id]
+    user_account_ids = [acc.account_id for acc in accounts if acc.user_id == normalized_user_id]
 
     if not user_account_ids:
         raise HTTPException(status_code=404, detail="User or user accounts not found")

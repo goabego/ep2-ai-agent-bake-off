@@ -53,3 +53,12 @@ class Event(BaseModel):
     description: str
     amount: Optional[float] = None
     triggered: bool
+
+class NetWorth(BaseModel):
+    net_worth: float
+
+class CashFlow(BaseModel):
+    cash_flow_last_30_days: float
+
+class AverageCashFlow(BaseModel):
+    average_monthly_cash_flow: float

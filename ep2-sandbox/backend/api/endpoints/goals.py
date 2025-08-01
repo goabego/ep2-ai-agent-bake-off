@@ -23,8 +23,9 @@ def get_user_goals(user_id: str):
     """
     Get user's financial goals.
     """
+    normalized_user_id = user_id.replace("_", "-")
     goals = read_goals_data()
-    user_goals = [goal for goal in goals if goal.user_id == user_id]
+    user_goals = [goal for goal in goals if goal.user_id == normalized_user_id]
     return user_goals
 
 @router.put("/goals/{goal_id}", response_model=LifeGoal)

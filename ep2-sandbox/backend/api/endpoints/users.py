@@ -19,8 +19,9 @@ def get_user(user_id: str):
     """
     Get user profile.
     """
+    normalized_user_id = user_id.replace("_", "-")
     users = read_users_data()
-    user = next((u for u in users if u.user_id == user_id), None)
+    user = next((u for u in users if u.user_id == normalized_user_id), None)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
     return user

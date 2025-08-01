@@ -19,6 +19,7 @@ def get_user_accounts(user_id: str):
     """
     Get all accounts for a user.
     """
+    normalized_user_id = user_id.replace("_", "-")
     accounts = read_accounts_data()
-    user_accounts = [acc for acc in accounts if acc.user_id == user_id]
+    user_accounts = [acc for acc in accounts if acc.user_id == normalized_user_id]
     return user_accounts
