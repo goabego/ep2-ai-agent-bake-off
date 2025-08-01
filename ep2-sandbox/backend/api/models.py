@@ -40,7 +40,7 @@ class LifeGoal(BaseModel):
     goal_id: str
     user_id: str
     description: str
-    target_amount: float
+    target_amount: Optional[float] = None
     target_date: str
     current_amount_saved: float
 

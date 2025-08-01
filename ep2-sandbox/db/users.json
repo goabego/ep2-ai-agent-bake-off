@@ -5,7 +5,7 @@
     "age": 24,
     "risk_tolerance": "moderate-high",
     "profile_picture": "user01_marcus_w.jpg",
-    "credit_score": 620
+    "credit_score": 720
   },
   {
     "user_id": "user-002",
@@ -21,6 +21,6 @@
     "age": 63,
     "risk_tolerance": "low-moderate",
     "profile_picture": "user10_ashwin_k.jpg",
-    "credit_score": 820
+    "credit_score": 780
   }
 ]

@@ -5,8 +5,8 @@
     "category": "asset",
     "type": "cash",
     "sub_type": "checking",
-    "description": "Marcus's Primary Checking",
-    "balance": 8500.00,
+    "description": "Primary Checking",
+    "balance": 8500.0,
     "institution": "Acme Bank"
   },
   {
@@ -15,22 +15,28 @@
     "category": "asset",
     "type": "cash",
     "sub_type": "savings",
-    "description": "Marcus's High-Yield Savings",
-    "balance": 25000.00,
-    "institution": "Cymbal Financial"
+    "description": "Emergency Fund",
+    "balance": 5000.0,
+    "institution": "Acme Bank"
   },
   {
     "account_id": "acc-mw-i-003",
     "user_id": "user-001",
     "category": "asset",
     "type": "investment",
-    "sub_type": "brokerage",
-    "description": "Marcus's Brokerage Account",
-    "balance": 15000.00,
-    "institution": "Cymbal Investments",
+    "sub_type": "401k",
+    "description": "Company 401(k)",
+    "balance": 2000.0,
+    "institution": "Fidelity",
     "holdings": [
-      {"symbol": "VTI", "value": 10000.00},
-      {"symbol": "VXUS", "value": 5000.00}
+      {
+        "symbol": "SPY",
+        "value": 1000.0
+      },
+      {
+        "symbol": "QQQ",
+        "value": 1000.0
+      }
     ]
   },
   {
@@ -38,20 +44,31 @@
     "user_id": "user-001",
     "category": "asset",
     "type": "investment",
-    "sub_type": "401k",
-    "description": "Marcus's 401k",
-    "balance": 50000.00,
-    "institution": "Acme Retirement"
+    "sub_type": "roth_ira",
+    "description": "Roth IRA",
+    "balance": 3000.0,
+    "institution": "Vanguard",
+    "holdings": [
+      {
+        "symbol": "VTI",
+        "value": 1500.0
+      },
+      {
+        "symbol": "VXUS",
+        "value": 1500.0
+      }
+    ]
   },
   {
-    "account_id": "acc-mw-i-005",
+    "account_id": "acc-mw-d-005",
     "user_id": "user-001",
-    "category": "asset",
-    "type": "investment",
-    "sub_type": "roth_ira",
-    "description": "Marcus's Roth IRA",
-    "balance": 12000.00,
-    "institution": "Cymbal Investments"
+    "category": "liability",
+    "type": "loan",
+    "sub_type": "student_loan",
+    "description": "Federal Student Loan 1",
+    "balance": -30000.0,
+    "institution": "Nelnet",
+    "interest_rate": 0.058
   },
   {
     "account_id": "acc-mw-d-006",
@@ -59,65 +76,64 @@
     "category": "liability",
     "type": "loan",
     "sub_type": "student_loan",
-    "description": "Student Loan for University",
-    "balance": -60000.00,
-    "institution": "Acme Education Services",
-    "interest_rate": 0.058
+    "description": "Federal Student Loan 2",
+    "balance": -30000.0,
+    "institution": "Great Lakes",
+    "interest_rate": 0.06
   },
   {
     "account_id": "acc-mw-d-007",
     "user_id": "user-001",
     "category": "liability",
-    "type": "credit",
+    "type": "credit_card",
     "sub_type": "credit_card",
-    "description": "Cymbal Rewards Card",
-    "balance": -2500.00,
-    "institution": "Cymbal Bank",
-    "interest_rate": 0.22
-  },
-  {
-    "account_id": "acc-mw-d-008",
-    "user_id": "user-001",
-    "category": "liability",
-    "type": "credit",
-    "sub_type": "credit_card",
-    "description": "Acme Travel Card",
-    "balance": -5000.00,
-    "institution": "Acme Bank",
+    "description": "Travel Rewards Card",
+    "balance": -500.0,
+    "institution": "Chase",
     "interest_rate": 0.18
   },
   {
     "account_id": "acc-jd-c-001",
     "user_id": "user-002",
     "category": "asset",
-    "type": "checking",
+    "type": "cash",
     "sub_type": "checking",
-    "description": "Janet's Primary Checking",
-    "balance": 12000.00,
-    "institution": "Acme Bank"
+    "description": "Joint Checking",
+    "balance": 12500.0,
+    "institution": "First National Bank"
   },
   {
-    "account_id": "acc-jd-e-002",
+    "account_id": "acc-jd-s-002",
     "user_id": "user-002",
     "category": "asset",
-    "type": "investment",
-    "sub_type": "529",
-    "description": "529 Plan for Child",
-    "balance": 75000.00,
-    "institution": "Cymbal Education"
+    "type": "cash",
+    "sub_type": "savings",
+    "description": "Emergency Fund",
+    "balance": 25000.0,
+    "institution": "First National Bank"
   },
   {
     "account_id": "acc-jd-i-003",
     "user_id": "user-002",
     "category": "asset",
     "type": "investment",
-    "sub_type": "brokerage",
-    "description": "Janet's Brokerage Account",
-    "balance": 250000.00,
-    "institution": "Cymbal Investments",
+    "sub_type": "401k",
+    "description": "Janet's 401(k)",
+    "balance": 150000.0,
+    "institution": "Fidelity",
     "holdings": [
-      {"symbol": "SPY", "value": 150000.00},
-      {"symbol": "AGG", "value": 100000.00}
+      {
+        "symbol": "VTI",
+        "value": 50000.0
+      },
+      {
+        "symbol": "VXUS",
+        "value": 50000.0
+      },
+      {
+        "symbol": "BND",
+        "value": 50000.0
+      }
     ]
   },
   {
@@ -125,137 +141,58 @@
     "user_id": "user-002",
     "category": "asset",
     "type": "investment",
-    "sub_type": "roth_ira",
+    "sub_type": "ira",
     "description": "Janet's Roth IRA",
-    "balance": 85000.00,
-    "institution": "Cymbal Investments"
+    "balance": 60000.0,
+    "institution": "Vanguard",
+    "holdings": [
+      {
+        "symbol": "VOO",
+        "value": 30000.0
+      },
+      {
+        "symbol": "VGT",
+        "value": 30000.0
+      }
+    ]
   },
   {
     "account_id": "acc-jd-i-005",
     "user_id": "user-002",
     "category": "asset",
     "type": "investment",
-    "sub_type": "401k",
-    "description": "Janet's 401k",
-    "balance": 350000.00,
-    "institution": "Acme Retirement"
+    "sub_type": "529",
+    "description": "Daughter's 529 Plan",
+    "balance": 20000.0,
+    "institution": "State 529 Plan",
+    "holdings": [
+      {
+        "symbol": "AOA",
+        "value": 20000
+      }
+    ]
   },
   {
-    "account_id": "acc-jd-i-006",
-    "user_id": "user-002",
-    "category": "asset",
-    "type": "investment",
-    "sub_type": "hsa",
-    "description": "Health Savings Account",
-    "balance": 15000.00,
-    "institution": "Acme Health"
-  },
-  {
-    "account_id": "acc-jd-i-007",
-    "user_id": "user-002",
-    "category": "asset",
-    "type": "cash",
-    "sub_type": "savings",
-    "description": "Emergency Fund",
-    "balance": 50000.00,
-    "institution": "Cymbal Financial"
-  },
-  {
-    "account_id": "acc-jd-i-008",
-    "user_id": "user-002",
-    "category": "asset",
-    "type": "investment",
-    "sub_type": "brokerage",
-    "description": "Janet's Speculative Investments",
-    "balance": 25000.00,
-    "institution": "Cymbal Investments"
-  },
-  {
-    "account_id": "acc-jd-i-009",
-    "user_id": "user-002",
-    "category": "asset",
-    "type": "investment",
-    "sub_type": "real_estate",
-    "description": "Rental Property",
-    "balance": 450000.00,
-    "institution": "N/A"
-  },
-  {
-    "account_id": "acc-jd-d-010",
+    "account_id": "acc-jd-l-006",
     "user_id": "user-002",
     "category": "liability",
     "type": "loan",
     "sub_type": "mortgage",
-    "description": "Primary Residence Mortgage",
-    "balance": -350000.00,
-    "institution": "Acme Mortgage",
-    "interest_rate": 0.035
-  },
-  {
-    "account_id": "acc-jd-d-011",
-    "user_id": "user-002",
-    "category": "liability",
-    "type": "credit",
-    "sub_type": "credit_card",
-    "description": "Acme Rewards Card",
-    "balance": -5000.00,
-    "institution": "Acme Bank",
-    "interest_rate": 0.15
-  },
-  {
-    "account_id": "acc-jd-d-012",
-    "user_id": "user-002",
-    "category": "liability",
-    "type": "credit",
-    "sub_type": "credit_card",
-    "description": "Cymbal Travel Card",
-    "balance": -10000.00,
-    "institution": "Cymbal Bank",
-    "interest_rate": 0.20
-  },
-  {
-    "account_id": "acc-jd-d-013",
-    "user_id": "user-002",
-    "category": "liability",
-    "type": "loan",
-    "sub_type": "auto_loan",
-    "description": "Car Loan",
-    "balance": -20000.00,
-    "institution": "Acme Auto Finance",
+    "description": "Home Mortgage",
+    "balance": -250000.0,
+    "institution": "Second National Bank",
     "interest_rate": 0.045
   },
   {
-    "account_id": "acc-jd-d-014",
+    "account_id": "acc-jd-l-007",
     "user_id": "user-002",
     "category": "liability",
-    "type": "loan",
-    "sub_type": "personal_loan",
-    "description": "Home Improvement Loan",
-    "balance": -15000.00,
-    "institution": "Cymbal Financial",
-    "interest_rate": 0.07
-  },
-  {
-    "account_id": "acc-jd-d-015",
-    "user_id": "user-002",
-    "category": "liability",
-    "type": "loan",
-    "sub_type": "student_loan",
-    "description": "Janet's Student Loan",
-    "balance": -25000.00,
-    "institution": "Acme Education Services",
-    "interest_rate": 0.05
-  },
-  {
-    "account_id": "acc-jd-d-016",
-    "user_id": "user-002",
-    "category": "liability",
-    "type": "loan",
-    "sub_type": "mortgage",
-    "description": "Rental Property Mortgage",
-    "balance": -200000.00,
-    "institution": "Acme Mortgage",
-    "interest_rate": 0.04
+    "type": "credit_card",
+    "sub_type": "credit card",
+    "description": "Visa Card",
+    "balance": -2500.0,
+    "institution": "Chase",
+    "interest_rate": 0.18
   },
   {
     "account_id": "acc-ak-c-001",
@@ -263,33 +200,42 @@
     "category": "asset",
     "type": "cash",
     "sub_type": "checking",
-    "description": "Ashwin's Primary Checking",
-    "balance": 50000.00,
-    "institution": "Acme Private Bank"
+    "description": "Primary Checking",
+    "balance": 25000.0,
+    "institution": "First National Bank"
   },
   {
-    "account_id": "acc-ak-t-002",
+    "account_id": "acc-ak-s-002",
     "user_id": "user-003",
     "category": "asset",
-    "type": "investment",
-    "sub_type": "trust",
-    "description": "Ashwin's Revocable Trust",
-    "balance": 2500000.00,
-    "institution": "Cymbal Trust Services"
+    "type": "cash",
+    "sub_type": "savings",
+    "description": "High Yield Savings",
+    "balance": 150000.0,
+    "institution": "First National Bank"
   },
   {
     "account_id": "acc-ak-i-003",
     "user_id": "user-003",
     "category": "asset",
     "type": "investment",
-    "sub_type": "brokerage",
-    "description": "Ashwin's Brokerage Account",
-    "balance": 5000000.00,
-    "institution": "Acme Wealth Management",
+    "sub_type": "401k",
+    "description": "Rollover 401k",
+    "balance": 850000.0,
+    "institution": "Fidelity",
     "holdings": [
-      {"symbol": "MUB", "value": 2000000.00},
-      {"symbol": "VTEB", "value": 2000000.00},
-      {"symbol": "SCHD", "value": 1000000.00}
+      {
+        "symbol": "VTI",
+        "value": 300000
+      },
+      {
+        "symbol": "VXUS",
+        "value": 250000
+      },
+      {
+        "symbol": "BND",
+        "value": 300000
+      }
     ]
   },
   {
@@ -297,84 +243,54 @@
     "user_id": "user-003",
     "category": "asset",
     "type": "investment",
-    "sub_type": "real_estate",
-    "description": "Commercial Real Estate Holding",
-    "balance": 10000000.00,
-    "institution": "N/A"
+    "sub_type": "ira",
+    "description": "Traditional IRA",
+    "balance": 250000.0,
+    "institution": "Vanguard",
+    "holdings": [
+      {
+        "symbol": "VYM",
+        "value": 125000
+      },
+      {
+        "symbol": "BND",
+        "value": 125000
+      }
+    ]
   },
   {
     "account_id": "acc-ak-i-005",
     "user_id": "user-003",
     "category": "asset",
     "type": "investment",
-    "sub_type": "art_collection",
-    "description": "Fine Art Collection",
-    "balance": 1500000.00,
-    "institution": "N/A"
+    "sub_type": "brokerage",
+    "description": "Taxable Brokerage",
+    "balance": 500000.0,
+    "institution": "Schwab",
+    "holdings": [
+      {
+        "symbol": "MSFT",
+        "value": 150000
+      },
+      {
+        "symbol": "AAPL",
+        "value": 150000
+      },
+      {
+        "symbol": "GOOG",
+        "value": 200000
+      }
+    ]
   },
   {
-    "account_id": "acc-ak-i-006",
-    "user_id": "user-003",
-    "category": "asset",
-    "type": "investment",
-    "sub_type": "private_equity",
-    "description": "Private Equity Investments",
-    "balance": 3000000.00,
-    "institution": "Cymbal Capital"
-  },
-  {
-    "account_id": "acc-ak-d-007",
-    "user_id": "user-003",
-    "category": "liability",
-    "type": "loan",
-    "sub_type": "mortgage",
-    "description": "Primary Residence Mortgage",
-    "balance": -2000000.00,
-    "institution": "Acme Private Bank",
-    "interest_rate": 0.028
-  },
-  {
-    "account_id": "acc-ak-d-008",
+    "account_id": "acc-ak-l-006",
     "user_id": "user-003",
     "category": "liability",
     "type": "loan",
     "sub_type": "mortgage",
-    "description": "Commercial Real Estate Loan",
-    "balance": -5000000.00,
-    "institution": "Acme Commercial Lending",
-    "interest_rate": 0.032
-  },
-  {
-    "account_id": "acc-ak-d-009",
-    "user_id": "user-003",
-    "category": "liability",
-    "type": "credit",
-    "sub_type": "line_of_credit",
-    "description": "Portfolio Line of Credit",
-    "balance": -1000000.00,
-    "institution": "Acme Wealth Management",
-    "interest_rate": 0.025
-  },
-  {
-    "account_id": "acc-ak-d-010",
-    "user_id": "user-003",
-    "category": "liability",
-    "type": "loan",
-    "sub_type": "yacht_loan",
-    "description": "Yacht Financing",
-    "balance": -1500000.00,
-    "institution": "Cymbal Marine Finance",
-    "interest_rate": 0.04
-  },
-  {
-    "account_id": "acc-ak-d-011",
-    "user_id": "user-003",
-    "category": "liability",
-    "type": "credit",
-    "sub_type": "credit_card",
-    "description": "Acme Premium Card",
-    "balance": -50000.00,
-    "institution": "Acme Private Bank",
-    "interest_rate": 0.12
+    "description": "Mortgage",
+    "balance": -200000.0,
+    "institution": "Wells Fargo",
+    "interest_rate": 0.035
   }
 ]

@@ -1,18 +1,73 @@
 [
   {
-    "goal_id": "goal-001",
-    "user_id": "user-123",
-    "description": "Buy a house",
-    "target_amount": 750000.00,
-    "target_date": "2030-01-01",
-    "current_amount_saved": 120000.00
+    "goal_id": "goal-student-loans-001",
+    "user_id": "user-001",
+    "description": "Aggressively pay off student loans",
+    "target_amount": 60000.0,
+    "target_date": "2028-10-26",
+    "current_amount_saved": 0.0
   },
   {
-    "goal_id": "goal-002",
-    "user_id": "user-123",
-    "description": "Retire",
-    "target_amount": 2000000.00,
-    "target_date": "2055-01-01",
-    "current_amount_saved": 150000.00
+    "goal_id": "goal-condo-downpayment-001",
+    "user_id": "user-001",
+    "description": "Save for a down payment on a condo",
+    "target_amount": 50000.0,
+    "target_date": "2031-10-26",
+    "current_amount_saved": 2000.0
+  },
+  {
+    "goal_id": "goal-401k-match-001",
+    "user_id": "user-001",
+    "description": "Contribute enough to 401(k) to get full employer match",
+    "target_amount": 6000.0,
+    "target_date": "2024-12-31",
+    "current_amount_saved": 1000.0
+  },
+  {
+    "goal_id": "goal-529-contribution-001",
+    "user_id": "user-002",
+    "description": "Contribute $800/month to daughter's 529 college savings plan.",
+    "target_amount": 800.0,
+    "target_date": "2024-07-01",
+    "current_amount_saved": 600.0
+  },
+  {
+    "goal_id": "goal-401k-increase-002",
+    "user_id": "user-002",
+    "description": "Increase 401(k) contribution rate from 6% to 10% of salary.",
+    "target_amount": 10.0,
+    "target_date": "2024-08-01",
+    "current_amount_saved": 6.0
+  },
+  {
+    "goal_id": "goal-portfolio-rebalance-003",
+    "user_id": "user-002",
+    "description": "Evaluate and rebalance investment portfolio for long-term growth.",
+    "target_date": "2024-09-01",
+    "current_amount_saved": 0.0
+  },
+  {
+    "goal_id": "goal-income-generation-001",
+    "user_id": "user-003",
+    "description": "Optimize investment portfolio for $120,000 annual income",
+    "target_amount": 120000.0,
+    "target_date": "2024-12-31",
+    "current_amount_saved": 0.0
+  },
+  {
+    "goal_id": "goal-tax-loss-harvesting-002",
+    "user_id": "user-003",
+    "description": "Explore and implement tax-loss harvesting opportunities",
+    "target_amount": 10000.0,
+    "target_date": "2024-04-15",
+    "current_amount_saved": 0.0
+  },
+  {
+    "goal_id": "goal-estate-planning-003",
+    "user_id": "user-003",
+    "description": "Set up a trust with an estate planner",
+    "target_amount": 5000.0,
+    "target_date": "2025-06-30",
+    "current_amount_saved": 0.0
   }
 ]
