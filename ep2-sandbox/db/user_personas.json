@@ -10,7 +10,8 @@
         "Start saving for a $50,000 down payment on a condo.",
         "Contribute to his company's 401(k) to get the full employer match."
       ],
-      "profile_picture": "user01_marcus_w.jpg"
+      "profile_picture": "user01_marcus_w.jpg",
+      "address": "123 Tech Lane, Silicon Valley, CA 94043"
     },
     {
       "name": "Janet D.",
@@ -22,7 +23,8 @@
         "Increase her 401(k) contribution rate from 6% to 10% of her salary.",
         "Evaluate and rebalance her current investment portfolio for long-term growth."
       ],
-      "profile_picture": "user02_janet_d.jpg"
+      "profile_picture": "user02_janet_d.jpg",
+      "address": "456 Marketing Ave, New York, NY 10001"
     },
     {
       "name": "Ashwin K.",
@@ -34,7 +36,8 @@
         "Review Medicare options and supplemental insurance to manage healthcare costs.",
         "Set aside savings for occasional travel and gifts for his grandchildren."
       ],
-      "profile_picture": "user10_ashwin_k.jpg"
+      "profile_picture": "user10_ashwin_k.jpg",
+      "address": "789 Education Rd, Suburbia, IL 60540"
     }
   ]
 }

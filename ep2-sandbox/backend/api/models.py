@@ -24,9 +24,13 @@ class User(BaseModel):
     name: str
     age: int
     risk_tolerance: str
-    life_goals: Optional[List[str]] = None
     profile_picture: Optional[str] = None
+    address: Optional[str] = None
     credit_score: Optional[int] = None
+    net_worth: Optional[float] = None
+    member_since: Optional[int] = None
+    financial_blurb: str
+    goals: List[str]
 
 class Transaction(BaseModel):
     transaction_id: str

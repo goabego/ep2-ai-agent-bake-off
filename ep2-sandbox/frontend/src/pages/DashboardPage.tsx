@@ -10,10 +10,12 @@ interface Account {
   account_id: string;
   type: string;
   balance: number;
+  description: string;
 }
 
 interface Transaction {
   transaction_id: string;
+  account_id: string;
   date: string;
   description: string;
   amount: number;
@@ -23,6 +25,14 @@ interface Transaction {
 interface User {
   name: string;
   profile_picture: string;
+  age?: number;
+  risk_tolerance?: string;
+  address?: string;
+  credit_score?: number;
+  net_worth?: number;
+  member_since?: number;
+  financial_blurb?: string;
+  goals?: string[];
 }
 
 const DashboardPage: React.FC = () => {
@@ -90,13 +100,41 @@ const DashboardPage: React.FC = () => {
 
   return (
     <div className="relative flex min-h-auto flex-col bg-background overflow-x-hidden" style={{ fontFamily: 'Public Sans, Noto Sans, sans-serif' }}>
+  
       <div className="flex h-full grow flex-col">
-        {/* Header */}
-        <div className="gap-4 px-6 flex flex-1 justify-center py-10">
+        
+        {/* Main Content Area */}
+        <div className="gap-4 px-6 flex flex-1 justify-center py-6">
           {/* Sidebar */}
           <Sidebar />
           {/* Main Content */}
           <div className="flex flex-col max-w-[960px] flex-1">
+            {/* <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">
+                    Net Worth
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">
+                    ${user?.net_worth?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">
+                    Member Since
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">
+                    {user?.member_since}
+                  </div>
+                </CardContent>
+              </Card>
+            </div> */}
             <div className="flex flex-wrap justify-between gap-3 p-4">
               <p className="text-foreground tracking-light text-[32px] font-bold leading-tight min-w-72">Recent Transactions</p>
             </div>
@@ -106,22 +144,30 @@ const DashboardPage: React.FC = () => {
                   <thead>
                     <tr className="bg-background">
                       <th className="px-4 py-3 text-left text-foreground w-[200px] text-sm font-medium leading-normal">Date</th>
-                      <th className="px-4 py-3 text-left text-foreground w-[400px] text-sm font-medium leading-normal">Description</th>
-                      <th className="px-4 py-3 text-left text-foreground w-[400px] text-sm font-medium leading-normal">Amount</th>
+                      <th className="px-4 py-3 text-left text-foreground w-[350px] text-sm font-medium leading-normal">Description</th>
+                      <th className="px-4 py-3 text-left text-foreground w-[150px] text-sm font-medium leading-normal">Category</th>
+                      <th className="px-4 py-3 text-left text-foreground w-[150px] text-sm font-medium leading-normal">Amount</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {currentTransactions.map((transaction) => (
-                      <tr key={transaction.transaction_id} className="border-t border-t-border">
-                        <td className="h-[72px] px-4 py-2 w-[200px] text-muted-foreground text-sm font-normal leading-normal">
-                          {new Date(transaction.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
-                        </td>
-                        <td className="h-[72px] px-4 py-2 w-[400px] text-muted-foreground text-sm font-normal leading-normal">
-                          {transaction.description}
-                        </td>
-                        <td className={`h-[72px] px-4 py-2 w-[400px] text-sm font-normal leading-normal ${transaction.amount < 0 ? 'text-destructive' : 'text-primary'}`}>{transaction.amount < 0 ? '-' : '+'}${Math.abs(transaction.amount).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-                      </tr>
-                    ))}
+                    {currentTransactions.map((transaction) => {
+                      const account = accounts.find(acc => acc.account_id === transaction.account_id);
+                      return (
+                        <tr key={transaction.transaction_id} className="border-t border-t-border">
+                          <td className="h-[72px] px-4 py-2 w-[200px] text-muted-foreground text-sm font-normal leading-normal">
+                            {new Date(transaction.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
+                          </td>
+                          <td className="h-[72px] px-4 py-2 w-[350px] text-muted-foreground text-sm font-normal leading-normal">
+                            <div>{transaction.description}</div>
+                            <div className="text-xs text-muted-foreground/80">{account?.description}</div>
+                          </td>
+                          <td className="h-[72px] px-4 py-2 w-[150px] text-muted-foreground text-sm font-normal leading-normal">
+                            {transaction.category}
+                          </td>
+                          <td className={`h-[72px] px-4 py-2 w-[150px] text-sm font-normal leading-normal ${transaction.amount < 0 ? 'text-destructive' : 'text-primary'}`}>{transaction.amount < 0 ? '-' : '+'}${Math.abs(transaction.amount).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                        </tr>
+                      )
+                    })}
                   </tbody>
                 </table>
               </div>
