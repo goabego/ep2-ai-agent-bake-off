@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Exit on any error
+set -e
+
+echo "🚀 Starting Cloud Run deployment process..."
+
+# Build the Docker image
+echo "📦 Building Docker image..."
+docker build --platform linux/amd64 -t backend:latest -f Dockerfile .
+
+# Tag the image
+echo "🏷️  Tagging image for GCR..."
+docker tag backend:latest us-west1-docker.pkg.dev/agent-starter-pack-spend/ep2-sandbox/backend:latest
+
+# Push to GCR
+echo "⬆️  Pushing to Google Container Registry..."
+docker push us-west1-docker.pkg.dev/agent-starter-pack-spend/ep2-sandbox/backend:latest
+
+# Deploy to Cloud Run
+echo "🚀 Deploying to Cloud Run..."
+gcloud run deploy backend \
+  --image us-west1-docker.pkg.dev/agent-starter-pack-spend/ep2-sandbox/backend:latest \
+  --platform managed \
+  --region us-west1 \
+  --allow-unauthenticated \
+
+echo "✅ Deployment complete!"

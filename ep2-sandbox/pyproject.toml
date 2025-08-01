@@ -14,7 +14,7 @@ dependencies = [
     "python-multipart>=0.0.6,<0.1.0",
     "google-generativeai>=0.3.0,<0.4.0",
     "httpx>=0.25.0,<0.26.0",
-    "pytest (>=8.4.1,<9.0.0)"
+    "gunicorn>=22.0.0"
 ]
 
 [tool.poetry]
@@ -24,6 +24,7 @@ packages = [
 ]
 
 [tool.poetry.group.dev.dependencies]
+pytest = ">=8.4.1,<9.0.0"
 erdantic = "^1.1.1"
 
 [build-system]
