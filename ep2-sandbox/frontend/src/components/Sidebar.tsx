@@ -71,7 +71,7 @@ const Sidebar: React.FC = () => {
       {/* User Details */}
       {user && (
         <div className="py-4">
-          <Card className="overflow-hidden border-border bg-card">
+          <Card className="overflow-hidden border-border bg-card shadow-none">
             <CardContent>
               {/* Header with Avatar and Name */}
               <div className="flex items-center space-x-4 mb-4">
@@ -79,6 +79,8 @@ const Sidebar: React.FC = () => {
                   <AvatarImage 
                     src={`/users/${user.profile_picture}`} 
                     alt={user.name}
+                    className="object-cover object-top"
+                    style={{ objectPosition: 'center top' }}
                   />
                   <AvatarFallback className="text-sm font-semibold text-card-foreground">
                     {user.name.split(' ').map((n: string) => n[0]).join('')}
