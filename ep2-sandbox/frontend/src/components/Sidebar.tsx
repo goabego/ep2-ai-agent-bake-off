@@ -70,12 +70,12 @@ const Sidebar: React.FC = () => {
     <div className="flex flex-col w-80">
       {/* User Details */}
       {user && (
-        <div className="p-4">
+        <div className="py-4">
           <Card className="overflow-hidden border-border bg-card">
             <CardContent>
               {/* Header with Avatar and Name */}
               <div className="flex items-center space-x-4 mb-4">
-                <Avatar className="h-12 w-12 border-2 border-border shadow-sm">
+                <Avatar className="h-12 w-12 border-2 border-border">
                   <AvatarImage 
                     src={`/users/${user.profile_picture}`} 
                     alt={user.name}
@@ -143,7 +143,7 @@ const Sidebar: React.FC = () => {
         </div>
       )}
       {/* Investments Section */}
-      <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Investments</h2>
+      <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Assets</h2>
       {investments.slice(0, 5).map((account) => (
         <div key={account.account_id} className="flex items-center gap-4 bg-card px-4 min-h-[72px] py-2 justify-between mb-2 rounded-lg border border-border">
           <div className="flex items-center gap-4">
@@ -164,7 +164,7 @@ const Sidebar: React.FC = () => {
       )}
 
       {/* Commitments Section */}
-      <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Commitments</h2>
+      <h2 className="text-foreground text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Liabilities</h2>
       {debts.slice(0, 5).map((account) => (
         <div key={account.account_id} className="flex items-center gap-4 bg-card px-4 min-h-[72px] py-2 justify-between mb-2 rounded-lg border border-border">
           <div className="flex items-center gap-4">

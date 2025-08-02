@@ -36,7 +36,7 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-background">
+    <div className="flex items-center justify-center min-h-[50vh] bg-background">
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">Cymbal Bank</CardTitle>
@@ -50,7 +50,7 @@ const LoginPage: React.FC = () => {
             <Input
               id="userId"
               type="text"
-              placeholder="user-001"
+              placeholder="Enter your user ID"
               required
               value={userId}
               onChange={(e) => setUserId(e.target.value)}

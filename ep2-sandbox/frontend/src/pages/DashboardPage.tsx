@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchTransactions, fetchAccounts } from '@/services/api';
 import Sidebar from '@/components/Sidebar';
+import Chatbot from '@/components/Chatbot';
 
 interface Account {
   account_id: string;
@@ -83,6 +84,7 @@ const DashboardPage: React.FC = () => {
 
   return (
     <div className="relative flex min-h-auto flex-col bg-background overflow-x-hidden" style={{ fontFamily: 'Public Sans, Noto Sans, sans-serif' }}>
+      <Chatbot />
   
       <div className="flex h-full grow flex-col">
         
