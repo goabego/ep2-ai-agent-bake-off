@@ -35,10 +35,23 @@ class User(BaseModel):
 class Transaction(BaseModel):
     transaction_id: str
     account_id: str
+    merchant_id: str
     date: str
     description: str
     amount: float
     category: str
+
+class EligibilityCriteria(BaseModel):
+    minimum_credit_score: Optional[int] = None
+
+class BankPartner(BaseModel):
+    partner_id: str
+    merchant_id: str
+    name: str
+    category: str
+    benefit_type: str
+    benefit_value: float
+    eligibility_criteria: Optional[EligibilityCriteria] = None
 
 class LifeGoal(BaseModel):
     goal_id: str

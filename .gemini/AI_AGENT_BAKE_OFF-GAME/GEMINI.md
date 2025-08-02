@@ -20,7 +20,7 @@ The competition is designed to be a fun, collaborative, and challenging experien
 
 Our mission is to bring together the brightest minds in development to explore the limitless possibilities of AI. We aim to:
 
-*   **Showcase the Power of Google's AI Tools:** Introduce developers to the capabilities of Google Cloud, the Agent Developer Kit (ADK), and the Agent to Agent Protocol.
+*   **Showcase the Power of Google's AI Tools:** Introduce developers to the capabilities of Google Cloud, the Agent Developer Kit (ADK), and the Gemini API.
 *   **Foster Innovation:** Encourage creative problem-solving and the development of next-generation AI agents.
 *   **Build Community:** Connect developers with Google engineers and create a network of AI enthusiasts.
 

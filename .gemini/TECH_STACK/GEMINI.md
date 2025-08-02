@@ -24,7 +24,7 @@ Participants should follow these steps to prepare their local development enviro
 2.  **Initialize Project:** In your project directory, initialize a new Poetry project.
 
     ```bash
-    poetry init --name "ai-financial-steward" --python "^3.10"
+    poetry init --name "ep2-sandbox" --python "^3.10"
     ```
     This will create a `pyproject.toml` file.
 
@@ -46,50 +46,43 @@ Participants should follow these steps to prepare their local development enviro
 To keep the project organized, we recommend the following directory structure.
 
 ```
-ai-financial-steward/
+ep2-sandbox/
 │
 ├── pyproject.toml      # Poetry configuration and dependencies
 ├── poetry.lock         # Poetry lock file
 │
-├── app/                # Main application source code
-│   ├── __init__.py
+├── backend/            # FastAPI backend application
 │   ├── main.py         # FastAPI application entry point
 │   │
 │   ├── api/            # FastAPI backend logic
-│   │   ├── __init__.py
-│   │   ├── endpoints/  # API endpoint routers
-│   │   │   ├── __init__.py
-│   │   │   ├── users.py
-│   │   │   ├── accounts.py
-│   │   │   └── goals.py
-│   │   └── models.py   # Pydantic models for request/response
-│   │
-│   ├── agent/          # ADK Agent logic
-│   │   ├── __init__.py
-│   │   ├── steward.py  # Main Financial Steward agent
-│   │   ├── council/    # The multi-agent council
-│   │   │   ├── __init__.py
-│   │   │   ├── banker.py
-│   │   │   ├── wealth_planner.py
-│   │   │   └── tax_strategist.py
-│   │   └── tools/      # Tools for agents to interact with the API
-│   │       ├── __init__.py
-│   ���       └── financial_tools.py
+│   │   ├── models.py   # Pydantic models for request/response
+│   │   └── endpoints/  # API endpoint routers
+│   │       ├── users.py
+│   │       ├── accounts.py
+│   │       ├── transactions.py
+│   │       ├── financials.py
+│   │       └── goals.py
 │   │
 │   └── core/           # Core application logic/config
-│       ├── __init__.py
 │       └── config.py   # Configuration settings
 │
-├── data/               # Mock database JSON files
+├── agent/              # ADK Agent logic
+│   ├── steward.py      # Main Financial Steward agent
+│   ├── council/        # The multi-agent council
+│   │   ├── banker.py
+│   │   ├── wealth_planner.py
+│   │   └── tax_strategist.py
+│   └── tools/          # Tools for agents to interact with the API
+│       └── financial_tools.py
+│
+├── db/                 # Mock database JSON files
 │   ├── users.json
+│   ├── user_personas.json
 │   ├── accounts.json
 │   ├── transactions.json
-│   ├── life_goals.json
-│   ├── market_data.json
-│   └── events.json
+│   └── schema_documentation.md
 │
 └── tests/              # Tests for the application
-    ├── __init__.py
     ├── test_api.py
     └── test_agent.py
 ```
@@ -175,88 +168,18 @@ A log of all financial transactions.
         "date": "2025-07-21T12:30:00Z",
         "description": "Coffee Shop",
         "amount": -5.50,
-        "category": "Discretionary"
+        "category": "Dining"
       }
     ]
     ```
 
-### d. `life_goals.json`
 
-Defines the user's major life goals.
-
-*   **Structure:**
-    ```json
-    [
-      {
-        "goal_id": "goal-001",
-        "user_id": "user-123",
-        "description": "Buy a house",
-        "target_amount": 750000.00,
-        "target_date": "2030-01-01",
-        "current_amount_saved": 120000.00
-      },
-      {
-        "goal_id": "goal-002",
-        "user_id": "user-123",
-        "description": "Retire",
-        "target_amount": 2000000.00,
-        "target_date": "2055-01-01",
-        "current_amount_saved": 150000.00
-      }
-    ]
-    ```
-
-### e. `market_data.json`
-
-Simulated market data for the "Market Tremor" challenge.
-
-*   **Structure:**
-    ```json
-    {
-      "timestamp": "2025-07-25T14:00:00Z",
-      "indices": {
-        "S&P_500": {"change_percent": -15.0},
-        "NASDAQ": {"change_percent": -18.5}
-      },
-      "news_headline": "Stock market enters correction territory amidst inflation fears."
-    }
-    ```
-
-### f. `events.json`
-
-For triggering the midway challenges.
-
-*   **Structure:**
-    ```json
-    [
-        {
-            "event_id": "event-bonus-001",
-            "type": "windfall",
-            "description": "Received a one-time work bonus.",
-            "amount": 25000.00,
-            "triggered": false
-        },
-        {
-            "event_id": "event-market-002",
-            "type": "market_downturn",
-            "description": "Market correction: indices down 15%.",
-            "triggered": false
-        }
-    ]
-    ```
 
 ## 4. Backend API (FastAPI)
 
 The FastAPI server will expose endpoints to manage the mock data. This creates a clear separation between the data and the agent logic.
 
-**Example Endpoints:**
 
-*   `GET /user/{user_id}`: Get user profile.
-*   `GET /user/{user_id}/accounts`: Get all accounts for a user.
-*   `POST /user/{user_id}/transactions`: Add a new transaction.
-*   `GET /goals/{user_id}`: Get user's financial goals.
-*   `PUT /goals/{goal_id}`: Update a financial goal.
-*   `GET /events/next`: Get the next event for a midway challenge.
 
 ## 5. Role of Gemini: Core Logic and Creative Content
 
@@ -305,8 +228,8 @@ The ADK agent will be the "brain" of the operation.
 
 *   **Interaction:** The agent will not access the JSON files directly. Instead, it will use **tools** that make HTTP requests to the FastAPI backend.
 *   **Example Workflow:**
-    1.  A user asks the agent, "How close am I to buying a house?"
-    2.  The agent uses its `get_financial_goals` tool, which calls the `GET /goals/{user_id}` endpoint.
-    3.  The FastAPI server reads `life_goals.json` and returns the relevant data.
+    1.  A user asks the agent, "How are my finances looking?"
+    2.  The agent uses its `get_financial_summary` tool, which calls the `GET /financials/{user_id}` endpoint.
+    3.  The FastAPI server reads the relevant data from the `db/` directory and returns a summary.
     4.  The agent receives the data and formulates a response for the user.
 *   **Multi-Agent Council:** The ADK will be used to define the `Personal Banker`, `Wealth Planner`, and `Tax Strategist` agents. Each agent will have its own set of tools to interact with the backend, allowing them to collaborate on complex queries.

@@ -2,6 +2,7 @@
   {
     "transaction_id": "txn_id_001",
     "account_id": "acc-mw-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-08-01T00:00:00Z",
     "description": "Paycheck",
     "amount": 3000,
@@ -10,6 +11,7 @@
   {
     "transaction_id": "txn_id_002",
     "account_id": "acc-mw-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-08-01T00:00:00Z",
     "description": "Rent",
     "amount": -1500,
@@ -18,6 +20,7 @@
   {
     "transaction_id": "txn_id_003",
     "account_id": "acc-jd-d-010",
+    "merchant_id": "merch_301",
     "date": "2024-08-01T00:00:00Z",
     "description": "Mortgage Payment",
     "amount": -2500,
@@ -26,6 +29,7 @@
   {
     "transaction_id": "txn_id_004",
     "account_id": "acc-ak-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-08-01T00:00:00Z",
     "description": "Pension Deposit",
     "amount": 4000,
@@ -34,6 +38,7 @@
   {
     "transaction_id": "txn_id_005",
     "account_id": "acc-mw-d-006",
+    "merchant_id": "merch_999",
     "date": "2024-08-05T00:00:00Z",
     "description": "Student Loan Payment",
     "amount": -500,
@@ -42,6 +47,7 @@
   {
     "transaction_id": "txn_id_006",
     "account_id": "acc-jd-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-08-10T00:00:00Z",
     "description": "Paycheck",
     "amount": 4000,
@@ -50,6 +56,7 @@
   {
     "transaction_id": "txn_id_007",
     "account_id": "acc-jd-e-002",
+    "merchant_id": "merch_999",
     "date": "2024-08-12T00:00:00Z",
     "description": "529 Contribution",
     "amount": 800,
@@ -58,6 +65,7 @@
   {
     "transaction_id": "txn_id_008",
     "account_id": "acc-mw-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-08-15T00:00:00Z",
     "description": "Paycheck",
     "amount": 3000,
@@ -66,6 +74,7 @@
   {
     "transaction_id": "txn_id_009",
     "account_id": "acc-mw-s-002",
+    "merchant_id": "merch_999",
     "date": "2024-08-15T00:00:00Z",
     "description": "Savings Transfer",
     "amount": 1000,
@@ -74,6 +83,7 @@
   {
     "transaction_id": "txn_id_010",
     "account_id": "acc-ak-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-08-15T00:00:00Z",
     "description": "403(b) Withdrawal",
     "amount": 2000,
@@ -82,6 +92,7 @@
   {
     "transaction_id": "txn_id_011",
     "account_id": "acc-jd-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-08-25T00:00:00Z",
     "description": "Paycheck",
     "amount": 4000,
@@ -90,6 +101,7 @@
   {
     "transaction_id": "txn_id_012",
     "account_id": "acc-ak-d-005",
+    "merchant_id": "merch_402",
     "date": "2024-08-31T00:00:00Z",
     "description": "Travel",
     "amount": -1043,
@@ -98,6 +110,7 @@
   {
     "transaction_id": "txn_id_013",
     "account_id": "acc-mw-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-09-01T00:00:00Z",
     "description": "Paycheck",
     "amount": 3000,
@@ -106,6 +119,7 @@
   {
     "transaction_id": "txn_id_014",
     "account_id": "acc-mw-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-09-01T00:00:00Z",
     "description": "Rent",
     "amount": -1500,
@@ -114,6 +128,7 @@
   {
     "transaction_id": "txn_id_015",
     "account_id": "acc-jd-d-010",
+    "merchant_id": "merch_301",
     "date": "2024-09-01T00:00:00Z",
     "description": "Mortgage Payment",
     "amount": -2500,
@@ -122,6 +137,7 @@
   {
     "transaction_id": "txn_id_016",
     "account_id": "acc-ak-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-09-01T00:00:00Z",
     "description": "Pension Deposit",
     "amount": 4000,
@@ -130,6 +146,7 @@
   {
     "transaction_id": "txn_id_017",
     "account_id": "acc-ak-d-005",
+    "merchant_id": "merch_402",
     "date": "2024-09-04T00:00:00Z",
     "description": "Travel",
     "amount": -947,
@@ -138,6 +155,7 @@
   {
     "transaction_id": "txn_id_018",
     "account_id": "acc-mw-d-006",
+    "merchant_id": "merch_999",
     "date": "2024-09-05T00:00:00Z",
     "description": "Student Loan Payment",
     "amount": -500,
@@ -146,14 +164,16 @@
   {
     "transaction_id": "txn_id_019",
     "account_id": "acc-ak-d-005",
+    "merchant_id": "merch_101",
     "date": "2024-09-07T00:00:00Z",
-    "description": "Travel",
-    "amount": -905,
-    "category": "Travel"
+    "description": "The Daily Grind",
+    "amount": -5,
+    "category": "Dining"
   },
   {
     "transaction_id": "txn_id_020",
     "account_id": "acc-jd-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-09-10T00:00:00Z",
     "description": "Paycheck",
     "amount": 4000,
@@ -162,14 +182,16 @@
   {
     "transaction_id": "txn_id_021",
     "account_id": "acc-ak-d-005",
+    "merchant_id": "merch_201",
     "date": "2024-09-11T00:00:00Z",
-    "description": "Travel",
-    "amount": -1164,
-    "category": "Travel"
+    "description": "Streamify",
+    "amount": -15,
+    "category": "Subscriptions"
   },
   {
     "transaction_id": "txn_id_022",
     "account_id": "acc-jd-e-002",
+    "merchant_id": "merch_999",
     "date": "2024-09-12T00:00:00Z",
     "description": "529 Contribution",
     "amount": 800,
@@ -178,6 +200,7 @@
   {
     "transaction_id": "txn_id_023",
     "account_id": "acc-mw-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-09-15T00:00:00Z",
     "description": "Paycheck",
     "amount": 3000,
@@ -186,6 +209,7 @@
   {
     "transaction_id": "txn_id_024",
     "account_id": "acc-mw-s-002",
+    "merchant_id": "merch_999",
     "date": "2024-09-15T00:00:00Z",
     "description": "Savings Transfer",
     "amount": 1000,
@@ -194,6 +218,7 @@
   {
     "transaction_id": "txn_id_025",
     "account_id": "acc-ak-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-09-15T00:00:00Z",
     "description": "403(b) Withdrawal",
     "amount": 2000,
@@ -202,1151 +227,17 @@
   {
     "transaction_id": "txn_id_026",
     "account_id": "acc-ak-d-005",
+    "merchant_id": "merch_401",
     "date": "2024-09-23T00:00:00Z",
-    "description": "Travel",
-    "amount": -727,
-    "category": "Travel"
+    "description": "Precision Auto Repair",
+    "amount": -350,
+    "category": "Automotive"
   },
   {
     "transaction_id": "txn_id_027",
     "account_id": "acc-jd-c-001",
+    "merchant_id": "merch_999",
     "date": "2024-09-25T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_028",
-    "account_id": "acc-mw-c-001",
-    "date": "2024-10-01T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_029",
-    "account_id": "acc-mw-c-001",
-    "date": "2024-10-01T00:00:00Z",
-    "description": "Rent",
-    "amount": -1500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_030",
-    "account_id": "acc-jd-d-010",
-    "date": "2024-10-01T00:00:00Z",
-    "description": "Mortgage Payment",
-    "amount": -2500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_031",
-    "account_id": "acc-ak-c-001",
-    "date": "2024-10-01T00:00:00Z",
-    "description": "Pension Deposit",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_032",
-    "account_id": "acc-mw-d-006",
-    "date": "2024-10-05T00:00:00Z",
-    "description": "Student Loan Payment",
-    "amount": -500,
-    "category": "Debt"
-  },
-  {
-    "transaction_id": "txn_id_033",
-    "account_id": "acc-jd-c-001",
-    "date": "2024-10-10T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_034",
-    "account_id": "acc-jd-e-002",
-    "date": "2024-10-12T00:00:00Z",
-    "description": "529 Contribution",
-    "amount": 800,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_035",
-    "account_id": "acc-mw-c-001",
-    "date": "2024-10-15T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_036",
-    "account_id": "acc-mw-s-002",
-    "date": "2024-10-15T00:00:00Z",
-    "description": "Savings Transfer",
-    "amount": 1000,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_037",
-    "account_id": "acc-ak-c-001",
-    "date": "2024-10-15T00:00:00Z",
-    "description": "403(b) Withdrawal",
-    "amount": 2000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_038",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-10-22T00:00:00Z",
-    "description": "Travel",
-    "amount": -1133,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_039",
-    "account_id": "acc-jd-c-001",
-    "date": "2024-10-25T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_040",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-10-27T00:00:00Z",
-    "description": "Travel",
-    "amount": -935,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_041",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-10-30T00:00:00Z",
-    "description": "Travel",
-    "amount": -604,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_042",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-10-31T00:00:00Z",
-    "description": "Travel",
-    "amount": -1020,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_043",
-    "account_id": "acc-mw-c-001",
-    "date": "2024-11-01T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_044",
-    "account_id": "acc-mw-c-001",
-    "date": "2024-11-01T00:00:00Z",
-    "description": "Rent",
-    "amount": -1500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_045",
-    "account_id": "acc-jd-d-010",
-    "date": "2024-11-01T00:00:00Z",
-    "description": "Mortgage Payment",
-    "amount": -2500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_046",
-    "account_id": "acc-ak-c-001",
-    "date": "2024-11-01T00:00:00Z",
-    "description": "Pension Deposit",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_047",
-    "account_id": "acc-mw-d-006",
-    "date": "2024-11-05T00:00:00Z",
-    "description": "Student Loan Payment",
-    "amount": -500,
-    "category": "Debt"
-  },
-  {
-    "transaction_id": "txn_id_048",
-    "account_id": "acc-jd-c-001",
-    "date": "2024-11-10T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_049",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-11-11T00:00:00Z",
-    "description": "Travel",
-    "amount": -1450,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_050",
-    "account_id": "acc-jd-e-002",
-    "date": "2024-11-12T00:00:00Z",
-    "description": "529 Contribution",
-    "amount": 800,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_051",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-11-12T00:00:00Z",
-    "description": "Travel",
-    "amount": -1607,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_052",
-    "account_id": "acc-mw-c-001",
-    "date": "2024-11-15T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_053",
-    "account_id": "acc-mw-s-002",
-    "date": "2024-11-15T00:00:00Z",
-    "description": "Savings Transfer",
-    "amount": 1000,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_054",
-    "account_id": "acc-ak-c-001",
-    "date": "2024-11-15T00:00:00Z",
-    "description": "403(b) Withdrawal",
-    "amount": 2000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_055",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-11-23T00:00:00Z",
-    "description": "Travel",
-    "amount": -1676,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_056",
-    "account_id": "acc-jd-c-001",
-    "date": "2024-11-25T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_057",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-11-26T00:00:00Z",
-    "description": "Travel",
-    "amount": -796,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_058",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-11-28T00:00:00Z",
-    "description": "Travel",
-    "amount": -860,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_059",
-    "account_id": "acc-mw-c-001",
-    "date": "2024-12-01T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_060",
-    "account_id": "acc-mw-c-001",
-    "date": "2024-12-01T00:00:00Z",
-    "description": "Rent",
-    "amount": -1500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_061",
-    "account_id": "acc-jd-d-010",
-    "date": "2024-12-01T00:00:00Z",
-    "description": "Mortgage Payment",
-    "amount": -2500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_062",
-    "account_id": "acc-ak-c-001",
-    "date": "2024-12-01T00:00:00Z",
-    "description": "Pension Deposit",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_063",
-    "account_id": "acc-mw-d-006",
-    "date": "2024-12-05T00:00:00Z",
-    "description": "Student Loan Payment",
-    "amount": -500,
-    "category": "Debt"
-  },
-  {
-    "transaction_id": "txn_id_064",
-    "account_id": "acc-jd-c-001",
-    "date": "2024-12-10T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_065",
-    "account_id": "acc-jd-e-002",
-    "date": "2024-12-12T00:00:00Z",
-    "description": "529 Contribution",
-    "amount": 800,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_066",
-    "account_id": "acc-mw-c-001",
-    "date": "2024-12-15T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_067",
-    "account_id": "acc-mw-s-002",
-    "date": "2024-12-15T00:00:00Z",
-    "description": "Savings Transfer",
-    "amount": 1000,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_068",
-    "account_id": "acc-ak-c-001",
-    "date": "2024-12-15T00:00:00Z",
-    "description": "403(b) Withdrawal",
-    "amount": 2000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_069",
-    "account_id": "acc-jd-c-001",
-    "date": "2024-12-25T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_070",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-12-26T00:00:00Z",
-    "description": "Travel",
-    "amount": -506,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_071",
-    "account_id": "acc-ak-d-005",
-    "date": "2024-12-28T00:00:00Z",
-    "description": "Travel",
-    "amount": -1364,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_072",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-01-01T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_073",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-01-01T00:00:00Z",
-    "description": "Rent",
-    "amount": -1500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_074",
-    "account_id": "acc-jd-d-010",
-    "date": "2025-01-01T00:00:00Z",
-    "description": "Mortgage Payment",
-    "amount": -2500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_075",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-01-01T00:00:00Z",
-    "description": "Pension Deposit",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_076",
-    "account_id": "acc-mw-d-006",
-    "date": "2025-01-05T00:00:00Z",
-    "description": "Student Loan Payment",
-    "amount": -500,
-    "category": "Debt"
-  },
-  {
-    "transaction_id": "txn_id_077",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-01-08T00:00:00Z",
-    "description": "Travel",
-    "amount": -1152,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_078",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-01-10T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_079",
-    "account_id": "acc-jd-e-002",
-    "date": "2025-01-12T00:00:00Z",
-    "description": "529 Contribution",
-    "amount": 800,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_080",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-01-15T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_081",
-    "account_id": "acc-mw-s-002",
-    "date": "2025-01-15T00:00:00Z",
-    "description": "Savings Transfer",
-    "amount": 1000,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_082",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-01-15T00:00:00Z",
-    "description": "403(b) Withdrawal",
-    "amount": 2000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_083",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-01-15T00:00:00Z",
-    "description": "Travel",
-    "amount": -775,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_084",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-01-16T00:00:00Z",
-    "description": "Travel",
-    "amount": -1629,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_085",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-01-18T00:00:00Z",
-    "description": "Travel",
-    "amount": -1643,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_086",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-01-20T00:00:00Z",
-    "description": "Travel",
-    "amount": -1663,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_087",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-01-21T00:00:00Z",
-    "description": "Travel",
-    "amount": -854,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_088",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-01-25T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_089",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-02-01T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_090",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-02-01T00:00:00Z",
-    "description": "Rent",
-    "amount": -1500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_091",
-    "account_id": "acc-jd-d-010",
-    "date": "2025-02-01T00:00:00Z",
-    "description": "Mortgage Payment",
-    "amount": -2500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_092",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-02-01T00:00:00Z",
-    "description": "Pension Deposit",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_093",
-    "account_id": "acc-mw-d-006",
-    "date": "2025-02-05T00:00:00Z",
-    "description": "Student Loan Payment",
-    "amount": -500,
-    "category": "Debt"
-  },
-  {
-    "transaction_id": "txn_id_094",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-02-06T00:00:00Z",
-    "description": "Travel",
-    "amount": -1824,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_095",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-02-10T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_096",
-    "account_id": "acc-jd-e-002",
-    "date": "2025-02-12T00:00:00Z",
-    "description": "529 Contribution",
-    "amount": 800,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_097",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-02-15T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_098",
-    "account_id": "acc-mw-s-002",
-    "date": "2025-02-15T00:00:00Z",
-    "description": "Savings Transfer",
-    "amount": 1000,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_099",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-02-15T00:00:00Z",
-    "description": "403(b) Withdrawal",
-    "amount": 2000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_100",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-02-25T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_101",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-02-26T00:00:00Z",
-    "description": "Travel",
-    "amount": -1385,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_102",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-03-01T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_103",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-03-01T00:00:00Z",
-    "description": "Rent",
-    "amount": -1500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_104",
-    "account_id": "acc-jd-d-010",
-    "date": "2025-03-01T00:00:00Z",
-    "description": "Mortgage Payment",
-    "amount": -2500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_105",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-03-01T00:00:00Z",
-    "description": "Pension Deposit",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_106",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-03-03T00:00:00Z",
-    "description": "Travel",
-    "amount": -1341,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_107",
-    "account_id": "acc-mw-d-006",
-    "date": "2025-03-05T00:00:00Z",
-    "description": "Student Loan Payment",
-    "amount": -500,
-    "category": "Debt"
-  },
-  {
-    "transaction_id": "txn_id_108",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-03-05T00:00:00Z",
-    "description": "Travel",
-    "amount": -1910,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_109",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-03-10T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_110",
-    "account_id": "acc-jd-e-002",
-    "date": "2025-03-12T00:00:00Z",
-    "description": "529 Contribution",
-    "amount": 800,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_111",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-03-15T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_112",
-    "account_id": "acc-mw-s-002",
-    "date": "2025-03-15T00:00:00Z",
-    "description": "Savings Transfer",
-    "amount": 1000,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_113",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-03-15T00:00:00Z",
-    "description": "403(b) Withdrawal",
-    "amount": 2000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_114",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-03-25T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_115",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-03-27T00:00:00Z",
-    "description": "Travel",
-    "amount": -846,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_116",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-03-29T00:00:00Z",
-    "description": "Travel",
-    "amount": -1353,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_117",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-04-01T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_118",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-04-01T00:00:00Z",
-    "description": "Rent",
-    "amount": -1500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_119",
-    "account_id": "acc-jd-d-010",
-    "date": "2025-04-01T00:00:00Z",
-    "description": "Mortgage Payment",
-    "amount": -2500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_120",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-04-01T00:00:00Z",
-    "description": "Pension Deposit",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_121",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-04-02T00:00:00Z",
-    "description": "Travel",
-    "amount": -629,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_122",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-04-04T00:00:00Z",
-    "description": "Travel",
-    "amount": -1648,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_123",
-    "account_id": "acc-mw-d-006",
-    "date": "2025-04-05T00:00:00Z",
-    "description": "Student Loan Payment",
-    "amount": -500,
-    "category": "Debt"
-  },
-  {
-    "transaction_id": "txn_id_124",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-04-10T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_125",
-    "account_id": "acc-jd-e-002",
-    "date": "2025-04-12T00:00:00Z",
-    "description": "529 Contribution",
-    "amount": 800,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_126",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-04-15T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_127",
-    "account_id": "acc-mw-s-002",
-    "date": "2025-04-15T00:00:00Z",
-    "description": "Savings Transfer",
-    "amount": 1000,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_128",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-04-15T00:00:00Z",
-    "description": "403(b) Withdrawal",
-    "amount": 2000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_129",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-04-25T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_130",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-05-01T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_131",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-05-01T00:00:00Z",
-    "description": "Rent",
-    "amount": -1500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_132",
-    "account_id": "acc-jd-d-010",
-    "date": "2025-05-01T00:00:00Z",
-    "description": "Mortgage Payment",
-    "amount": -2500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_133",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-05-01T00:00:00Z",
-    "description": "Pension Deposit",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_134",
-    "account_id": "acc-mw-d-006",
-    "date": "2025-05-05T00:00:00Z",
-    "description": "Student Loan Payment",
-    "amount": -500,
-    "category": "Debt"
-  },
-  {
-    "transaction_id": "txn_id_135",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-05-05T00:00:00Z",
-    "description": "Travel",
-    "amount": -533,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_136",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-05-06T00:00:00Z",
-    "description": "Travel",
-    "amount": -749,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_137",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-05-10T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_138",
-    "account_id": "acc-jd-e-002",
-    "date": "2025-05-12T00:00:00Z",
-    "description": "529 Contribution",
-    "amount": 800,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_139",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-05-15T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_140",
-    "account_id": "acc-mw-s-002",
-    "date": "2025-05-15T00:00:00Z",
-    "description": "Savings Transfer",
-    "amount": 1000,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_141",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-05-15T00:00:00Z",
-    "description": "403(b) Withdrawal",
-    "amount": 2000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_142",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-05-25T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_143",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-05-29T00:00:00Z",
-    "description": "Travel",
-    "amount": -692,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_144",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-05-30T00:00:00Z",
-    "description": "Travel",
-    "amount": -1302,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_145",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-06-01T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_146",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-06-01T00:00:00Z",
-    "description": "Rent",
-    "amount": -1500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_147",
-    "account_id": "acc-jd-d-010",
-    "date": "2025-06-01T00:00:00Z",
-    "description": "Mortgage Payment",
-    "amount": -2500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_148",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-06-01T00:00:00Z",
-    "description": "Pension Deposit",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_149",
-    "account_id": "acc-mw-d-006",
-    "date": "2025-06-05T00:00:00Z",
-    "description": "Student Loan Payment",
-    "amount": -500,
-    "category": "Debt"
-  },
-  {
-    "transaction_id": "txn_id_150",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-06-05T00:00:00Z",
-    "description": "Travel",
-    "amount": -1503,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_151",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-06-06T00:00:00Z",
-    "description": "Travel",
-    "amount": -1112,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_152",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-06-10T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_153",
-    "account_id": "acc-jd-e-002",
-    "date": "2025-06-12T00:00:00Z",
-    "description": "529 Contribution",
-    "amount": 800,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_154",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-06-15T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_155",
-    "account_id": "acc-mw-s-002",
-    "date": "2025-06-15T00:00:00Z",
-    "description": "Savings Transfer",
-    "amount": 1000,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_156",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-06-15T00:00:00Z",
-    "description": "403(b) Withdrawal",
-    "amount": 2000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_157",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-06-25T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_158",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-07-01T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_159",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-07-01T00:00:00Z",
-    "description": "Rent",
-    "amount": -1500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_160",
-    "account_id": "acc-jd-d-010",
-    "date": "2025-07-01T00:00:00Z",
-    "description": "Mortgage Payment",
-    "amount": -2500,
-    "category": "Housing"
-  },
-  {
-    "transaction_id": "txn_id_161",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-07-01T00:00:00Z",
-    "description": "Pension Deposit",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_162",
-    "account_id": "acc-mw-d-006",
-    "date": "2025-07-05T00:00:00Z",
-    "description": "Student Loan Payment",
-    "amount": -500,
-    "category": "Debt"
-  },
-  {
-    "transaction_id": "txn_id_163",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-07-10T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 4000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_164",
-    "account_id": "acc-jd-e-002",
-    "date": "2025-07-12T00:00:00Z",
-    "description": "529 Contribution",
-    "amount": 800,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_165",
-    "account_id": "acc-ak-d-005",
-    "date": "2025-07-13T00:00:00Z",
-    "description": "Travel",
-    "amount": -1434,
-    "category": "Travel"
-  },
-  {
-    "transaction_id": "txn_id_166",
-    "account_id": "acc-mw-c-001",
-    "date": "2025-07-15T00:00:00Z",
-    "description": "Paycheck",
-    "amount": 3000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_167",
-    "account_id": "acc-mw-s-002",
-    "date": "2025-07-15T00:00:00Z",
-    "description": "Savings Transfer",
-    "amount": 1000,
-    "category": "Transfers"
-  },
-  {
-    "transaction_id": "txn_id_168",
-    "account_id": "acc-ak-c-001",
-    "date": "2025-07-15T00:00:00Z",
-    "description": "403(b) Withdrawal",
-    "amount": 2000,
-    "category": "Income"
-  },
-  {
-    "transaction_id": "txn_id_169",
-    "account_id": "acc-jd-c-001",
-    "date": "2025-07-25T00:00:00Z",
     "description": "Paycheck",
     "amount": 4000,
     "category": "Income"

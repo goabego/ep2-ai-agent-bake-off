@@ -60,10 +60,23 @@ class Account(BaseModel):
 class Transaction(BaseModel):
     transaction_id: str
     account_id: str
+    merchant_id: str
     date: str
     description: str
     amount: float
     category: str
+```
+
+#### BankPartner
+```python
+class BankPartner(BaseModel):
+    partner_id: str
+    merchant_id: str
+    name: str
+    category: str
+    benefit_type: str
+    benefit_value: float
+    eligibility_criteria: Optional[EligibilityCriteria] = None
 ```
 
 #### LifeGoal
@@ -165,6 +178,23 @@ class AverageCashFlow(BaseModel):
 - **Error Codes**: 404 (No debt accounts found)
 - **Function**: `get_user_debts(user_id: str)`
 
+### Partners
+
+#### GET `/api/partners`
+- **Description**: Retrieves a list of all available bank partners and their associated benefits.
+- **Parameters**: None
+- **Response**: List of `BankPartner` objects
+- **Function**: `get_bank_partners()`
+
+#### GET `/api/partners/user/{user_id}`
+- **Description**: Identifies and returns a list of partners a specific user can benefit from.
+- **Parameters**:
+  - `user_id` (path): User identifier
+- **Response**: List of `BankPartner` objects
+- **Error Codes**: 404 (User not found)
+- **Function**: `get_user_benefits(user_id: str)`
+
+
 #### GET `/api/users/{user_id}/investments`
 - **Description**: Get all investment accounts for a user
 - **Parameters**:
@@ -211,6 +241,7 @@ The API uses JSON files stored in the `db/` directory as its data source:
 - `users.json`: User profiles and personal information
 - `accounts.json`: Account information and balances
 - `transactions.json`: Transaction history
+- `bank_partners.json`: Bank partner information and benefits
 - `life_goals.json`: Financial goals and targets
 
 ### Data Loading Functions

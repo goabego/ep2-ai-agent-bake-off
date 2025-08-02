@@ -1,0 +1,96 @@
+[
+  {
+    "partner_id": "partner_001",
+    "merchant_id": "merch_101",
+    "name": "The Daily Grind",
+    "category": "Dining",
+    "benefit_type": "percentage_discount",
+    "benefit_value": 0.10,
+    "eligibility_criteria": null
+  },
+  {
+    "partner_id": "partner_002",
+    "merchant_id": "merch_102",
+    "name": "Blue Mountain Coffee",
+    "category": "Dining",
+    "benefit_type": "percentage_discount",
+    "benefit_value": 0.05,
+    "eligibility_criteria": null
+  },
+  {
+    "partner_id": "partner_003",
+    "merchant_id": "merch_201",
+    "name": "Streamify",
+    "category": "Subscriptions",
+    "benefit_type": "percentage_discount",
+    "benefit_value": 0.15,
+    "eligibility_criteria": null
+  },
+  {
+    "partner_id": "partner_004",
+    "merchant_id": "merch_202",
+    "name": "FitLife Gym App",
+    "category": "Subscriptions",
+    "benefit_type": "percentage_discount",
+    "benefit_value": 0.20,
+    "eligibility_criteria": null
+  },
+  {
+    "partner_id": "partner_005",
+    "merchant_id": "merch_301",
+    "name": "SecureHome Mortgage",
+    "category": "Lender",
+    "benefit_type": "apr_reduction",
+    "benefit_value": 0.0025,
+    "eligibility_criteria": {
+      "minimum_credit_score": 720
+    }
+  },
+  {
+    "partner_id": "partner_006",
+    "merchant_id": "merch_302",
+    "name": "AutoDrive Financial",
+    "category": "Lender",
+    "benefit_type": "apr_reduction",
+    "benefit_value": 0.0015,
+    "eligibility_criteria": {
+      "minimum_credit_score": 680
+    }
+  },
+  {
+    "partner_id": "partner_007",
+    "merchant_id": "merch_401",
+    "name": "Precision Auto Repair",
+    "category": "Automotive",
+    "benefit_type": "percentage_discount",
+    "benefit_value": 0.10,
+    "eligibility_criteria": null
+  },
+  {
+    "partner_id": "partner_008",
+    "merchant_id": "merch_402",
+    "name": "Apex Car Rentals",
+    "category": "Automotive",
+    "benefit_type": "percentage_discount",
+    "benefit_value": 0.12,
+    "eligibility_criteria": null
+  },
+  {
+    "partner_id": "partner_009",
+    "merchant_id": "merch_501",
+    "name": "Keystone Realty",
+    "category": "Home Purchases",
+    "benefit_type": "percentage_discount",
+    "benefit_value": 0.01,
+    "eligibility_criteria": null
+  },
+  {
+    "partner_id": "partner_010",
+    "merchant_id": "merch_502",
+    "name": "Haven Home Insurance",
+    "category": "Home Purchases",
+    "benefit_type": "percentage_discount",
+    "benefit_value": 0.05,
+    "eligibility_criteria": null
+  }
+]
