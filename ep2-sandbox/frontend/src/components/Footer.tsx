@@ -1,13 +1,5 @@
 import React from 'react';
 
-const ValonLogo = () => (
-  <svg width="100" height="32" viewBox="0 0 100 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 32L0 0H10L16 18L22 0H32L20 32H12Z" fill="#0e141b"/>
-    <path d="M45.5 32L35 0H45L50.5 21L56 0H66L55.5 32H45.5Z" fill="#0e141b"/>
-    <path d="M78 32L67 0H77L88 21V0H98V32H88L78 11V32H68V0H78L78 32Z" fill="#0e141b"/>
-  </svg>
-);
-
 const Footer: React.FC = () => {
   return (
     <footer className="bg-muted text-foreground pt-16 pb-12 relative overflow-hidden">

@@ -1,10 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Bell } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const Navbar: React.FC<{ userName?: string, profilePicture?: string }> = ({ userName, profilePicture }) => {
+const Navbar: React.FC<{ userName?: string, profilePicture?: string }> = ({ profilePicture }) => {
   return (
     <header className="flex items-center justify-between border-b border-solid border-b-border px-10 py-3 mx-auto w-full max-w-7xl">
       <div className="flex items-center gap-4 text-foreground">

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { fetchUser, fetchTransactions, fetchAccounts } from '@/services/api';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { fetchTransactions, fetchAccounts } from '@/services/api';
 import Sidebar from '@/components/Sidebar';
 
 interface Account {
@@ -22,21 +19,9 @@ interface Transaction {
   category: string;
 }
 
-interface User {
-  name: string;
-  profile_picture: string;
-  age?: number;
-  risk_tolerance?: string;
-  address?: string;
-  credit_score?: number;
-  net_worth?: number;
-  member_since?: number;
-  financial_blurb?: string;
-  goals?: string[];
-}
+
 
 const DashboardPage: React.FC = () => {
-  const [user, setUser] = useState<User | null>(null);
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [loading, setLoading] = useState(true);
@@ -72,12 +57,10 @@ const DashboardPage: React.FC = () => {
     if (userId) {
       const loadData = async () => {
         try {
-          const [userData, accountsData, transactionsData] = await Promise.all([
-            fetchUser(userId),
+          const [accountsData, transactionsData] = await Promise.all([
             fetchAccounts(userId),
             fetchTransactions(userId),
           ]);
-          setUser(userData);
           setAccounts(accountsData);
           setTransactions(transactionsData); // Only show 5 most recent
         } catch (err) {

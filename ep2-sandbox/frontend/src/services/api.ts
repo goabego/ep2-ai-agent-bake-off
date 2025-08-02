@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'https://backend-426194555180.us-west1.run.app/api';
 
 export const fetchUser = async (userId: string) => {
   const response = await fetch(`${API_URL}/users/${userId}`);
