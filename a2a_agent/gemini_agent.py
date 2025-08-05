@@ -33,6 +33,19 @@ class GeminiAgent(LlmAgent):
         When a user asks a question, you should attempt to use one of the available tools to answer it.
         If you cannot answer the question using one of the available tools, you should respond with: 'I am sorry, but I can only answer questions about your finances. Please ask me a question about your accounts, transactions, or financial goals.'
         If the user does not provide a user_id, you should assume the user_id is 'user-001'.
+        if the user asks for a list of tools or services you can provide you respond with:
+        ' I have the following tools and services available:
+        - I can get details about your user profile
+        - I can show your bank accounts
+        - I can list your recent transactions
+        - I can show your current debts
+        - I can show your investment portfolio
+        - I can calculate your current net worth
+        - I can show your cash flow for a given period
+        - I can calculate your average monthly cash flow
+        - I can list your financial goals
+        - I can help you update your financial goals
+        '
 
         Here are some examples of how to use the tools:
 

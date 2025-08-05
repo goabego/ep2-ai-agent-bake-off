@@ -42,3 +42,10 @@ SERVICE_URL=$(gcloud run services describe "$SERVICE_NAME" --project="$PROJECT_I
 echo "Updating service with its public URL: $SERVICE_URL"
 gcloud run services update "$SERVICE_NAME"   --project="$PROJECT_ID"   --region="$REGION"   --update-env-vars=AGENT_URL=$SERVICE_URL
 
+# Do a quick curl test
+echo "Doing a quick curl test to verify the service is working"
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer $(gcloud auth print-identity-token)" \
+-d '{"jsonrpc": "2.0", "method": "message/send", "params": {"message": {"messageId": "a-random-id", "role": "user", "parts": [{"text": "What is my user profile?"}]}}, "id": "1"}' \
+${SERVICE_URL}

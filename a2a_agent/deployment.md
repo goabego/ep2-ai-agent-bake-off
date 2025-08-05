@@ -48,6 +48,7 @@ Since the service is deployed with `--no-allow-unauthenticated`, you need to pro
 First, get a token:
 
 ```bash
+
 TOKEN=$(gcloud auth print-identity-token)
 ```
 
