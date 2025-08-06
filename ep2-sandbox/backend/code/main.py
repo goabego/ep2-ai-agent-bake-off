@@ -1,9 +1,8 @@
-# backend/main.py
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.api.endpoints import users, accounts, goals, transactions, financials, partners
-from backend.core.config import API_PREFIX
+from api.endpoints import users, accounts, goals, transactions, financials, partners
+from core.config import API_PREFIX
 
 app = FastAPI(
     title="Cymbal Bank API",
@@ -34,3 +33,4 @@ def read_root():
     Root endpoint for health checks.
     """
     return {"status": "ok", "message": "Welcome to the AI Financial Steward API"}
+

@@ -1,0 +1,15 @@
+services:
+  backend:
+    build:
+      context: backend/        
+      dockerfile: Dockerfile 
+    ports:
+      - "8081:8080"       
+  frontend:
+    build:
+      context: frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8000"
+    env_file:
+      - ./compose.env

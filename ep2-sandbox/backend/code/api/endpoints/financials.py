@@ -2,7 +2,7 @@ import json
 from fastapi import APIRouter, HTTPException
 from typing import List, Dict, Any
 from datetime import datetime, timedelta
-from backend.api.models import Account, NetWorth, CashFlow, AverageCashFlow
+from api.models import Account, NetWorth, CashFlow, AverageCashFlow
 
 router = APIRouter()
 

@@ -3,7 +3,7 @@
 import json
 from fastapi import APIRouter, HTTPException
 from typing import List
-from backend.api.models import LifeGoal
+from api.models import LifeGoal
 
 router = APIRouter()
 

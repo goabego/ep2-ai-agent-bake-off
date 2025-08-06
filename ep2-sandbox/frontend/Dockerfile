@@ -1,32 +1,43 @@
-# --- Stage 1: Build the React App ---
-FROM node:18-alpine AS builder
+# ---- Base Stage ----
+# Use an official Node.js image.
+# https://hub.docker.com/_/node
+FROM node:20 AS base
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package.json package-lock.json ./
+# Copy package.json and package-lock.json (or yarn.lock)
+COPY package*.json ./
 
-# Install dependencies
-RUN npm install
 
-# Copy the rest of the application source code
+# ---- Dependencies Stage ----
+# Install dependencies. 'npm ci' is generally recommended for production builds
+# as it's faster and uses the package-lock.json for deterministic installs.
+FROM base AS deps
+RUN npm ci
+
+
+# ---- Build Stage ----
+# Copy the source code and build the application
+FROM deps AS builder
 COPY . .
-
-# Build the application for production
 RUN npm run build
 
-# --- Stage 2: Serve with Nginx ---
-FROM nginx:1.25-alpine AS runtime
 
-# Copy the built static files from the builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+# ---- Production Stage ----
+# Start from a clean, small image for the final production environment
+FROM base AS runner
+WORKDIR /app
 
-# Copy the custom Nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy the built application from the 'builder' stage
+# Adjust the source folder if your build output is not '.next' (e.g., 'dist', 'build')
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
 
-# Expose port 8080 (as configured in nginx.conf)
-EXPOSE 8080
+# Expose the port your app will run on
+EXPOSE 3000
 
-# Command to start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# The command to start your application
+# This typically uses the 'start' script from your package.json
+CMD ["npm", "run", "dev"]

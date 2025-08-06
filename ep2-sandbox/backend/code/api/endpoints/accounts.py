@@ -3,7 +3,7 @@
 import json
 from fastapi import APIRouter
 from typing import List
-from backend.api.models import Account
+from api.models import Account
 
 router = APIRouter()
 

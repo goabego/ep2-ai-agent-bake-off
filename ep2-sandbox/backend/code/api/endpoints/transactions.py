@@ -3,7 +3,7 @@
 import json
 from fastapi import APIRouter, HTTPException
 from typing import List
-from backend.api.models import Transaction, Account
+from api.models import Transaction, Account
 
 router = APIRouter()
 
