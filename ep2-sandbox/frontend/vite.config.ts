@@ -5,10 +5,23 @@ import tailwindcss from "@tailwindcss/vite"
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // plugins: [react()],
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
     },
+  },
+  // Config for the dev server (vite dev)
+  server: {
+    host: true,
+    port: 8080,
+    strictPort: true,
+    allowedHosts: ['frontend-ep2-879168005744.us-west1.run.app','*.run.app', 'localhost', '127.0.0.1' ,'*'],
+  },
+  // Config for the preview server (vite preview)
+  preview: {
+    host: true,
+    port: 8080,
+    strictPort: true,
+    allowedHosts: ['frontend-ep2-879168005744.us-west1.run.app','*.run.app', 'localhost', '127.0.0.1','*'],
   },
 })

@@ -26,11 +26,13 @@ COPY package*.json ./
 # Install dependencies needed for the preview server
 RUN npm install
 
+
 # Copy the built static files from the builder stage
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/ .
+
 
 # Expose port 8080 to match docker-compose.yml
 EXPOSE 8080
 
-# Command to start the Vite preview server on port 8000 and expose it externally
-CMD ["npm", "run", "preview", "--", "--port", "8080", "--host", "0.0.0.0"]
+# Command to start the Vite preview server on port 8080 and expose it externally
+CMD ["npm", "run", "preview"]
