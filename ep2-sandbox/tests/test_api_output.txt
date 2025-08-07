@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.3, pytest-8.4.1, pluggy-1.6.0
+rootdir: /Users/abrahamgomez/gemini-cli/ep2-agent-bake-off/ep2-sandbox
+configfile: pyproject.toml
+plugins: anyio-3.7.1
+collected 17 items
+
+tests/test_api.py .................                                      [100%]
+
+=============================== warnings summary ===============================
+/Users/abrahamgomez/Library/Caches/pypoetry/virtualenvs/ai-financial-steward-5ko4JLbV-py3.13/lib/python3.13/site-packages/starlette/formparsers.py:10
+  /Users/abrahamgomez/Library/Caches/pypoetry/virtualenvs/ai-financial-steward-5ko4JLbV-py3.13/lib/python3.13/site-packages/starlette/formparsers.py:10: PendingDeprecationWarning: Please use `import python_multipart` instead.
+    import multipart
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 17 passed, 1 warning in 0.42s =========================

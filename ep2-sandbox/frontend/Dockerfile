@@ -1,43 +1,36 @@
-# ---- Base Stage ----
-# Use an official Node.js image.
-# https://hub.docker.com/_/node
-FROM node:20 AS base
+# --- Stage 1: Build the React App ---
+FROM node:20-alpine AS builder
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json (or yarn.lock)
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
+# Install all dependencies, including devDependencies needed for building
+RUN npm install
 
-# ---- Dependencies Stage ----
-# Install dependencies. 'npm ci' is generally recommended for production builds
-# as it's faster and uses the package-lock.json for deterministic installs.
-FROM base AS deps
-RUN npm ci
-
-
-# ---- Build Stage ----
-# Copy the source code and build the application
-FROM deps AS builder
+# Copy the rest of the application source code
 COPY . .
+
+# Build the application for production
 RUN npm run build
 
+# --- Stage 2: Serve with Vite Preview Server ---
+FROM node:20-alpine AS runner
 
-# ---- Production Stage ----
-# Start from a clean, small image for the final production environment
-FROM base AS runner
 WORKDIR /app
 
-# Copy the built application from the 'builder' stage
-# Adjust the source folder if your build output is not '.next' (e.g., 'dist', 'build')
+# Copy package.json and package-lock.json to install vite
+COPY package*.json ./
+
+# Install dependencies needed for the preview server
+RUN npm install
+
+# Copy the built static files from the builder stage
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/package.json ./package.json
 
-# Expose the port your app will run on
-EXPOSE 3000
+# Expose port 8000 to match docker-compose.yml
+EXPOSE 8000
 
-# The command to start your application
-# This typically uses the 'start' script from your package.json
-CMD ["npm", "run", "dev"]
+# Command to start the Vite preview server on port 8000 and expose it externally
+CMD ["npm", "run", "preview", "--", "--port", "8000", "--host", "0.0.0.0"]
