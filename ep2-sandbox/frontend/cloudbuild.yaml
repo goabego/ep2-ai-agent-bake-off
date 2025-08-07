@@ -1,31 +1,24 @@
 steps:
+  # 1. Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'build'
-      - '-t'
-      - 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/frontend-ep2:$SHORT_SHA'
-      - '-t'
-      - 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/frontend-ep2:latest'
-      - '-f'
-      - 'frontend/Dockerfile' 
+    args: ['build', '-t', 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/frontend-ep2:latest', '.']
+  # 2. Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'push'
-      - 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/frontend-ep2:$SHORT_SHA'
+    args: ['push', 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/frontend-ep2:latest']
+  # 3. Deploy the container image
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'run'
       - 'deploy'
       - 'frontend-ep2'
       - '--image'
-      - 'gcr.io/$PROJECT_ID/frontend-ep2:$SHORT_SHA'
+      - 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/frontend-ep2:latest'
       - '--platform'
       - 'managed'
       - '--region'
       - 'us-west1' 
       - '--allow-unauthenticated' 
 images:
-  - 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/frontend-ep2:$SHORT_SHA'
   - 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/frontend-ep2:latest'
 options:
   logging: CLOUD_LOGGING_ONLY

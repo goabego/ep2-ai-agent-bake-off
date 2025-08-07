@@ -35,6 +35,20 @@ To get started with the AI Financial Steward, you'll need to have Python 3.10+ a
    ```
 This will start the FastAPI server, and you can access the interactive API documentation at `http://localhost:8000/docs`.
 
+## Run Locally
+
+To get this up and running quickly we recommend using [docker compose](https://docs.docker.com/compose/install/)
+
+```bash
+cd ep2-sandbox
+docker compose up --build
+```
+
+You can then access both components locally using: <br />
+[http://localhost:8080](http://localhost:8080) for the front end <br />
+[http://localhost:8081/docs](http://localhost:8081/docs) for the API endpoint
+
+
 ## API Endpoints
 
 The backend API provides the following endpoints:
@@ -70,3 +84,14 @@ The AI Financial Steward is powered by a council of specialized agents:
 - **Tax Strategist Agent**: Analyzes the tax implications of all financial activities and identifies opportunities for tax savings.
 
 These agents collaborate to provide users with comprehensive and proactive financial advice.
+
+
+## Deployments
+We provide two ways to deploy this to the Google Cloud
+- Cloud Build
+  - [backend/cloudbuild.yaml](backend/cloudbuild.yaml): <br />
+    This file can be used to automatically deploy the backend to a cloud run service
+  - [frontend/cloudbuild.yaml](fronted/cloudbuild.yaml): <br />
+    This file can be used to automatically deploy the front to a cloud run service
+- Cloud Deploy
+  - run the file `.cloud-run-deploy.sh`

@@ -29,8 +29,8 @@ RUN npm install
 # Copy the built static files from the builder stage
 COPY --from=builder /app/dist ./dist
 
-# Expose port 8000 to match docker-compose.yml
-EXPOSE 8000
+# Expose port 8080 to match docker-compose.yml
+EXPOSE 8080
 
 # Command to start the Vite preview server on port 8000 and expose it externally
-CMD ["npm", "run", "preview", "--", "--port", "8000", "--host", "0.0.0.0"]
+CMD ["npm", "run", "preview", "--", "--port", "8080", "--host", "0.0.0.0"]
