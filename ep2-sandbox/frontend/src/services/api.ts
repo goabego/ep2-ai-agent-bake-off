@@ -1,4 +1,4 @@
-const API_URL = 'https://backend-426194555180.us-west1.run.app/api';
+const API_URL = process.env.API_URL;
 
 export const fetchUser = async (userId: string) => {
   const response = await fetch(`${API_URL}/users/${userId}`);
