@@ -3,7 +3,7 @@
     "transaction_id": "txn_id_001",
     "account_id": "acc-mw-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-08-01T00:00:00Z",
+    "date": "2025-08-01T00:00:00Z",
     "description": "Paycheck",
     "amount": 3000,
     "category": "Income"
@@ -12,7 +12,7 @@
     "transaction_id": "txn_id_002",
     "account_id": "acc-mw-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-08-01T00:00:00Z",
+    "date": "2025-08-01T00:00:00Z",
     "description": "Rent",
     "amount": -1500,
     "category": "Housing"
@@ -21,7 +21,7 @@
     "transaction_id": "txn_id_003",
     "account_id": "acc-jd-d-010",
     "merchant_id": "merch_301",
-    "date": "2024-08-01T00:00:00Z",
+    "date": "2025-08-01T00:00:00Z",
     "description": "Mortgage Payment",
     "amount": -2500,
     "category": "Housing"
@@ -30,7 +30,7 @@
     "transaction_id": "txn_id_004",
     "account_id": "acc-ak-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-08-01T00:00:00Z",
+    "date": "2025-08-01T00:00:00Z",
     "description": "Pension Deposit",
     "amount": 4000,
     "category": "Income"
@@ -39,7 +39,7 @@
     "transaction_id": "txn_id_005",
     "account_id": "acc-mw-d-006",
     "merchant_id": "merch_999",
-    "date": "2024-08-05T00:00:00Z",
+    "date": "2025-08-05T00:00:00Z",
     "description": "Student Loan Payment",
     "amount": -500,
     "category": "Debt"
@@ -48,7 +48,7 @@
     "transaction_id": "txn_id_006",
     "account_id": "acc-jd-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-08-10T00:00:00Z",
+    "date": "2025-08-10T00:00:00Z",
     "description": "Paycheck",
     "amount": 4000,
     "category": "Income"
@@ -57,7 +57,7 @@
     "transaction_id": "txn_id_007",
     "account_id": "acc-jd-e-002",
     "merchant_id": "merch_999",
-    "date": "2024-08-12T00:00:00Z",
+    "date": "2025-08-12T00:00:00Z",
     "description": "529 Contribution",
     "amount": 800,
     "category": "Transfers"
@@ -66,7 +66,7 @@
     "transaction_id": "txn_id_008",
     "account_id": "acc-mw-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-08-15T00:00:00Z",
+    "date": "2025-08-15T00:00:00Z",
     "description": "Paycheck",
     "amount": 3000,
     "category": "Income"
@@ -75,7 +75,7 @@
     "transaction_id": "txn_id_009",
     "account_id": "acc-mw-s-002",
     "merchant_id": "merch_999",
-    "date": "2024-08-15T00:00:00Z",
+    "date": "2025-08-15T00:00:00Z",
     "description": "Savings Transfer",
     "amount": 1000,
     "category": "Transfers"
@@ -84,7 +84,7 @@
     "transaction_id": "txn_id_010",
     "account_id": "acc-ak-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-08-15T00:00:00Z",
+    "date": "2025-08-15T00:00:00Z",
     "description": "403(b) Withdrawal",
     "amount": 2000,
     "category": "Income"
@@ -93,7 +93,7 @@
     "transaction_id": "txn_id_011",
     "account_id": "acc-jd-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-08-25T00:00:00Z",
+    "date": "2025-08-25T00:00:00Z",
     "description": "Paycheck",
     "amount": 4000,
     "category": "Income"
@@ -102,7 +102,7 @@
     "transaction_id": "txn_id_012",
     "account_id": "acc-ak-d-005",
     "merchant_id": "merch_402",
-    "date": "2024-08-31T00:00:00Z",
+    "date": "2025-08-31T00:00:00Z",
     "description": "Travel",
     "amount": -1043,
     "category": "Travel"
@@ -111,7 +111,7 @@
     "transaction_id": "txn_id_013",
     "account_id": "acc-mw-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-09-01T00:00:00Z",
+    "date": "2025-07-01T00:00:00Z",
     "description": "Paycheck",
     "amount": 3000,
     "category": "Income"
@@ -120,7 +120,7 @@
     "transaction_id": "txn_id_014",
     "account_id": "acc-mw-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-09-01T00:00:00Z",
+    "date": "2025-07-01T00:00:00Z",
     "description": "Rent",
     "amount": -1500,
     "category": "Housing"
@@ -129,7 +129,7 @@
     "transaction_id": "txn_id_015",
     "account_id": "acc-jd-d-010",
     "merchant_id": "merch_301",
-    "date": "2024-09-01T00:00:00Z",
+    "date": "2025-07-01T00:00:00Z",
     "description": "Mortgage Payment",
     "amount": -2500,
     "category": "Housing"
@@ -138,7 +138,7 @@
     "transaction_id": "txn_id_016",
     "account_id": "acc-ak-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-09-01T00:00:00Z",
+    "date": "2025-07-01T00:00:00Z",
     "description": "Pension Deposit",
     "amount": 4000,
     "category": "Income"
@@ -147,7 +147,7 @@
     "transaction_id": "txn_id_017",
     "account_id": "acc-ak-d-005",
     "merchant_id": "merch_402",
-    "date": "2024-09-04T00:00:00Z",
+    "date": "2025-07-04T00:00:00Z",
     "description": "Travel",
     "amount": -947,
     "category": "Travel"
@@ -156,7 +156,7 @@
     "transaction_id": "txn_id_018",
     "account_id": "acc-mw-d-006",
     "merchant_id": "merch_999",
-    "date": "2024-09-05T00:00:00Z",
+    "date": "2025-07-05T00:00:00Z",
     "description": "Student Loan Payment",
     "amount": -500,
     "category": "Debt"
@@ -165,7 +165,7 @@
     "transaction_id": "txn_id_019",
     "account_id": "acc-ak-d-005",
     "merchant_id": "merch_101",
-    "date": "2024-09-07T00:00:00Z",
+    "date": "2025-07-07T00:00:00Z",
     "description": "The Daily Grind",
     "amount": -5,
     "category": "Dining"
@@ -174,7 +174,7 @@
     "transaction_id": "txn_id_020",
     "account_id": "acc-jd-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-09-10T00:00:00Z",
+    "date": "2025-07-10T00:00:00Z",
     "description": "Paycheck",
     "amount": 4000,
     "category": "Income"
@@ -183,7 +183,7 @@
     "transaction_id": "txn_id_021",
     "account_id": "acc-ak-d-005",
     "merchant_id": "merch_201",
-    "date": "2024-09-11T00:00:00Z",
+    "date": "2025-07-11T00:00:00Z",
     "description": "Streamify",
     "amount": -15,
     "category": "Subscriptions"
@@ -192,7 +192,7 @@
     "transaction_id": "txn_id_022",
     "account_id": "acc-jd-e-002",
     "merchant_id": "merch_999",
-    "date": "2024-09-12T00:00:00Z",
+    "date": "2025-07-12T00:00:00Z",
     "description": "529 Contribution",
     "amount": 800,
     "category": "Transfers"
@@ -201,7 +201,7 @@
     "transaction_id": "txn_id_023",
     "account_id": "acc-mw-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-09-15T00:00:00Z",
+    "date": "2025-07-15T00:00:00Z",
     "description": "Paycheck",
     "amount": 3000,
     "category": "Income"
@@ -210,7 +210,7 @@
     "transaction_id": "txn_id_024",
     "account_id": "acc-mw-s-002",
     "merchant_id": "merch_999",
-    "date": "2024-09-15T00:00:00Z",
+    "date": "2025-07-15T00:00:00Z",
     "description": "Savings Transfer",
     "amount": 1000,
     "category": "Transfers"
@@ -219,7 +219,7 @@
     "transaction_id": "txn_id_025",
     "account_id": "acc-ak-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-09-15T00:00:00Z",
+    "date": "2025-07-15T00:00:00Z",
     "description": "403(b) Withdrawal",
     "amount": 2000,
     "category": "Income"
@@ -228,7 +228,7 @@
     "transaction_id": "txn_id_026",
     "account_id": "acc-ak-d-005",
     "merchant_id": "merch_401",
-    "date": "2024-09-23T00:00:00Z",
+    "date": "2025-07-23T00:00:00Z",
     "description": "Precision Auto Repair",
     "amount": -350,
     "category": "Automotive"
@@ -237,7 +237,7 @@
     "transaction_id": "txn_id_027",
     "account_id": "acc-jd-c-001",
     "merchant_id": "merch_999",
-    "date": "2024-09-25T00:00:00Z",
+    "date": "2025-07-25T00:00:00Z",
     "description": "Paycheck",
     "amount": 4000,
     "category": "Income"
