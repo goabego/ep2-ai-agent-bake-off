@@ -1,0 +1,26 @@
+[
+  {
+    "advisor_id": "adv-mortgage-001",
+    "name": "Alice Johnson",
+    "advisor_type": "Mortgage",
+    "availability": ["Monday 10:00-12:00", "Wednesday 14:00-16:00"]
+  },
+  {
+    "advisor_id": "adv-investment-001",
+    "name": "Bob Williams",
+    "advisor_type": "Investment",
+    "availability": ["Tuesday 09:00-11:00", "Thursday 13:00-15:00"]
+  },
+  {
+    "advisor_id": "adv-loans-001",
+    "name": "Charlie Brown",
+    "advisor_type": "Loans",
+    "availability": ["Friday 11:00-13:00"]
+  },
+  {
+    "advisor_id": "adv-retirement-001",
+    "name": "Diana Miller",
+    "advisor_type": "Retirement Planning",
+    "availability": ["Monday 15:00-17:00", "Wednesday 09:00-11:00"]
+  }
+]

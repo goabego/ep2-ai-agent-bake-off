@@ -1,7 +1,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.endpoints import users, accounts, goals, transactions, financials, partners
+from api.endpoints import users, accounts, goals, transactions, financials, partners, schedule, meeting
 from core.config import API_PREFIX
 
 app = FastAPI(
@@ -26,6 +26,8 @@ app.include_router(goals.router, prefix=API_PREFIX, tags=["Goals"])
 app.include_router(transactions.router, prefix=API_PREFIX, tags=["Transactions"])
 app.include_router(financials.router, prefix=API_PREFIX, tags=["Financials"])
 app.include_router(partners.router, prefix=API_PREFIX, tags=["Partners"])
+app.include_router(schedule.router, prefix=API_PREFIX, tags=["Schedule"])
+app.include_router(meeting.router, prefix=API_PREFIX, tags=["Meeting"])
 
 @app.get("/", tags=["Root"])
 def read_root():

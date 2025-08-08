@@ -1,7 +1,9 @@
 # app/api/models.py
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
+from uuid import uuid4
+import datetime
 
 class Holding(BaseModel):
     symbol: str
@@ -81,3 +83,28 @@ class CashFlow(BaseModel):
 
 class AverageCashFlow(BaseModel):
     average_monthly_cash_flow: float
+
+class Schedule(BaseModel):
+    user_id: str
+    schedule_id: str
+    source_account_id: str
+    destination_account_id: str
+    description: str
+    frequency: str
+    start_date: str
+    end_date: str
+    amount: float
+
+class Meeting(BaseModel):
+    meeting_id: str = Field(default_factory=lambda: f"meet-{uuid4()}")
+    user_id: str
+    advisor_name: str
+    advisor_type: str
+    meeting_time: datetime.datetime
+    notes: Optional[str] = None
+
+class Advisor(BaseModel):
+    advisor_id: str = Field(default_factory=lambda: f"adv-{uuid4()}")
+    name: str
+    advisor_type: str
+    availability: List[str] = []
