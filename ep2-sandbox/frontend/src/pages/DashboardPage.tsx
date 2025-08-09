@@ -84,12 +84,14 @@ const DashboardPage: React.FC = () => {
 
   return (
     <div className="relative flex min-h-auto flex-col bg-background overflow-x-hidden" style={{ fontFamily: 'Public Sans, Noto Sans, sans-serif' }}>
-      <Chatbot />
+      
   
       <div className="flex h-full grow flex-col">
-        
+        {/* Chatbot */}
+        <Chatbot />
         {/* Main Content Area */}
         <div className="gap-4 px-6 flex flex-1 justify-center py-6">
+     
           {/* Sidebar */}
           <Sidebar />
           {/* Main Content */}

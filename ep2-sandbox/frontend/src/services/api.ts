@@ -9,7 +9,7 @@ export const fetchUser = async (userId: string) => {
 };
 
 export const fetchTransactions = async (userId: string) => {
-  const response = await fetch(`${API_URL}/users/${userId}/transactions`);
+  const response = await fetch(`${API_URL}/users/${userId}/transactions?history=365`);
   if (!response.ok) {
     throw new Error('Could not fetch transactions');
   }

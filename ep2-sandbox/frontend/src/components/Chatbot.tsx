@@ -41,16 +41,16 @@ const Chatbot: React.FC = () => {
     };
 
     return (
-        <div className="z-1 px-6">
+        <div className="flex-1 v-full w-full">
             <Button
                 onClick={toggleChat}
-                className="fixed bottom-10 left-10 w-16 h-16 rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90"
+                className="absolute bottom-10 right-10 w-16 h-16 rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90"
             >
                 <RobotIcon />
             </Button>
 
             {isOpen && (
-                <Card className="fixed bottom-28 left-10 w-96 bg-card text-card-foreground shadow-2xl">
+                <Card className="absolute bottom-28 right-10 w-96 bg-card text-card-foreground shadow-2xl">
                     <CardHeader>
                         <CardTitle>Cymbal Chat</CardTitle>
                     </CardHeader>
@@ -75,7 +75,7 @@ const Chatbot: React.FC = () => {
                             />
                             <Button onClick={handleSendMessage}>Send</Button>
                         </div>
-                    </CardFooter>.
+                    </CardFooter>
                 </Card>
             )}
         </div>
