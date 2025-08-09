@@ -9,6 +9,8 @@
   - [Transactions](#transactions)
   - [Goals](#goals)
   - [Financials](#financials)
+  - [Schedule](#schedule)
+  - [Meeting](#meeting)
 - [Error Handling](#error-handling)
 - [Data Sources](#data-sources)
 
@@ -88,6 +90,40 @@ class LifeGoal(BaseModel):
     target_amount: float
     target_date: str
     current_amount_saved: float
+```
+
+#### Schedule
+```python
+class Schedule(BaseModel):
+    user_id: str
+    schedule_id: str
+    source_account_id: str
+    destination_account_id: str
+    description: str
+    frequency: str
+    start_date: str
+    end_date: str
+    amount: float
+```
+
+#### Advisor
+```python
+class Advisor(BaseModel):
+    advisor_id: str = Field(default_factory=lambda: f"adv-{uuid4()}")
+    name: str
+    advisor_type: str
+    availability: List[str] = []
+```
+
+#### Meeting
+```python
+class Meeting(BaseModel):
+    meeting_id: str = Field(default_factory=lambda: f"meet-{uuid4()}")
+    user_id: str
+    advisor_name: str
+    advisor_type: str
+    meeting_time: datetime.datetime
+    notes: Optional[str] = None
 ```
 
 #### Financial Analytics Models
@@ -224,6 +260,42 @@ class AverageCashFlow(BaseModel):
   - `user_id` (path): User identifier
 - **Response**: `AverageCashFlow` object
 - **Function**: `get_user_average_cash_flow(user_id: str)`
+
+### Schedule
+Provides full CRUD (Create, Read, Update, Delete) operations for managing scheduled transactions, such as recurring payments or transfers.
+
+#### POST `/api/users/{user_id}/schedules`
+- **Description**: Create a new scheduled transaction for a user. The `schedule_id` is generated automatically.
+- **Parameters**:
+  - `user_id` (path): The user's identifier.
+  - `schedule_in` (body): A `Schedule` object (without `schedule_id` and `user_id`).
+- **Response**: `Schedule` object, 201 Created
+- **Function**: `create_schedule_for_user(user_id: str, schedule_in: Schedule)`
+
+#### GET `/api/users/{user_id}/schedules`
+- **Description**: Retrieve all scheduled transactions for a specific user.
+- **Parameters**:
+  - `user_id` (path): The user's identifier.
+- **Response**: List of `Schedule` objects.
+- **Function**: `get_schedules_for_user(user_id: str)`
+
+#### PUT `/api/schedules/{schedule_id}`
+- **Description**: Update an existing scheduled transaction.
+- **Parameters**:
+  - `schedule_id` (path): The identifier of the schedule to update.
+  - `schedule_update` (body): A `Schedule` object containing the fields to update.
+- **Response**: The updated `Schedule` object.
+- **Error Codes**: 404 (Schedule not found).
+- **Function**: `update_schedule(schedule_id: str, schedule_update: Schedule)`
+
+#### DELETE `/api/schedules/{schedule_id}`
+- **Description**: Delete a scheduled transaction by its ID.
+- **Parameters**:
+  - `schedule_id` (path): The identifier of the schedule to delete.
+- **Response**: 204 No Content.
+- **Error Codes**: 404 (Schedule not found).
+- **Function**: `delete_schedule(schedule_id: str)`
+
 
 ## Error Handling
 

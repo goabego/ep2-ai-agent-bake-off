@@ -8,10 +8,6 @@ COPY code/ .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy your application code into the container
-COPY ./db/ ./db
-COPY ./images/ ./images
-
 # Expose the port the application will run on
 EXPOSE 8080
 
