@@ -1,4 +1,9 @@
 const API_URL = 'https://backend-ep2-879168005744.us-west1.run.app/api';
+// const API_URL = process.env.API_URL;
+// const API_URL = 'http://backend:8081/api';
+
+
+
 
 export const fetchUser = async (userId: string) => {
   const response = await fetch(`${API_URL}/users/${userId}`);
