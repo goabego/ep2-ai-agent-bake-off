@@ -5,7 +5,6 @@ description = ""
 authors = [
     {name = "Abraham Gomez",email = "abrahamgomez@google.com"}
 ]
-readme = "README.md"
 requires-python = "^3.10"
 dependencies = [
     "fastapi>=0.104.0,<0.105.0",
@@ -19,8 +18,7 @@ dependencies = [
 
 [tool.poetry]
 packages = [
-    {include = "backend"},
-    {include = "agent"}
+    {include = "code"},
 ]
 
 [tool.poetry.group.dev.dependencies]

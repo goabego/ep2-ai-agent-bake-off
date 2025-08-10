@@ -83,7 +83,7 @@ const DashboardPage: React.FC = () => {
   }
 
   return (
-    <div className="relative flex min-h-auto flex-col bg-background overflow-x-hidden" style={{ fontFamily: 'Public Sans, Noto Sans, sans-serif' }}>
+    <div className="relative flex min-h-auto flex-col bg-red overflow-x-hidden" style={{ fontFamily: 'Public Sans, Noto Sans, sans-serif' }}>
       
   
       <div className="flex h-full grow flex-col">
