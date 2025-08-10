@@ -15,10 +15,10 @@ export default defineConfig({
     host: true,
     port: 8080,
     strictPort: true,
-    allowedHosts: ['frontend-ep2-879168005744.us-west1.run.app','*.run.app', 'localhost', '127.0.0.1' ,'*'],
+    allowedHosts: ['frontend-ep2-426194555180.us-west1.run.app','*.run.app', 'localhost', '127.0.0.1' ,'*'],
     proxy: {
       '/api': {
-        target: 'https://a2a-426194555180.us-central1.run.app',
+        target: 'https://a2a-bfpwtp2iiq-uc.a.run.app',
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
@@ -30,6 +30,6 @@ export default defineConfig({
     host: true,
     port: 8080,
     strictPort: true,
-    allowedHosts: ['frontend-ep2-879168005744.us-west1.run.app','*.run.app', 'localhost', '127.0.0.1','*'],
+    allowedHosts: ['frontend-ep2-426194555180.us-west1.run.app','*.run.app', 'localhost', '127.0.0.1','*'],
   },
 })

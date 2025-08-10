@@ -12,6 +12,7 @@ from a2a.types import (
 from gemini_agent import GeminiAgent
 from agent_executor import AdkAgentToA2AExecutor
 from starlette.middleware.cors import CORSMiddleware
+from starlette.middleware import Middleware
 
 load_dotenv()
 
@@ -32,17 +33,29 @@ request_handler = DefaultRequestHandler(
 )
 
 # 2. The Functions Framework will automatically look for this 'app' variable.
-app = A2AStarletteApplication(
+# Use the middleware parameter for proper exception handling as recommended by Starlette docs
+base_app = A2AStarletteApplication(
     agent_card=agent_card,
     http_handler=request_handler,
-).build()
+)
 
-# Add CORS middleware to allow frontend requests
+# Build the base app
+app = base_app.build()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
+# Apply CORS middleware to the entire application for global enforcement
+# This ensures CORS headers are applied even to error responses
+app = CORSMiddleware(
+    app=app,
+    allow_origins=[
+        "https://frontend-ep2-426194555180.us-west1.run.app",  # Production frontend
+        "http://localhost:8080",  # Development frontend
+        "http://localhost:3000",  # Alternative development port
+        "http://127.0.0.1:8080",  # Alternative localhost
+        "http://127.0.0.1:3000",  # Alternative localhost
+    ],
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],  # Explicit methods
     allow_headers=["*"],  # Allows all headers
+    expose_headers=["*"],  # Expose all headers in response
+    max_age=600,  # Cache CORS preflight for 10 minutes
 )

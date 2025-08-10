@@ -1,9 +1,21 @@
 const API_URL = 'https://backend-ep2-879168005744.us-west1.run.app/api';
+const TOKEN_URL = 'https://backend-ep2-426194555180.us-west1.run.app/token';
 // const API_URL = process.env.API_URL;
 // const API_URL = 'http://backend:8081/api';
 
-
-
+// Get authentication token from backend
+export const fetchAuthToken = async () => {
+  const response = await fetch(TOKEN_URL);
+  if (!response.ok) {
+    throw new Error('Failed to get authentication token');
+  }
+  const data = await response.json();
+  if (data.status === 'success' && data.token) {
+    return data.token;
+  } else {
+    throw new Error('Invalid token response from backend');
+  }
+};
 
 export const fetchUser = async (userId: string) => {
   const response = await fetch(`${API_URL}/users/${userId}`);

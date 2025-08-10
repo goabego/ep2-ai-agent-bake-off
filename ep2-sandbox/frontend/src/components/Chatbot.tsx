@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -37,13 +37,9 @@ const Chatbot: React.FC = () => {
 
     // Send message to A2A API
     const sendMessageToAPI = async (messageText: string): Promise<string> => {
-        // Use Vite proxy in development, direct API in production
-        const API_ENDPOINT = import.meta.env.DEV 
-            ? '/api'  // This will be proxied to the A2A API
-            : 'https://a2a-426194555180.us-central1.run.app';
+        // Use backend proxy to avoid CORS issues
+        const API_ENDPOINT = 'https://backend-ep2-426194555180.us-west1.run.app/proxy/a2a';
         
-        // Note: In production, you'd need to implement proper authentication
-        // For now, we'll send without auth header (API may reject this)
         const payload = {
             jsonrpc: "2.0",
             method: "message/send",
@@ -51,24 +47,19 @@ const Chatbot: React.FC = () => {
                 message: {
                     messageId: generateMessageId(),
                     role: "user",
-                    parts: [
-                        {
-                            text: messageText
-                        }
-                    ]
+                    parts: [{ text: messageText }]
                 }
             },
             id: "1"
         };
 
         try {
+            // No need to get auth token - backend handles authentication
             const response = await fetch(API_ENDPOINT, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    // TODO: Add proper authentication header
-                    // 'Authorization': `Bearer ${authToken}`
-                    'Authorization': `Bearer ${import.meta.env.VITE_A2A_API_KEY}`
+                    'Content-Type': 'application/json'
+                    // No Authorization header needed - backend handles this
                 },
                 body: JSON.stringify(payload)
             });

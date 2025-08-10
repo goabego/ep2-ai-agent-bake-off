@@ -49,3 +49,11 @@ curl -X POST \
 -H "Authorization: Bearer $(gcloud auth print-identity-token)" \
 -d '{"jsonrpc": "2.0", "method": "message/send", "params": {"message": {"messageId": "a-random-id", "role": "user", "parts": [{"text": "What is my user profile?"}]}}, "id": "1"}' \
 ${SERVICE_URL}
+
+# Test CORS preflight
+echo "Testing CORS preflight request..."
+curl -X OPTIONS \
+-H "Origin: https://frontend-ep2-426194555180.us-west1.run.app" \
+-H "Access-Control-Request-Method: POST" \
+-H "Access-Control-Request-Headers: Content-Type,Authorization" \
+-v ${SERVICE_URL}

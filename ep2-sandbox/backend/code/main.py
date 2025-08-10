@@ -1,8 +1,10 @@
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from api.endpoints import users, accounts, goals, transactions, financials, partners, schedule, meeting
 from core.config import API_PREFIX
+import requests
+import os
 
 app = FastAPI(
     title="Cymbal Bank API",
@@ -35,4 +37,66 @@ def read_root():
     Root endpoint for health checks.
     """
     return {"status": "ok", "message": "Welcome to the AI Financial Steward API"}
+
+@app.get("/token", tags=["Authentication"])
+def get_auth_token():
+    """
+    Get Google Cloud ID token for A2A service authentication.
+    This endpoint fetches the token from the metadata server and returns it to the frontend.
+    """
+    try:
+        # Fetch ID token from Google Cloud metadata server
+        metadata_url = "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/identity"
+        params = {"audience": "https://a2a-bfpwtp2iiq-uc.a.run.app"}
+        headers = {"Metadata-Flavor": "Google"}
+        
+        response = requests.get(metadata_url, params=params, headers=headers, timeout=10)
+        
+        if response.status_code == 200:
+            return {"token": response.text, "status": "success"}
+        else:
+            raise HTTPException(status_code=500, detail=f"Failed to fetch token: {response.status_code}")
+            
+    except requests.exceptions.RequestException as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching token: {str(e)}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")
+
+@app.post("/proxy/a2a", tags=["Proxy"])
+async def proxy_a2a_request(request: dict):
+    """
+    Proxy requests to the A2A service with proper authentication.
+    This eliminates CORS issues by handling all communication server-side.
+    """
+    try:
+        # Get authentication token
+        metadata_url = "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/identity"
+        params = {"audience": "https://a2a-bfpwtp2iiq-uc.a.run.app"}
+        headers = {"Metadata-Flavor": "Google"}
+        
+        token_response = requests.get(metadata_url, params=params, headers=headers, timeout=10)
+        
+        if token_response.status_code != 200:
+            raise HTTPException(status_code=500, detail="Failed to get authentication token")
+        
+        auth_token = token_response.text
+        
+        # Forward request to A2A service
+        a2a_url = "https://a2a-bfpwtp2iiq-uc.a.run.app/"
+        a2a_headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {auth_token}"
+        }
+        
+        a2a_response = requests.post(a2a_url, json=request, headers=a2a_headers, timeout=30)
+        
+        if a2a_response.status_code == 200:
+            return a2a_response.json()
+        else:
+            raise HTTPException(status_code=a2a_response.status_code, detail=f"A2A service error: {a2a_response.text}")
+            
+    except requests.exceptions.RequestException as e:
+        raise HTTPException(status_code=500, detail=f"Proxy error: {str(e)}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Unexpected error: {str(e)}")
 
