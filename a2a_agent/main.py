@@ -11,6 +11,7 @@ from a2a.types import (
 )
 from gemini_agent import GeminiAgent
 from agent_executor import AdkAgentToA2AExecutor
+from starlette.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
@@ -35,3 +36,13 @@ app = A2AStarletteApplication(
     agent_card=agent_card,
     http_handler=request_handler,
 ).build()
+
+# Add CORS middleware to allow frontend requests
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
