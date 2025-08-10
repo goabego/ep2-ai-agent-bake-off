@@ -87,11 +87,12 @@ const DashboardPage: React.FC = () => {
       
   
       <div className="flex h-full grow flex-col">
-        {/* Chatbot */}
-        <Chatbot />
+      
         {/* Main Content Area */}
         <div className="gap-4 px-6 flex flex-1 justify-center py-6">
-     
+
+          {/* Chatbot */}
+          <Chatbot />
           {/* Sidebar */}
           <Sidebar />
           {/* Main Content */}

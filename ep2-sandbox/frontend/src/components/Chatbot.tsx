@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -31,9 +31,22 @@ const Chatbot: React.FC = () => {
     const [inputValue, setInputValue] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [contextId, setContextId] = useState<string | null>(null);
+    const chatRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
 
     // Generate unique message ID
     const generateMessageId = () => `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+    // Scroll to bottom of messages
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    // Auto-scroll to bottom when messages change
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
 
     // Send message to A2A API
     const sendMessageToAPI = async (messageText: string): Promise<string> => {
@@ -132,17 +145,44 @@ const Chatbot: React.FC = () => {
         setIsOpen(!isOpen);
     };
 
+    // Handle click outside to close chat
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (isOpen && 
+                chatRef.current && 
+                buttonRef.current && 
+                !chatRef.current.contains(event.target as Node) && 
+                !buttonRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen]);
+
     return (
-        <div className="flex-1 v-full w-full">
+        <div className="fixed inset-0 pointer-events-none z-50">
             <Button
+                ref={buttonRef}
                 onClick={toggleChat}
-                className="absolute bottom-10 right-10 w-16 h-16 rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90"
+                className="fixed w-16 h-16 rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 pointer-events-auto z-50"
+                style={{ right: '7.5vw', bottom: '7.5vh' }}
             >
                 <RobotIcon />
             </Button>
 
             {isOpen && (
-                <Card className="absolute bottom-28 right-10 w-96 bg-card text-card-foreground shadow-2xl">
+                <Card 
+                    ref={chatRef}
+                    className="fixed w-96 bg-card text-card-foreground shadow-2xl pointer-events-auto z-40" 
+                    style={{ right: '7.5vw', bottom: '18vh' }}
+                >
                     <CardHeader>
                         <CardTitle>Cymbal Chat</CardTitle>
                     </CardHeader>
@@ -166,6 +206,7 @@ const Chatbot: React.FC = () => {
                                     </div>
                                 </div>
                             )}
+                            <div ref={messagesEndRef} />
                         </div>
                     </CardContent>
                     <CardFooter>
