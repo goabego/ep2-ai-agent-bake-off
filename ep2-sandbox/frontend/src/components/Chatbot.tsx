@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -13,31 +13,132 @@ const RobotIcon = () => (
     </svg>
 );
 
+interface Message {
+    sender: 'user' | 'bot';
+    text: string;
+    messageId?: string;
+    contextId?: string;
+}
+
 const Chatbot: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [messages, setMessages] = useState([
+    const [messages, setMessages] = useState<Message[]>([
         {
             sender: 'bot',
             text: 'Hello, I am Cymbal Chat and can get you answers about your transaction history, your current assets, or any information related to your financial footprint.'
         }
     ]);
     const [inputValue, setInputValue] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [contextId, setContextId] = useState<string | null>(null);
+
+    // Generate unique message ID
+    const generateMessageId = () => `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+    // Send message to A2A API
+    const sendMessageToAPI = async (messageText: string): Promise<string> => {
+        // Use Vite proxy in development, direct API in production
+        const API_ENDPOINT = import.meta.env.DEV 
+            ? '/api'  // This will be proxied to the A2A API
+            : 'https://a2a-426194555180.us-central1.run.app';
+        
+        // Note: In production, you'd need to implement proper authentication
+        // For now, we'll send without auth header (API may reject this)
+        const payload = {
+            jsonrpc: "2.0",
+            method: "message/send",
+            params: {
+                message: {
+                    messageId: generateMessageId(),
+                    role: "user",
+                    parts: [
+                        {
+                            text: messageText
+                        }
+                    ]
+                }
+            },
+            id: "1"
+        };
+
+        try {
+            const response = await fetch(API_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    // TODO: Add proper authentication header
+                    // 'Authorization': `Bearer ${authToken}`
+                    'Authorization': `Bearer ${import.meta.env.VITE_A2A_API_KEY}`
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`API request failed: ${response.status}`);
+            }
+
+            const data = await response.json();
+            
+            // Extract response text from the JSON-RPC result
+            if (data.result && data.result.artifacts && data.result.artifacts.length > 0) {
+                const responseText = data.result.artifacts[0].parts[0].text;
+                
+                // Store context ID for future requests if available
+                if (data.result.contextId) {
+                    setContextId(data.result.contextId);
+                }
+                
+                return responseText;
+            } else {
+                throw new Error('Invalid response format from API');
+            }
+        } catch (error) {
+            console.error('Error sending message to API:', error);
+            return 'Sorry, I encountered an error while processing your request. Please try again.';
+        }
+    };
+
+    const handleSendMessage = async () => {
+        if (inputValue.trim() && !isLoading) {
+            const userMessage: Message = {
+                sender: 'user',
+                text: inputValue,
+                messageId: generateMessageId()
+            };
+
+            // Add user message immediately
+            setMessages(prev => [...prev, userMessage]);
+            setInputValue('');
+            setIsLoading(true);
+
+            try {
+                // Send to API and get response
+                const apiResponse = await sendMessageToAPI(inputValue);
+                
+                const botMessage: Message = {
+                    sender: 'bot',
+                    text: apiResponse,
+                    messageId: generateMessageId(),
+                    contextId: contextId || undefined
+                };
+
+                setMessages(prev => [...prev, botMessage]);
+            } catch (error) {
+                console.error('Error handling message:', error);
+                const errorMessage: Message = {
+                    sender: 'bot',
+                    text: 'Sorry, I encountered an error. Please try again.',
+                    messageId: generateMessageId()
+                };
+                setMessages(prev => [...prev, errorMessage]);
+            } finally {
+                setIsLoading(false);
+            }
+        }
+    };
 
     const toggleChat = () => {
         setIsOpen(!isOpen);
-    };
-
-    const handleSendMessage = () => {
-        if (inputValue.trim()) {
-            const newMessages = [...messages, { sender: 'user', text: inputValue }];
-            if (inputValue === 'What is my average cash flow?') {
-                newMessages.push({ sender: 'bot', text: 'Answer 1' });
-            } else if (inputValue === 'What was my most recent subscription?') {
-                newMessages.push({ sender: 'bot', text: 'Answer 2' });
-            }
-            setMessages(newMessages);
-            setInputValue('');
-        }
     };
 
     return (
@@ -58,11 +159,22 @@ const Chatbot: React.FC = () => {
                         <div className="space-y-4">
                             {messages.map((msg, index) => (
                                 <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                    <div className={`p-3 rounded-lg ${msg.sender === 'user' ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}`}>
+                                    <div className={`p-3 rounded-lg max-w-xs break-words ${msg.sender === 'user' ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}`}>
                                         {msg.text}
                                     </div>
                                 </div>
                             ))}
+                            {isLoading && (
+                                <div className="flex justify-start">
+                                    <div className="p-3 rounded-lg bg-muted text-muted-foreground">
+                                        <div className="flex space-x-1">
+                                            <div className="w-2 h-2 bg-current rounded-full animate-bounce"></div>
+                                            <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                                            <div className="w-2 h-2 bg-current rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </CardContent>
                     <CardFooter>
@@ -72,8 +184,11 @@ const Chatbot: React.FC = () => {
                                 onChange={(e) => setInputValue(e.target.value)}
                                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                                 placeholder="Type a message..."
+                                disabled={isLoading}
                             />
-                            <Button onClick={handleSendMessage}>Send</Button>
+                            <Button onClick={handleSendMessage} disabled={isLoading || !inputValue.trim()}>
+                                Send
+                            </Button>
                         </div>
                     </CardFooter>
                 </Card>
