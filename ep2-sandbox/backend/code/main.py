@@ -38,7 +38,7 @@ def read_root():
     """
     return {"status": "ok", "message": "Welcome to the AI Financial Steward API"}
 
-A2A_AGENT_URL = os.environ.get("A2A_AGENT_URL", "https://a2a-bfpwtp2iiq-uc.a.run.app")
+A2A_AGENT_URL = os.environ.get("A2A_AGENT_URL", "https://a2a-33wwy4ha3a-uc.a.run.app")
 
 
 @app.get("/token", tags=["Authentication"])
@@ -86,7 +86,7 @@ async def proxy_a2a_request(request: dict):
         auth_token = token_response.text
 
         # Forward request to A2A service
-        a2a_url = f"{A2A_AGENT_URL}/"
+        a2a_url = A2A_AGENT_URL
         a2a_headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {auth_token}"

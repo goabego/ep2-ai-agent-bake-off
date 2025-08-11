@@ -10,10 +10,15 @@ import sys
 import time
 from typing import Dict, Any
 
+# # Production URLs
+# BACKEND_URL = "https://backend-ep2-426194555180.us-west1.run.app"
+# FRONTEND_URL = "https://frontend-ep2-426194555180.us-west1.run.app"
+# A2A_URL = "https://a2a-bfpwtp2iiq-uc.a.run.app"
+
 # Production URLs
-BACKEND_URL = "https://backend-ep2-426194555180.us-west1.run.app"
-FRONTEND_URL = "https://frontend-ep2-426194555180.us-west1.run.app"
-A2A_URL = "https://a2a-bfpwtp2iiq-uc.a.run.app"
+BACKEND_URL = "https://backend-ep2-879168005744.us-west1.run.app"
+FRONTEND_URL = "https://frontend-ep2-879168005744.us-west1.run.app"
+A2A_URL = "https://a2a-33wwy4ha3a-uc.a.run.app"
 
 class ProductionTester:
     def __init__(self):
@@ -106,18 +111,7 @@ class ProductionTester:
     def test_backend_proxy_flow(self) -> bool:
         """Test the complete backend proxy flow to A2A"""
         try:
-            # Step 1: Get token from backend
-            token_response = self.session.get(f"{BACKEND_URL}/token")
-            if token_response.status_code != 200:
-                return self.log_test("Backend Proxy Flow", False, "Failed to get token")
-            
-            token_data = token_response.json()
-            if token_data.get("status") != "success" or not token_data.get("token"):
-                return self.log_test("Backend Proxy Flow", False, "Invalid token response")
-            
-            token = token_data["token"]
-            
-            # Step 2: Test proxy endpoint with token
+            # Test proxy endpoint directly (backend handles authentication internally)
             payload = {
                 "jsonrpc": "2.0",
                 "method": "message/send",
@@ -131,7 +125,14 @@ class ProductionTester:
                 "id": "1"
             }
             
+            print(f"DEBUG: Making request to {BACKEND_URL}/proxy/a2a")
+            print(f"DEBUG: Payload: {json.dumps(payload, indent=2)}")
+            
             proxy_response = self.session.post(f"{BACKEND_URL}/proxy/a2a", json=payload)
+            print(f"DEBUG: Response status: {proxy_response.status_code}")
+            print(f"DEBUG: Response headers: {dict(proxy_response.headers)}")
+            print(f"DEBUG: Response text: {proxy_response.text[:200]}...")
+            
             if proxy_response.status_code == 200:
                 proxy_data = proxy_response.json()
                 if proxy_data.get("result") and proxy_data["result"].get("artifacts"):

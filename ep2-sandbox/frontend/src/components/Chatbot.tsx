@@ -51,7 +51,7 @@ const Chatbot: React.FC = () => {
     // Send message to A2A API
     const sendMessageToAPI = async (messageText: string): Promise<string> => {
         // Use backend proxy to avoid CORS issues
-        const API_ENDPOINT = 'https://backend-ep2-426194555180.us-west1.run.app/proxy/a2a';
+        const API_ENDPOINT = import.meta.env.VITE_A2A_PROXY_URL || 'https://backend-ep2-879168005744.us-west1.run.app/proxy/a2a';
         
         const payload = {
             jsonrpc: "2.0",
