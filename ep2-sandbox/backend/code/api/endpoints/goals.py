@@ -1,7 +1,7 @@
 # backend/api/endpoints/goals.py
 
 import json
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, status
 from typing import List
 from api.models import LifeGoal
 
