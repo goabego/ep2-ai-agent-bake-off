@@ -4,13 +4,14 @@
 set -e
 
 # --- Configuration ---
-if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <PROJECT_ID> <SERVICE_NAME>"
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <PROJECT_ID> <SERVICE_NAME> <FRONTEND_URL>"
     exit 1
 fi
 
 PROJECT_ID=$1
 SERVICE_NAME=$2
+FRONTEND_URL=$3
 
 # The region to deploy to
 REGION="us-central1"
@@ -29,7 +30,7 @@ gcloud run deploy "$SERVICE_NAME" \
   --region "$REGION" \
   --memory "$MEMORY" \
   --no-allow-unauthenticated \
-  --set-env-vars=GOOGLE_CLOUD_PROJECT="$PROJECT_ID",GOOGLE_CLOUD_LOCATION="$REGION",GOOGLE_GENAI_USE_VERTEXAI=TRUE,MODEL="gemini-2.5-flash"
+  --set-env-vars=GOOGLE_CLOUD_PROJECT="$PROJECT_ID",GOOGLE_CLOUD_LOCATION="$REGION",GOOGLE_GENAI_USE_VERTEXAI=TRUE,MODEL="gemini-2.5-flash",FRONTEND_URL="$FRONTEND_URL"
 
 
 echo "Deployment complete."
@@ -53,7 +54,7 @@ ${SERVICE_URL}
 # Test CORS preflight
 echo "Testing CORS preflight request..."
 curl -X OPTIONS \
--H "Origin: https://frontend-ep2-426194555180.us-west1.run.app" \
+-H "Origin: $FRONTEND_URL" \
 -H "Access-Control-Request-Method: POST" \
 -H "Access-Control-Request-Headers: Content-Type,Authorization" \
 -v ${SERVICE_URL}

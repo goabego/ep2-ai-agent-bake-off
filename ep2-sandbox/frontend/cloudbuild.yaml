@@ -1,7 +1,15 @@
 steps:
   # 1. Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/frontend-ep2:latest', '.']
+    args:
+      - 'build'
+      - '-t'
+      - 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/frontend-ep2:latest'
+      - '--build-arg'
+      - 'VITE_API_URL=${_VITE_API_URL}'
+      - '--build-arg'
+      - 'VITE_TOKEN_URL=${_VITE_TOKEN_URL}'
+      - '.'
   # 2. Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/frontend-ep2:latest']
@@ -16,9 +24,12 @@ steps:
       - '--platform'
       - 'managed'
       - '--region'
-      - 'us-west1' 
-      - '--allow-unauthenticated' 
+      - 'us-west1'
+      - '--allow-unauthenticated'
 images:
   - 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/frontend-ep2:latest'
 options:
   logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _VITE_API_URL: 'https://backend-ep2-879168005744.us-west1.run.app/api'
+  _VITE_TOKEN_URL: 'https://backend-ep2-426194555180.us-west1.run.app/token'

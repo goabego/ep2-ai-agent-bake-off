@@ -12,8 +12,12 @@ RUN npm install
 # Copy the rest of the application source code
 COPY . .
 
+# Set build-time arguments
+ARG VITE_API_URL
+ARG VITE_TOKEN_URL
+
 # Build the application for production
-RUN npm run build
+RUN VITE_API_URL=${VITE_API_URL} VITE_TOKEN_URL=${VITE_TOKEN_URL} npm run build
 
 # --- Stage 2: Serve with Vite Preview Server ---
 FROM node:20-alpine AS runner

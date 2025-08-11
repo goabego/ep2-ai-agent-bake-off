@@ -19,9 +19,13 @@ steps:
       - '--platform'
       - 'managed'
       - '--region'
-      - 'us-west1' 
-      - '--allow-unauthenticated' 
+      - 'us-west1'
+      - '--allow-unauthenticated'
+      - '--set-env-vars'
+      - 'A2A_AGENT_URL=${_A2A_AGENT_URL}'
 images:
   - 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/backend-ep2:latest'
 options:
   logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _A2A_AGENT_URL: 'https://a2a-bfpwtp2iiq-uc.a.run.app'
