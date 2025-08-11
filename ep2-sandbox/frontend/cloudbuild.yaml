@@ -1,10 +1,22 @@
 steps:
   # 1. Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/frontend-ep2:latest', '.']
+    args:
+      - 'build'
+      - '-t'
+      - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/frontend-ep2:latest'
+      - '--build-arg'
+      - 'VITE_API_URL=${_VITE_API_URL}'
+      - '--build-arg'
+      - 'VITE_TOKEN_URL=${_VITE_TOKEN_URL}'
+      - '--build-arg'
+      - 'VITE_A2A_PROXY_URL=${_VITE_A2A_PROXY_URL}'
+      - '--build-arg'
+      - 'A2A_URL=${_A2A_URL}'
+      - '.'
   # 2. Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/frontend-ep2:latest']
+    args: ['push', 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/frontend-ep2:latest']
   # 3. Deploy the container image
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
@@ -12,13 +24,19 @@ steps:
       - 'deploy'
       - 'frontend-ep2'
       - '--image'
-      - 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/frontend-ep2:latest'
+      - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/frontend-ep2:latest'
       - '--platform'
       - 'managed'
       - '--region'
-      - 'us-west1' 
-      - '--allow-unauthenticated' 
+      - 'us-west1'
+      - '--allow-unauthenticated'
 images:
-  - 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/frontend-ep2:latest'
+  - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/frontend-ep2:latest'
 options:
   logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _PROJECT_ID: 'bake-off-hosting'
+  _VITE_API_URL: 'https://backend-ep2-879168005744.us-west1.run.app/api'
+  _VITE_TOKEN_URL: 'https://backend-ep2-879168005744.us-west1.run.app/token'
+  _VITE_A2A_PROXY_URL: 'https://backend-ep2-879168005744.us-west1.run.app/proxy/a2a'
+  _A2A_URL: 'https://a2a-33wwy4ha3a-uc.a.run.app'

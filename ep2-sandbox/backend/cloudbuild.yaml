@@ -3,25 +3,30 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/backend-ep2:latest'
+      - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/backend-ep2:latest'
       - '.'
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/backend-ep2:latest'
+      - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/backend-ep2:latest'
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'run'
       - 'deploy'
       - 'backend-ep2'
       - '--image'
-      - 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/backend-ep2:latest'
+      - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/backend-ep2:latest'
       - '--platform'
       - 'managed'
       - '--region'
-      - 'us-west1' 
-      - '--allow-unauthenticated' 
+      - 'us-west1'
+      - '--allow-unauthenticated'
+      - '--set-env-vars'
+      - 'A2A_AGENT_URL=${_A2A_AGENT_URL}'
 images:
-  - 'us-west1-docker.pkg.dev/agent-starter-pack-spend/bake-off/backend-ep2:latest'
+  - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/backend-ep2:latest'
 options:
   logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _PROJECT_ID: 'bake-off-hosting'
+  _A2A_AGENT_URL: 'https://a2a-33wwy4ha3a-uc.a.run.app'

@@ -4,19 +4,17 @@
 set -e
 
 # --- Configuration ---
-if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <PROJECT_ID> <SERVICE_NAME>"
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <PROJECT_ID> <SERVICE_NAME> <REGION>"
     exit 1
 fi
 
 PROJECT_ID=$1
 SERVICE_NAME=$2
+REGION=$3 
 
 BACKEND_URL="https://backend-ep2-879168005744.us-west1.run.app"
 FRONTEND_URL="https://frontend-ep2-879168005744.us-west1.run.app"
-
-# The region to deploy to
-REGION="us-central1"
 
 # The memory to allocate to the service
 MEMORY="1Gi"
@@ -32,7 +30,7 @@ gcloud run deploy "$SERVICE_NAME" \
   --region "$REGION" \
   --memory "$MEMORY" \
   --no-allow-unauthenticated \
-  --set-env-vars=GOOGLE_CLOUD_PROJECT="$PROJECT_ID",GOOGLE_CLOUD_LOCATION="$REGION",GOOGLE_GENAI_USE_VERTEXAI=TRUE,MODEL="gemini-2.5-flash",API_BASE_URL="$BACKEND_URL/api"
+  --set-env-vars=GOOGLE_CLOUD_PROJECT="$PROJECT_ID",GOOGLE_CLOUD_LOCATION="$REGION",GOOGLE_GENAI_USE_VERTEXAI=TRUE,MODEL="gemini-2.5-flash",FRONTEND_URL="$FRONTEND_URL",BACKEND_URL="$BACKEND_URL"
 
 
 echo "Deployment complete."
@@ -53,7 +51,7 @@ TOKEN=$(curl -s ${BACKEND_URL}/token | jq -r '.token')
 echo "Doing a quick curl test to verify the service is working"
 curl -X POST \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer $(TOKEN)" \
+-H "Authorization: Bearer $TOKEN" \
 -d '{"jsonrpc": "2.0", "method": "message/send", "params": {"message": {"messageId": "a-random-id", "role": "user", "parts": [{"text": "What is my user profile?"}]}}, "id": "1"}' \
 ${SERVICE_URL}
 
