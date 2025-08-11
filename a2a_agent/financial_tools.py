@@ -1,7 +1,7 @@
 import os
 import requests
 
-API_BASE_URL = os.environ.get("API_BASE_URL", "https://backend-426194555180.us-west1.run.app/api")
+API_BASE_URL = os.environ.get("API_BASE_URL", "https://backend-879168005744.us-west1.run.app/api")
 
 def get_user_profile(user_id: str) -> dict:
     """Gets a user's profile."""

@@ -38,7 +38,7 @@ def read_root():
     """
     return {"status": "ok", "message": "Welcome to the AI Financial Steward API"}
 
-A2A_AGENT_URL = os.environ.get("A2A_AGENT_URL", "https://a2a-33wwy4ha3a-uc.a.run.app")
+A2A_AGENT_URL = os.environ.get("A2A_AGENT_URL", "https://a2a-ep2-33wwy4ha3a-uw.a.run.app")
 
 
 @app.get("/token", tags=["Authentication"])

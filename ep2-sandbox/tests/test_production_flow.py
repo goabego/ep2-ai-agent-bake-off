@@ -18,7 +18,7 @@ from typing import Dict, Any
 # Production URLs
 BACKEND_URL = "https://backend-ep2-879168005744.us-west1.run.app"
 FRONTEND_URL = "https://frontend-ep2-879168005744.us-west1.run.app"
-A2A_URL = "https://a2a-33wwy4ha3a-uc.a.run.app"
+A2A_URL = "https://a2a-ep2-33wwy4ha3a-uw.a.run.app"
 
 class ProductionTester:
     def __init__(self):

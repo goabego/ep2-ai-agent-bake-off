@@ -39,4 +39,4 @@ substitutions:
   _VITE_API_URL: 'https://backend-ep2-879168005744.us-west1.run.app/api'
   _VITE_TOKEN_URL: 'https://backend-ep2-879168005744.us-west1.run.app/token'
   _VITE_A2A_PROXY_URL: 'https://backend-ep2-879168005744.us-west1.run.app/proxy/a2a'
-  _A2A_URL: 'https://a2a-33wwy4ha3a-uc.a.run.app'
+  _A2A_URL: 'https://a2a-ep2-33wwy4ha3a-uw.a.run.app'

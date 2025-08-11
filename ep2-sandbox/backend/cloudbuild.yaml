@@ -29,4 +29,4 @@ options:
   logging: CLOUD_LOGGING_ONLY
 substitutions:
   _PROJECT_ID: 'bake-off-hosting'
-  _A2A_AGENT_URL: 'https://a2a-33wwy4ha3a-uc.a.run.app'
+  _A2A_AGENT_URL: 'https://a2a-ep2-33wwy4ha3a-uw.a.run.app'

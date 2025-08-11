@@ -18,7 +18,7 @@ export default defineConfig({
     allowedHosts: ['frontend-ep2-426194555180.us-west1.run.app',"frontend-ep2-879168005744.us-west1.run.app",'*.run.app', 'localhost', '127.0.0.1' ,'*'],
     proxy: {
       '/api': {
-        target: process.env.A2A_URL || 'https://a2a-33wwy4ha3a-uc.a.run.app',
+        target: process.env.A2A_URL || 'https://a2a-ep2-33wwy4ha3a-uw.a.run.app',
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path.replace(/^\/api/, ''),

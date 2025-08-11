@@ -5,6 +5,10 @@ set -e
 
 echo "🚀 Starting Cloud Run deployment process..."
 
+A2A_URL="https://a2a-ep2-33wwy4ha3a-uw.a.run.app"
+BACKEND_URL="https://backend-ep2-879168005744.us-west1.run.app"
+FRONTEND_URL="https://frontend-ep2-879168005744.us-west1.run.app"
+
 # Deploy Backend first (since frontend depends on it)
 echo "📦 Deploying Backend..."
 cd backend
@@ -26,7 +30,6 @@ echo "🧪 Running deployment tests..."
 
 # Test 1: Backend health check
 echo "🔍 Testing Backend health..."
-BACKEND_URL="https://backend-ep2-426194555180.us-west1.run.app"
 if curl -s "$BACKEND_URL/" | grep -q "Welcome to the AI Financial Steward API"; then
     echo "✅ Backend health check passed"
 else
@@ -45,7 +48,6 @@ fi
 
 # Test 3: Frontend accessibility
 echo "🔍 Testing Frontend accessibility..."
-FRONTEND_URL="https://frontend-ep2-426194555180.us-west1.run.app"
 if curl -s "$FRONTEND_URL/" | grep -q "Vite + React + TS"; then
     echo "✅ Frontend accessibility check passed"
 else
@@ -62,7 +64,6 @@ if [ -n "$TOKEN" ]; then
     echo "✅ Successfully obtained authentication token"
     
     # Test A2A service with token
-    A2A_URL="https://a2a-bfpwtp2iiq-uc.a.run.app/"
     TEST_PAYLOAD='{"jsonrpc": "2.0", "method": "message/send", "params": {"message": {"messageId": "test-deploy", "role": "user", "parts": [{"text": "Hello"}]}}, "id": "1"}'
     
     if curl -s -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $TOKEN" -d "$TEST_PAYLOAD" "$A2A_URL" | grep -q "result"; then
@@ -82,4 +83,4 @@ echo "🌐 Frontend: $FRONTEND_URL"
 echo "🔧 Backend: $BACKEND_URL"
 echo "🤖 A2A Agent: $A2A_URL"
 echo ""
-echo "💡 Test the chatbot at: $FRONTEND_URL/dashboard?userId=user-002"
+echo "💡 Test the chatbot at: $FRONTEND_URL/dashboard?userId=user-001"

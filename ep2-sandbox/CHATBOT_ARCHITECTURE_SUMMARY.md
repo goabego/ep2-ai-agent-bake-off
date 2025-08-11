@@ -23,7 +23,7 @@ This document explains how the AI Financial Steward chatbot works, detailing the
 - **Location**: `a2a_agent/`
 - **Technology**: Python-based AI agent service
 - **Purpose**: Processes user messages and generates AI responses
-- **URL**: `https://a2a-33wwy4ha3a-uc.a.run.app`
+- **URL**: `https://a2a-ep2-33wwy4ha3a-uw.a.run.app`
 
 ## How It Works
 
@@ -129,7 +129,7 @@ Frontend → Backend → Google Cloud Metadata Server → A2A Service
 |-----------|-------------|-----|
 | **Frontend** | Production | `https://frontend-ep2-879168005744.us-west1.run.app` |
 | **Backend** | Production | `https://backend-ep2-879168005744.us-west1.run.app` |
-| **A2A Service** | Production | `https://a2a-33wwy4ha3a-uc.a.run.app` |
+| **A2A Service** | Production | `https://a2a-ep2-33wwy4ha3a-uw.a.run.app` |
 
 ## Testing
 
