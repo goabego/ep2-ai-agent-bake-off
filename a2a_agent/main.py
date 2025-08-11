@@ -48,6 +48,7 @@ app = CORSMiddleware(
     app=app,
     allow_origins=[
         "https://frontend-ep2-426194555180.us-west1.run.app",  # Production frontend
+        "https://frontend-ep2-879168005744.us-west1.run.app",
         "http://localhost:8080",  # Development frontend
         "http://localhost:3000",  # Alternative development port
         "http://127.0.0.1:8080",  # Alternative localhost

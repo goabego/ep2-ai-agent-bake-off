@@ -12,6 +12,9 @@ fi
 PROJECT_ID=$1
 SERVICE_NAME=$2
 
+BACKEND_URL="https://backend-ep2-879168005744.us-west1.run.app"
+FRONTEND_URL="https://frontend-ep2-879168005744.us-west1.run.app"
+
 # The region to deploy to
 REGION="us-central1"
 
@@ -29,7 +32,7 @@ gcloud run deploy "$SERVICE_NAME" \
   --region "$REGION" \
   --memory "$MEMORY" \
   --no-allow-unauthenticated \
-  --set-env-vars=GOOGLE_CLOUD_PROJECT="$PROJECT_ID",GOOGLE_CLOUD_LOCATION="$REGION",GOOGLE_GENAI_USE_VERTEXAI=TRUE,MODEL="gemini-2.5-flash"
+  --set-env-vars=GOOGLE_CLOUD_PROJECT="$PROJECT_ID",GOOGLE_CLOUD_LOCATION="$REGION",GOOGLE_GENAI_USE_VERTEXAI=TRUE,MODEL="gemini-2.5-flash",API_BASE_URL="$BACKEND_URL/api"
 
 
 echo "Deployment complete."
@@ -42,18 +45,22 @@ SERVICE_URL=$(gcloud run services describe "$SERVICE_NAME" --project="$PROJECT_I
 echo "Updating service with its public URL: $SERVICE_URL"
 gcloud run services update "$SERVICE_NAME"   --project="$PROJECT_ID"   --region="$REGION"   --update-env-vars=AGENT_URL=$SERVICE_URL
 
+
+# Get the token from the backend
+TOKEN=$(curl -s ${BACKEND_URL}/token | jq -r '.token')
+
 # Do a quick curl test
 echo "Doing a quick curl test to verify the service is working"
 curl -X POST \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer $(gcloud auth print-identity-token)" \
+-H "Authorization: Bearer $(TOKEN)" \
 -d '{"jsonrpc": "2.0", "method": "message/send", "params": {"message": {"messageId": "a-random-id", "role": "user", "parts": [{"text": "What is my user profile?"}]}}, "id": "1"}' \
 ${SERVICE_URL}
 
 # Test CORS preflight
 echo "Testing CORS preflight request..."
 curl -X OPTIONS \
--H "Origin: https://frontend-ep2-426194555180.us-west1.run.app" \
+-H "Origin: $FRONTEND_URL" \
 -H "Access-Control-Request-Method: POST" \
 -H "Access-Control-Request-Headers: Content-Type,Authorization" \
 -v ${SERVICE_URL}
