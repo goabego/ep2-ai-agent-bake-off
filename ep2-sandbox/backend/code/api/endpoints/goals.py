@@ -28,6 +28,25 @@ def get_user_goals(user_id: str):
     user_goals = [goal for goal in goals if goal.user_id == normalized_user_id]
     return user_goals
 
+@router.post("/goals", response_model=LifeGoal, status_code=status.HTTP_201_CREATED)
+def create_goal(goal_payload: LifeGoal):
+    """
+    Create a new financial goal. The goal_id is generated automatically.
+    """
+    goals = read_goals_data()
+    
+    # Create a new LifeGoal instance to ensure a server-generated UUID
+    new_goal = LifeGoal(
+        user_id=goal_payload.user_id,
+        name=goal_payload.name,
+        target_amount=goal_payload.target_amount,
+        current_amount=goal_payload.current_amount
+    )
+    
+    goals.append(new_goal)
+    write_goals_data(goals)
+    return new_goal
+
 @router.put("/goals/{goal_id}", response_model=LifeGoal)
 def update_goal(goal_id: str, updated_goal: LifeGoal):
     """
@@ -42,3 +61,18 @@ def update_goal(goal_id: str, updated_goal: LifeGoal):
     goals[goal_index] = updated_goal
     write_goals_data(goals)
     return updated_goal
+
+@router.delete("/goals/{goal_id}", status_code=204)
+def cancel_goal(goal_id: str):
+    """
+    Cancel a customer goal.
+    """
+    goals = read_goals_data()
+    goal_to_delete = next((g for g in goals if g.goal_id == goal_id), None)
+
+    if not goal_to_delete:
+        raise HTTPException(status_code=404, detail="Goal not found")
+
+    updated_goals = [g.model_dump() for g in goals if g.goal_id != goal_id]
+    write_goals_data(updated_goals)
+    return
