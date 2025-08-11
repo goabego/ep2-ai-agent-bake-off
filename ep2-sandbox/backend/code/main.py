@@ -79,11 +79,13 @@ async def proxy_a2a_request(request: dict):
         headers = {"Metadata-Flavor": "Google"}
 
         token_response = requests.get(metadata_url, params=params, headers=headers, timeout=10)
+        print(token_response)
 
         if token_response.status_code != 200:
             raise HTTPException(status_code=500, detail="Failed to get authentication token")
 
         auth_token = token_response.text
+        print (auth_token)
 
         # Forward request to A2A service
         a2a_url = A2A_AGENT_URL
@@ -93,6 +95,7 @@ async def proxy_a2a_request(request: dict):
         }
 
         a2a_response = requests.post(a2a_url, json=request, headers=a2a_headers, timeout=30)
+        print(a2a_response.json())
 
         if a2a_response.status_code == 200:
             return a2a_response.json()

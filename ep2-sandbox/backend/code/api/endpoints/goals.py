@@ -4,6 +4,7 @@ import json
 from fastapi import APIRouter, HTTPException, status
 from typing import List
 from api.models import LifeGoal
+import uuid
 
 router = APIRouter()
 
@@ -38,9 +39,10 @@ def create_goal(goal_payload: LifeGoal):
     # Create a new LifeGoal instance to ensure a server-generated UUID
     new_goal = LifeGoal(
         user_id=goal_payload.user_id,
-        name=goal_payload.name,
+        description=goal_payload.description,
+        target_date=goal_payload.target_date,
         target_amount=goal_payload.target_amount,
-        current_amount=goal_payload.current_amount
+        current_amount_saved=goal_payload.current_amount_saved
     )
     
     goals.append(new_goal)

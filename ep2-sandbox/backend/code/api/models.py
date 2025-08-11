@@ -56,7 +56,7 @@ class BankPartner(BaseModel):
     eligibility_criteria: Optional[EligibilityCriteria] = None
 
 class LifeGoal(BaseModel):
-    goal_id: str
+    goal_id: str = Field(default_factory=lambda: f"goal-{uuid4()}")
     user_id: str
     description: str
     target_amount: float
