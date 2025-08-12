@@ -48,6 +48,7 @@ ENV/
 env.bak/
 venv.bak/
 .env
+!.env.example
 
 # Spyder project settings
 .spyderproject
