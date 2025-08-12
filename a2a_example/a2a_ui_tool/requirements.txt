@@ -1,0 +1,14 @@
+a2a-sdk>=0.2.16
+asyncclick>=8.1.8
+sse-starlette>=2.2.1
+starlette>=0.46.1
+httpx>=0.28.1
+httpx-sse>=0.4.0
+jwcrypto>=1.5.6
+pydantic>=2.10.6
+pyjwt>=2.10.1
+typing-extensions>=4.12.2
+uvicorn>=0.34.0
+Pillow>=10.0.0
+fastapi>=0.95.0
+gunicorn

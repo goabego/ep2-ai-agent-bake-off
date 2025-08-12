@@ -29,7 +29,7 @@ gcloud run deploy "$SERVICE_NAME" \
   --project "$PROJECT_ID" \
   --region "$REGION" \
   --memory "$MEMORY" \
-  --no-allow-unauthenticated \
+  --allow-unauthenticated \
   --set-env-vars=GOOGLE_CLOUD_PROJECT="$PROJECT_ID",GOOGLE_CLOUD_LOCATION="$REGION",GOOGLE_GENAI_USE_VERTEXAI=TRUE,MODEL="gemini-2.5-flash",FRONTEND_URL="$FRONTEND_URL",BACKEND_URL="$BACKEND_URL"
 
 
