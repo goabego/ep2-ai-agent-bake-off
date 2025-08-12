@@ -6,22 +6,6 @@ from api.models import Account, NetWorth, CashFlow, AverageCashFlow
 
 router = APIRouter()
 
-# Financials API Endpoints Summary
-#
-# Table of Contents:
-# - load_data: Loads data from a JSON file in the db directory.
-# - get_user_debts: Retrieves all debt (liability) accounts for a user.
-#     API Endpoint: GET /users/{user_id}/debts
-# - get_user_investments: Retrieves all investment accounts for a user.
-#     API Endpoint: GET /users/{user_id}/investments
-# - get_user_net_worth: Calculates the net worth of a user.
-#     API Endpoint: GET /users/{user_id}/networth
-# - get_user_cash_flow: Calculates the cash flow for a user over the last 30 days.
-#     API Endpoint: GET /users/{user_id}/cashflow
-# - get_user_average_cash_flow: Calculates the average monthly cash flow for a user over the last 3 months.
-#     API Endpoint: GET /users/{user_id}/average_cashflow
-# (See below for endpoint implementations.)
-
 
 def load_data(file_name: str) -> List[Dict[str, Any]]:
     try:
