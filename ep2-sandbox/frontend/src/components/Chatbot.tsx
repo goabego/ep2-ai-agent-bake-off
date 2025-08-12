@@ -16,6 +16,7 @@ const RobotIcon = () => (
 interface Message {
     sender: 'user' | 'bot';
     text: string;
+    formattedText?: string; // Add formatted text for bot messages
     messageId?: string;
     contextId?: string;
 }
@@ -38,6 +39,17 @@ const Chatbot: React.FC = () => {
     // Generate unique message ID
     const generateMessageId = () => `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
+    // Helper function to format response text with bold and newlines
+    const formatResponseText = (text: string) => {
+        // Convert markdown-style bold (**text**) to HTML bold tags
+        let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        
+        // Convert newlines to <br> tags for proper display
+        formattedText = formattedText.replace(/\n/g, '<br>');
+        
+        return formattedText;
+    };
+
     // Scroll to bottom of messages
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -50,7 +62,7 @@ const Chatbot: React.FC = () => {
 
     // Send message to A2A API
     const sendMessageToAPI = async (messageText: string): Promise<string> => {
-        // Use backend proxy to avoid CORS issues
+        // Call A2A agent directly to test CORS and function calling
         const API_ENDPOINT = 'https://a2a-ep2-33wwy4ha3a-uw.a.run.app';
         
         const payload = {
@@ -122,6 +134,7 @@ const Chatbot: React.FC = () => {
                 const botMessage: Message = {
                     sender: 'bot',
                     text: apiResponse,
+                    formattedText: formatResponseText(apiResponse), // Format the response
                     messageId: generateMessageId(),
                     contextId: contextId || undefined
                 };
@@ -191,7 +204,11 @@ const Chatbot: React.FC = () => {
                             {messages.map((msg, index) => (
                                 <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                                     <div className={`p-3 rounded-lg max-w-xs break-words ${msg.sender === 'user' ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}`}>
-                                        {msg.text}
+                                        {msg.sender === 'bot' && msg.formattedText ? (
+                                            <div dangerouslySetInnerHTML={{ __html: msg.formattedText }} />
+                                        ) : (
+                                            msg.text
+                                        )}
                                     </div>
                                 </div>
                             ))}
