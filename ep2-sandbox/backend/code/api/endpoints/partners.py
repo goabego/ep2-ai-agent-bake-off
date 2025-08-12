@@ -26,8 +26,6 @@ def get_user_benefits(user_id: str):
     try:
         with open(f"db/users.json", "r") as f:
             users_data = json.load(f)
-        with open(f"db/user_personas.json", "r") as f:
-            user_personas_data = json.load(f)
         with open(f"db/bank_partners.json", "r") as f:
             partners_data = json.load(f)
 
@@ -35,11 +33,7 @@ def get_user_benefits(user_id: str):
         if not user:
             raise HTTPException(status_code=404, detail="User not found.")
 
-        user_persona = next((persona for persona in user_personas_data if persona["user_id"] == user_id), None)
-        if not user_persona:
-            raise HTTPException(status_code=404, detail="User persona not found.")
-
-        user_credit_score = user_persona.get("credit_score")
+        user_credit_score = user.get("credit_score")
 
         eligible_partners = []
         for partner in partners_data:

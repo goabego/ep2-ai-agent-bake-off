@@ -1,6 +1,6 @@
 {
-  "users": [
     {
+      "user_id": "user-001",
       "name": "Marcus W.",
       "age": 24,
       "risk_tolerance": "moderate-high",
@@ -14,6 +14,7 @@
       "address": "123 Tech Lane, Silicon Valley, CA 94043"
     },
     {
+      "user_id": "user-002",
       "name": "Janet D.",
       "age": 42,
       "risk_tolerance": "moderate",
@@ -27,6 +28,7 @@
       "address": "456 Marketing Ave, New York, NY 10001"
     },
     {
+      "user_id": "user-003",
       "name": "Ashwin K.",
       "age": 63,
       "risk_tolerance": "low-moderate",
@@ -39,5 +41,4 @@
       "profile_picture": "user10_ashwin_k.jpg",
       "address": "789 Education Rd, Suburbia, IL 60540"
     }
-  ]
 }
