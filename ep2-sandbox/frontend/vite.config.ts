@@ -30,6 +30,6 @@ export default defineConfig({
     host: true,
     port: 8080,
     strictPort: true,
-    allowedHosts: ['frontend-ep2-426194555180.us-west1.run.app',"frontend-ep2-879168005744.us-west1.run.app",'*.run.app', 'localhost', '127.0.0.1','*'],
+    allowedHosts: ['frontend.ai-agent-bakeoff.com','frontend-ep2-426194555180.us-west1.run.app',"frontend-ep2-879168005744.us-west1.run.app",'*.run.app', 'localhost', '127.0.0.1','*'],
   },
 })

@@ -83,6 +83,7 @@ class AdkAgentToA2AExecutor(AgentExecutor):
             async for event in self._runner.run_async(
                 user_id=self._user_id, session_id=session.id, new_message=content
             ):
+                print(f"🔍 Event: {event}")
                 if event.is_final_response():
                     if event.content and event.content.parts and event.content.parts[0].text:
                         await updater.add_artifact(

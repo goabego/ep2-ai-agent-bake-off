@@ -31,7 +31,18 @@ from financial_tools import (
     get_user_meetings,
     cancel_meeting,
 )
+import random
 
+def roll_dice(sides: int = 6) -> int:
+    """Rolls an N sided dice. If number of sides aren't given, uses 6.
+
+    Args:
+    N: the number of the side of the dice to roll.
+
+    Returns:
+    A number between 1 and N, inclusive
+    """
+    return random.randint(1, sides)
 
 class GeminiAgent(LlmAgent):
     """An agent powered by the Gemini model via Vertex AI."""
@@ -44,7 +55,22 @@ class GeminiAgent(LlmAgent):
     def __init__(self, **kwargs):
         print("Initializing GeminiAgent...")
         # --- SET YOUR SYSTEM INSTRUCTIONS HERE ---
-        instructions = AGENT_INSTRUCTIONS
+        instructions = AGENT_INSTRUCTIONS + """
+            You can roll a dice by using the roll_dice tool using the number of sides as an argument.
+            For example, if you want to roll a 6 sided dice, you can use the following command:
+            roll_dice(sides=6)
+            If you want to roll a 12 sided dice, you can use the following command:
+            roll_dice(sides=12)
+            If you want to roll a 20 sided dice, you can use the following command:
+            roll_dice(sides=20)
+
+            Tool Usage Examples:
+            **User:** "Roll a 12 sided dice"
+            **Response:** "I'll roll a 12 sided dice for you."
+            <tool_code>
+            roll_dice(sides=12)
+            </tool_code>
+        """
         
 
         # --- REGISTER YOUR TOOLS HERE ---
@@ -74,6 +100,7 @@ class GeminiAgent(LlmAgent):
             schedule_meeting,
             get_user_meetings,
             cancel_meeting,
+            FunctionTool(roll_dice)
         ]
 
         super().__init__(
@@ -87,11 +114,11 @@ class GeminiAgent(LlmAgent):
     def create_agent_card(self, agent_url: str) -> "AgentCard":
         return AgentCard(
             
-name=self.name,
+            name=self.name,
             description=self.description,
             url=agent_url,
             version="1.0.0",
-            defaultInputModes=["text/plain"],
+            defaultInputModes=["application/json", "text/plain"],
             defaultOutputModes=["text/plain"],
             capabilities=AgentCapabilities(streaming=True),
             skills=[
@@ -112,6 +139,12 @@ name=self.name,
                         "What are my financial goals?",
                         "Help me update my goal to save for a new car.",
                     ]
+                ),
+                AgentSkill(
+                    id="roll_dice",
+                    name="Roll Dice Skill",
+                    description="Roll a dice of any number of sides.",
+                    tags=["roll_dice"],
                 )
             ]
 

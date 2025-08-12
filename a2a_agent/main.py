@@ -48,6 +48,7 @@ app = CORSMiddleware(
     app=app,
     allow_origins=[
         os.environ.get("FRONTEND_URL", "http://localhost:8080"),  # Production frontend
+        "https://frontend.ai-agent-bakeoff.com",
         "http://localhost:8080",  # Development frontend
         "http://localhost:3000",  # Alternative development port
         "http://127.0.0.1:8080",  # Alternative localhost
