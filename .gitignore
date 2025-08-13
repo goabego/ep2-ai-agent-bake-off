@@ -48,6 +48,7 @@ ENV/
 env.bak/
 venv.bak/
 .env
+compose.env
 !.env.example
 
 # Spyder project settings
@@ -73,4 +74,3 @@ dmypy.json
 .DS_Store
 .DS_Store?
 ._*
-

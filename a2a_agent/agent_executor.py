@@ -1,3 +1,4 @@
+import json
 from a2a.server.agent_execution import AgentExecutor, RequestContext
 from a2a.server.events import EventQueue
 from a2a.utils.errors import ServerError
@@ -80,15 +81,46 @@ class AdkAgentToA2AExecutor(AgentExecutor):
         await updater.start_work()
 
         try:
+            tool_name = None
+            tool_result = None
+            isjson_response = False
+
             async for event in self._runner.run_async(
                 user_id=self._user_id, session_id=session.id, new_message=content
             ):
-                print(f"🔍 Event: {event}")
+                
+                if event.content and event.content.parts:
+                    responses = event.get_function_responses()
+                    print(event.content.parts)
+                    if responses:
+                        for response in responses:
+                            if 'result' in response.response:
+                                tool_name = response.name
+                                tool_result = response.response['result']
+                            else:
+                                tool_name = response.name
+                                tool_result = response.response
+
                 if event.is_final_response():
                     if event.content and event.content.parts and event.content.parts[0].text:
-                        await updater.add_artifact(
-                            [Part(root=TextPart(text=event.content.parts[0].text))], name='response'
-                        )
+                        if not isjson_response:
+                            await updater.add_artifact(
+                                [Part(root=TextPart(text=event.content.parts[0].text))], 
+                                name='response',
+                                metadata={
+                                    "tool_name": tool_name,
+                                    "tool_result": tool_result,
+                                }
+                            )
+                        else:
+                            await updater.add_artifact(
+                                [Part(root=TextPart(text=tool_result))], 
+                                name='response',
+                                metadata={
+                                    "tool_name": tool_name,
+                                    "tool_result": tool_result,
+                                }
+                            )
                         await updater.complete()
         except Exception as e:
             await updater.failed(message=new_agent_text_message(f"Task failed with error: {e}"))

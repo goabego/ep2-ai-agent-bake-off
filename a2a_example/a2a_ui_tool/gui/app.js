@@ -203,9 +203,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error(`HTTP error! status: ${response.status}, message: ${JSON.stringify(errorData)}`);
             }
 
+
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
             let buffer = '';
+
 
             while (true) {
                 const { value, done } = await reader.read();
@@ -226,6 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (line.startsWith('data:')) {
                         const data = line.substring(5).trim();
                         if (!data) continue;
+
                         try {
                             const json = JSON.parse(data);
                             if (firstChunkTime === null) {

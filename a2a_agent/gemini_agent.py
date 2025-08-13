@@ -1,106 +1,97 @@
 
 import os
+import tools.financial_tools as ft
+import tools.services_tools as st
+from prompts import AGENT_INSTRUCTIONS
+
 from google.adk.agents import LlmAgent
 from a2a.types import AgentCard, AgentCapabilities, AgentSkill
 from google.adk.tools import FunctionTool
-from prompts import AGENT_INSTRUCTIONS
-from financial_tools import (
-    get_user_profile,
-    get_user_accounts,
-    get_user_transactions,
-    get_user_debts,
-    get_user_investments,
-    get_user_networth,
-    get_user_cashflow,
-    get_user_average_cashflow,
-    get_user_goals,
-    update_user_goal,
-    create_user_account,
-    get_user_transactions_with_history,
-    create_user_goal,
-    delete_user_goal,
-    get_bank_partners,
-    get_user_eligible_partners,
-    create_user_schedule,
-    get_user_schedules,
-    update_user_schedule,
-    delete_user_schedule,
-    get_all_advisors,
-    get_advisors_by_type,
-    schedule_meeting,
-    get_user_meetings,
-    cancel_meeting,
-)
-import random
 
-def roll_dice(sides: int = 6) -> int:
-    """Rolls an N sided dice. If number of sides aren't given, uses 6.
 
-    Args:
-    N: the number of the side of the dice to roll.
-
-    Returns:
-    A number between 1 and N, inclusive
-    """
-    return random.randint(1, sides)
 
 class GeminiAgent(LlmAgent):
     """An agent powered by the Gemini model via Vertex AI."""
 
     # --- AGENT IDENTITY ---
     # These are the default values. The notebook can override them.
-    name: str = "gemini_agent"
-    description: str = "A helpful assistant powered by Gemini."
+    name: str = "cymbal_bank_ai_agent"
+    description: str = "A Cymbal Bank AI Agent powered by Gemini for Chatbot and Backend Services"
 
     def __init__(self, **kwargs):
         print("Initializing GeminiAgent...")
         # --- SET YOUR SYSTEM INSTRUCTIONS HERE ---
-        instructions = AGENT_INSTRUCTIONS + """
-            You can roll a dice by using the roll_dice tool using the number of sides as an argument.
-            For example, if you want to roll a 6 sided dice, you can use the following command:
-            roll_dice(sides=6)
-            If you want to roll a 12 sided dice, you can use the following command:
-            roll_dice(sides=12)
-            If you want to roll a 20 sided dice, you can use the following command:
-            roll_dice(sides=20)
+        instructions = """
+            You are Finley, a professional financial advisor assistant. Provide concise, accurate financial guidance using available tools.
 
-            Tool Usage Examples:
-            **User:** "Roll a 12 sided dice"
-            **Response:** "I'll roll a 12 sided dice for you."
-            <tool_code>
-            roll_dice(sides=12)
-            </tool_code>
+            **Core Principles:**
+            - Be professional, clear, and concise
+            - Use financial tools to provide accurate, personalized information
+            - Present information in organized, easy-to-understand formats
+            - Focus on actionable insights and professional recommendations
+            - Default to user_id 'user-001' if none provided
+
+            **Capabilities Overview:**
+            I can assist with:
+            • Get your user profile details
+            • Get your recent transactions
+            • Create a new financial goal
+            • Delete a financial goal
+            • Get a list of bank partners
+            • Get a list of partners a specific user can benefit from
+            • Create a new schedule
+
+            **Response Style:**
+            - Provide direct, professional answers
+            - Use tools to gather current data
+            - Present information clearly and concisely
+            - Offer brief, actionable insights when appropriate
+
+            **Skill Selection:**
+             - Use the "chat" skill for general financial advice and user interactions
+             - Use the "serice_backend" skill when accessing backend API endpoints
+    
+            **When to use each skill:**
+            - Chat skill: User questions, financial guidance, goal management
+            - backend_services: API calls, data retrieval, system operations
+
+            **When to use Json format:**
+            - When the user asks for details about the tools or backend services or backend_services skill,
+            - When the user asks for the data schemas,
+            - When the user asks for the API endpoints,
         """
-        
+
+        instructions = instructions + ft.get_tool_prompt() + st.get_tool_prompt()
 
         # --- REGISTER YOUR TOOLS HERE ---
         tools = [
-            get_user_profile,
-            get_user_accounts,
-            get_user_transactions,
-            get_user_debts,
-            get_user_investments,
-            get_user_networth,
-            get_user_cashflow,
-            get_user_average_cashflow,
-            get_user_goals,
-            update_user_goal,
-            create_user_account,
-            get_user_transactions_with_history,
-            create_user_goal,
-            delete_user_goal,
-            get_bank_partners,
-            get_user_eligible_partners,
-            create_user_schedule,
-            get_user_schedules,
-            update_user_schedule,
-            delete_user_schedule,
-            get_all_advisors,
-            get_advisors_by_type,
-            schedule_meeting,
-            get_user_meetings,
-            cancel_meeting,
-            FunctionTool(roll_dice)
+            ft.get_user_profile,
+            ft.get_user_accounts,
+            ft.get_user_transactions,
+            ft.get_user_debts,
+            ft.get_user_investments,
+            ft.get_user_networth,
+            ft.get_user_cashflow,
+            ft.get_user_average_cashflow,
+            ft.get_user_goals,
+            ft.update_user_goal,
+            ft.create_user_account,
+            ft.get_user_transactions_with_history,
+            ft.create_user_goal,
+            ft.delete_user_goal,
+            ft.get_bank_partners,
+            ft.get_user_eligible_partners,
+            ft.create_user_schedule,
+            ft.get_user_schedules,
+            ft.update_user_schedule,
+            ft.delete_user_schedule,
+            ft.get_all_advisors,
+            ft.get_advisors_by_type,
+            ft.schedule_meeting,
+            ft.get_user_meetings,
+            ft.cancel_meeting,
+            st.get_all_endpoints,
+            st.get_all_data_schemas,
         ]
 
         super().__init__(
@@ -119,13 +110,13 @@ class GeminiAgent(LlmAgent):
             url=agent_url,
             version="1.0.0",
             defaultInputModes=["application/json", "text/plain"],
-            defaultOutputModes=["text/plain"],
+            defaultOutputModes=["application/json", "text/plain"],
             capabilities=AgentCapabilities(streaming=True),
             skills=[
                 AgentSkill(
                     id="chat",
-                    name="Chat Skill",
-                    description="Chat with the Gemini agent.",
+                    name="Cymbal Bank AI Agent",
+                    description="Cymbal Bank AI Agent is a helpful assistant powered by Gemini.",
                     tags=["chat"],
                     examples=[
                         "What is my user profile?",
@@ -141,10 +132,15 @@ class GeminiAgent(LlmAgent):
                     ]
                 ),
                 AgentSkill(
-                    id="roll_dice",
-                    name="Roll Dice Skill",
-                    description="Roll a dice of any number of sides.",
-                    tags=["roll_dice"],
+                    id="backend_services",
+                    name="Cymbal Bank Backend Services",
+                    description="This skill is used to interact with the Cymbal Bank backend services.",
+                    tags=["fast_api","backend_services","backend"],
+                    defaultOutputModes=["application/json"],
+                    examples=[
+                        "What are the available endpoints?",
+                        "What are the data schemas?",
+                    ]
                 )
             ]
 

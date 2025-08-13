@@ -4,6 +4,37 @@ This project is an AI-powered financial assistant designed to help users manage 
 
 This project is built on a modern, scalable architecture that leverages the power of AI to deliver personalized financial guidance. At its core is a council of specialized AI agents, each responsible for a different aspect of the user's financial well-being.
 
+# Overview
+
+**What you’re building**  
+As a reminder, your core task is to: 
+
+1) Build agents that help to reimagine the retail banking experience using ADK and Gemini (or imagen, veo, etc)  
+2) Establishing connectivity to a pre-built retail bank agent (Cymbal Bank) that has access to the financial information of consumers your agents are trying to help with using A2A.    
+3) In addition, to build a delightful consumer experience that would wow the consumers of today, you’re encouraged  to show the development process of designing the agents  that benefit from communicating to the Cymbal Banks Agent. 
+
+**Focal points for hackathon**
+
+* P1: At least two subagents that tackle financial use cases (we suggested three but feel free to consider your own)  
+  * Suggested: Big Purchase planning agent, Travel Budget Agent, Subscriptions Audit Agent  
+* P2: Showcase how these agents you’ve built communicate to the Cymbal Banks Agent via A2A    
+* P3: Automation: Each sub-agent requires a form of automation. Automate at least one thing from a consumer experience and one from the bank’s operation perspective.
+
+
+**Endpoint URLs**  
+To help you focus on building, we've prepared useful assets that you can use during the bake-off:
+
+| Endpoint Type | Notes | Pretty URL |
+| :---- | :---- | :---- |
+| Cymbal Bank Frontend | This is to help give you a sense of challenge. You’re not expected to build on top of this frontend.  | [https://frontend.ai-agent-bakeoff.com/](https://frontend.ai-agent-bakeoff.com/) |
+| Cymbal Bank Frontend Dashboard | Same as above | [https://frontend.ai-agent-bakeoff.com/dashboard?userId=user-001](https://frontend.ai-agent-bakeoff.com/dashboard?userId=user-001) |
+| Cymbal Bank Agent | Agent endpoint that you will communicate via A2A | [https://agent.ai-agent-bakeoff.com/](https://agent.ai-agent-bakeoff.com/) |
+| Cymbal Bank Agent Card | Agent Card details. You need to establish protocol with your agents using A2A \- [docs here](https://a2a-protocol.org/latest/topics/agent-discovery/) | [https://agent.ai-agent-bakeoff.com/.well-known/agent-card.json](https://agent.ai-agent-bakeoff.com/.well-known/agent-card.json) |
+| Cymbal Bank Backend Fast API | Fast API Backend with built in components, database, etc. Implementation Note: To accurately simulate a real-world environment, please ensure all communication protocol is directed through the agent interface. Direct calls to the backend APIs are prohibited in the final product, as this would bypass the intended security model where each agent's data is treated as a protected and separate entity. Direct API access is provided exclusively for troubleshooting and debugging purposes.  | [https://backend.ai-agent-bakeoff.com/](https://backend.ai-agent-bakeoff.com//docs) |
+| A2A Inspector GUI | Useful A2A inspector GUI for communication and initializing Agent via A2A (can be used with your Agent and Cymbal Bank’s Agent). | [https://github.com/goabego/ep2-ai-agent-bake-off/tree/main/a2a\_example/a2a\_ui\_tool](https://github.com/goabego/ep2-ai-agent-bake-off/tree/main/a2a_example/a2a_ui_tool) |
+| A2A Examples | We added example code for quicker development. Mock Cymbal Bank Agent, Your Agent, and Inspector GUI. | [https://github.com/goabego/ep2-ai-agent-bake-off/tree/main/a2a\_example](https://github.com/goabego/ep2-ai-agent-bake-off/tree/main/a2a_example) |
+
+
 ## Tech Stack
 
 -   **Backend:** Python 3.10+ with FastAPI and Poetry
