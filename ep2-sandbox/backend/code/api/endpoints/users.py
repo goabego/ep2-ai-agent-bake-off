@@ -20,6 +20,13 @@ def read_accounts_data() -> List[Account]:
         accounts_data = json.load(f)
     return [Account(**acc) for acc in accounts_data]
 
+@router.get("/users", response_model=List[User])
+def get_users():
+    """
+    Get all users.
+    """
+    return read_users_data()
+
 @router.get("/users/{user_id}", response_model=User)
 def get_user(user_id: str):
     """

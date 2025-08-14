@@ -3,30 +3,36 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/backend-ep2:latest'
+      - 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/backend-ep2:latest'
       - '.'
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/backend-ep2:latest'
+      - 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/backend-ep2:latest'
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
+      - 'beta'
       - 'run'
       - 'deploy'
-      - 'backend-ep2'
+      - 'backend-ep2-2'
+      - '--service-account'
+      - 'ep2-sa@bake-off-hosting.iam.gserviceaccount.com'
       - '--image'
-      - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/backend-ep2:latest'
+      - 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/backend-ep2:latest'
       - '--platform'
       - 'managed'
       - '--region'
       - 'us-west1'
+      - '--add-volume'
+      - 'name=db,type=cloud-storage,bucket=bakeoff-ep2/db'
+      - '--add-volume-mount'
+      - 'volume=db,mount-path=/app/db'
       - '--allow-unauthenticated'
       - '--set-env-vars'
       - 'A2A_AGENT_URL=${_A2A_AGENT_URL}'
+      - '--cpu-boost'           # This flag enables startup CPU boost
+      - '--timeout=180s' 
 images:
-  - 'us-west1-docker.pkg.dev/${_PROJECT_ID}/bake-off/backend-ep2:latest'
-options:
-  logging: CLOUD_LOGGING_ONLY
+  - 'us-west1-docker.pkg.dev/bake-off-hosting/bake-off/backend-ep2:latest'
 substitutions:
-  _PROJECT_ID: 'bake-off-hosting'
-  _A2A_AGENT_URL: 'https://a2a-ep2-33wwy4ha3a-uw.a.run.app'
+  _A2A_AGENT_URL: 'https://a2a-ep2-33wwy4ha3a-uw.a.run.app' 

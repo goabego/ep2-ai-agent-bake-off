@@ -58,7 +58,7 @@ def schedule_meeting(meeting_request: Meeting):
     
     # Simple validation to prevent double booking the exact same time
     for existing_meeting in meetings:
-        if existing_meeting['advisor_id'] == meeting_request.advisor_id and \
+        if existing_meeting['name'] == meeting_request.name and \
            existing_meeting['meeting_time'] == meeting_request.meeting_time.isoformat():
             raise HTTPException(status_code=409, detail="This time slot is already booked with the advisor.")
 

@@ -1,18 +1,7 @@
 [
     {
-        "schedule_id": "bbf29656-e172-454f-9aff-007c4d1350b7",
-        "user_id": "user-001",
-        "source_account_id": "acc-mw-c-001",
-        "destination_account_id": "acc-mw-s-002",
-        "description": "529 Contribution",
-        "frequency": "monthly",
-        "start_date": "2024-08-12T00:00:00Z",
-        "end_date": "2028-08-15T00:00:00Z",
-        "amount": 100.0
-    },
-    {
-        "schedule_id": "cba5e7d8-9059-48bb-b0c1-a55d651578bb",
         "user_id": "user-002",
+        "schedule_id": "cba5e7d8-9059-48bb-b0c1-a55d651578bb",
         "source_account_id": "acc-jd-c-001",
         "destination_account_id": "acc-jd-i-003",
         "description": "529 Contribution",
@@ -22,8 +11,8 @@
         "amount": 100.0
     },
     {
-        "schedule_id": "cfa7a7d8-9059-48bb-b0c1-a55d651578bb",
         "user_id": "user-003",
+        "schedule_id": "cfa7a7d8-9059-48bb-b0c1-a55d651578bb",
         "source_account_id": "acc-ak-c-001",
         "destination_account_id": "cc-ak-s-002",
         "description": "Savings",
@@ -33,8 +22,8 @@
         "amount": 100.0
     },
     {
-        "schedule_id": "2e190ad0-c84a-4107-a871-c8e196cd18d7",
         "user_id": "user-003",
+        "schedule_id": "2e190ad0-c84a-4107-a871-c8e196cd18d7",
         "source_account_id": "acc-ak-c-001",
         "destination_account_id": "acc-ak-p-004",
         "description": "401k Contribution",
