@@ -23,7 +23,7 @@ from google.genai.types import Content
 
 from google.adk.agents.base_agent import BaseAgent
 from google.adk.runners import Runner
-from gemini_agent import GeminiAgent
+from gemini_agent import root_agent
 
 
 class AdkAgentToA2AExecutor(AgentExecutor):
@@ -32,7 +32,7 @@ class AdkAgentToA2AExecutor(AgentExecutor):
     def __init__(
         self,
     ):
-        self._agent = GeminiAgent()
+        self._agent = root_agent
         self._runner = Runner(
             app_name=self._agent.name,
             agent=self._agent,

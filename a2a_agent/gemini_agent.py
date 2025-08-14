@@ -1,16 +1,21 @@
 
 import os
-import tools.financial_tools as ft
-import tools.services_tools as st
-from prompts import AGENT_INSTRUCTIONS
+from .tools import financial_tools as ft
+from .tools import services_tools as st
+from .prompts import AGENT_INSTRUCTIONS
 
 from google.adk.agents import LlmAgent
 from a2a.types import AgentCard, AgentCapabilities, AgentSkill
 from google.adk.tools import FunctionTool
 
+# Import specialized agents
+from .agents.big_purchases import root_agent as big_purchases_agent
+from .agents.daily_spending import root_agent as daily_spending_agent
+from .agents.travel import root_agent as travel_agent
 
 
-class GeminiAgent(LlmAgent):
+
+class Agent(LlmAgent):
     """An agent powered by the Gemini model via Vertex AI."""
 
     # --- AGENT IDENTITY ---
@@ -22,7 +27,8 @@ class GeminiAgent(LlmAgent):
         print("Initializing GeminiAgent...")
         # --- SET YOUR SYSTEM INSTRUCTIONS HERE ---
         instructions = """
-            You are Finley, a professional financial advisor assistant. Provide concise, accurate financial guidance using available tools.
+            You are Finley, a professional financial advisor assistant coordinating a team of specialized agents. 
+            Provide concise, accurate financial guidance using available tools and delegate to specialists when appropriate.
 
             **Core Principles:**
             - Be professional, clear, and concise
@@ -31,7 +37,30 @@ class GeminiAgent(LlmAgent):
             - Focus on actionable insights and professional recommendations
             - Default to user_id 'user-001' if none provided
 
-            **Capabilities Overview:**
+            **Specialized Sub-Agents:**
+            You have access to these specialized agents for delegation:
+            1. 'big_purchases_agent': Handles queries about large purchases (cars, appliances, home upgrades, tuition).
+               Delegate when users ask about: buying cars, major appliances, financing big purchases, budgeting for large expenses.
+            2. 'daily_spending_agent': Analyzes daily spending patterns and provides coaching.
+               Delegate when users ask about: spending habits, daily expenses, budgeting tips, transaction analysis.
+            3. 'travel_agent': Helps with travel planning and cost optimization.
+               Delegate when users ask about: trip planning, travel budgets, vacation savings, travel cost optimization.
+
+            **Delegation Strategy:**
+            When you receive a user query, FIRST determine if it should be delegated to a specialist:
+            
+            - Travel-related requests (itinerary, vacation planning, trip budgets, travel savings): 
+              Use the transfer_to_agent function to delegate to 'travel_agent'
+            - Big purchase questions (cars, appliances, home upgrades, financing large expenses):
+              Use the transfer_to_agent function to delegate to 'big_purchases_agent'  
+            - Daily spending analysis or coaching (spending habits, budgeting tips, transaction categorization):
+              Use the transfer_to_agent function to delegate to 'daily_spending_agent'
+            - For account management, transactions, goals, or backend services: handle yourself using available tools
+            
+            IMPORTANT: If a query matches a specialist domain, you MUST use transfer_to_agent('agent_name') to delegate.
+            Do NOT try to answer travel, big purchase, or daily spending coaching questions yourself.
+
+            **Direct Capabilities:**
             I can assist with:
             • Get your user profile details
             • Get your recent transactions
@@ -43,7 +72,7 @@ class GeminiAgent(LlmAgent):
 
             **Response Style:**
             - Provide direct, professional answers
-            - Use tools to gather current data
+            - Use tools to gather current data when handling queries directly
             - Present information clearly and concisely
             - Offer brief, actionable insights when appropriate
 
@@ -98,6 +127,7 @@ class GeminiAgent(LlmAgent):
             model=os.environ.get("MODEL", "gemini-2.5-flash"),
             instruction=instructions,
             tools=tools,
+            sub_agents=[big_purchases_agent, daily_spending_agent, travel_agent],
             **kwargs,
         )
 
@@ -145,3 +175,5 @@ class GeminiAgent(LlmAgent):
             ]
 
         )
+
+root_agent = Agent()
